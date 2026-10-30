@@ -1,0 +1,10 @@
+comparison,rows_compared,max_abs_diff,unchanged
+2017 seed 0 and seed 2 defender rows (per seed),42,0.0,True
+2018 defender rows (pooled and per seed),84,0.0,True
+"2017 union, seed 0 and seed 2 point estimates",6,0.0,True
+"2017 union, seed 0 bootstrap CI (sequential stream; seed 1 now drawn before seed 2)",3,0.0,True
+"2017 union, seed 2 bootstrap CI (sequential stream; seed 1 now drawn before seed 2)",3,0.001915708812260511,False
+2018 union (all rows incl. CI),24,0.0,True
+"Stage 5 quantities, both datasets",3978,0.0,True
+2018 paired TPR (incl. CI),21,0.0,True
+"defender negatives, both datasets",16,0.0,True

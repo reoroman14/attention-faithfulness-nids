@@ -1,0 +1,23 @@
+year,check,value,tol,tol_kind,pass
+2018,(a) stand-in features max |A8x - A8|,0.0,1e-05,abs,True
+2018,(a) loss lambda 1 max |A8x - A8|,0.0,1e-05,abs,True
+2018,(a) loss lambda 100 max |A8x - A8|,0.0,1e-05,abs,True
+2018,(b) IG-20 raw max |A8x - captum|,0.0,1e-05,abs,True
+2018,(b) IG-20 normalised max |A8x - captum|,0.0,1e-05,abs,True
+2018,(c) msp max |inside - saved|,2.384185791015625e-07,1e-05,abs,True
+2018,(c) margin max |inside - saved|,1.9073486328125e-06,1e-05,abs,True
+2018,(c) mahalanobis_benign max relative |inside - saved|,6.199151485939731e-05,0.001,rel,True
+2018,(c) knn5_benign max |inside - saved|,0.0,1e-05,abs,True
+2018,(c) cons_rollout_gxi_spearman max |inside - saved|,0.0,1e-05,abs,True
+2018,(c) cons_rollout_gxi_jacc10 max |inside - saved|,0.0,1e-05,abs,True
+2018,(c) cons_rollout_gxi_cos max |inside - saved|,0.0,1e-05,abs,True
+2018,(c) cons_rollout_ig20_spearman max |inside - saved|,0.0,1e-05,abs,True
+2018,(c) cons_rollout_ig20_jacc10 max |inside - saved|,0.0,1e-05,abs,True
+2018,(c) cons_rollout_ig20_cos max |inside - saved|,0.0,1e-05,abs,True
+2018,(c) cons_attnmean_gxi_spearman max |inside - saved|,0.0,1e-05,abs,True
+2018,(c) cons_attnmean_gxi_jacc10 max |inside - saved|,0.0,1e-05,abs,True
+2018,(c) cons_attnmean_gxi_cos max |inside - saved|,0.0,1e-05,abs,True
+2018,(c) cons_attnmean_ig20_spearman max |inside - saved|,0.0,1e-05,abs,True
+2018,(c) cons_attnmean_ig20_jacc10 max |inside - saved|,0.0,1e-05,abs,True
+2018,(c) cons_attnmean_ig20_cos max |inside - saved|,0.0,1e-05,abs,True
+2018,(c) D_plus decision max |inside - saved|,0.00020516070501841455,0.001,abs (Amendment 1),True

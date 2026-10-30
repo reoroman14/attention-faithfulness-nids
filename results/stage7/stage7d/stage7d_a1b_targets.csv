@@ -1,0 +1,8 @@
+class,target_2017,target_2018,rule,class_mean_distance,distances
+bot,webattack,webattack,2017 target (exists on 2018),10.77354241183459,ddos 3.87; dos_hulk 5.53; dos_goldeneye 8.60; ssh_patator 9.66; webattack 10.77; dos_slowloris 15.43
+ddos,dos_hulk,dos_hulk,2017 target (exists on 2018),4.3123266039847845,bot 3.87; dos_hulk 4.31; dos_goldeneye 7.57; ssh_patator 9.65; webattack 10.43; dos_slowloris 15.98
+dos_goldeneye,dos_slowhttptest,dos_hulk,2017 target dos_slowhttptest absent: nearest attack class by class-mean distance,5.175857843335178,dos_hulk 5.18; ddos 7.57; bot 8.60; webattack 9.17; ssh_patator 9.99; dos_slowloris 12.31
+dos_hulk,dos_slowloris,dos_slowloris,2017 target (exists on 2018),14.927733918679886,ddos 4.31; dos_goldeneye 5.18; bot 5.53; ssh_patator 8.35; webattack 9.51; dos_slowloris 14.93
+dos_slowloris,dos_slowhttptest,dos_goldeneye,2017 target dos_slowhttptest absent: nearest attack class by class-mean distance,12.314465111189753,dos_goldeneye 12.31; dos_hulk 14.93; bot 15.43; ddos 15.98; webattack 16.50; ssh_patator 17.52
+ssh_patator,ftp_patator,webattack,2017 target ftp_patator absent: nearest attack class by class-mean distance,6.727385509832352,webattack 6.73; dos_hulk 8.35; ddos 9.65; bot 9.66; dos_goldeneye 9.99; dos_slowloris 17.52
+webattack,bot,bot,2017 target (exists on 2018),10.77354241183459,ssh_patator 6.73; dos_goldeneye 9.17; dos_hulk 9.51; ddos 10.43; bot 10.77; dos_slowloris 16.50

@@ -1,0 +1,16 @@
+class,day,train,val,test,gap,total
+benign,Monday,203409,67803,67803,6920,345935
+benign,Tuesday,168830,56277,56276,5744,287127
+benign,Wednesday,165739,55246,55247,5638,281870
+benign,Thursday,57158,19053,19052,1946,97209
+benign,Friday,145592,48531,48530,4954,247607
+bot,Friday,431,144,144,16,735
+ddos,Friday,56261,18754,18754,1914,95683
+dos_goldeneye,Wednesday,3977,1326,1326,136,6765
+dos_hulk,Wednesday,93476,31159,31158,3180,158973
+dos_slowhttptest,Wednesday,2770,923,923,96,4712
+dos_slowloris,Wednesday,3080,1027,1027,106,5240
+ftp_patator,Tuesday,2351,784,783,80,3998
+portscan,Friday,981,327,327,34,1669
+ssh_patator,Tuesday,1739,580,580,60,2959
+webattack,Thursday,1187,395,397,42,2021

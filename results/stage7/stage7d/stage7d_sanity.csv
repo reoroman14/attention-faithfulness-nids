@@ -1,0 +1,11 @@
+check,seed,value,expected,pass
+clean source rows predicted as label (through the torch preprocessing),0,985 / 985,all,True
+"preprocessing equivalence numpy vs torch (max |diff| float64, argmax agreement)",0,"6.7e-16, 1.0000","about 0, 1.0",True
+clean source rows valid under the checker at eps 0 (and no clean relation failures),0,985 / 985; clean relation failures 0,all; 0,True
+runtime estimate for the full run (h),0,3.32,<= 7.0,True
+clean source rows predicted as label (through the torch preprocessing),1,985 / 985,all,True
+"preprocessing equivalence numpy vs torch (max |diff| float64, argmax agreement)",1,"6.7e-16, 1.0000","about 0, 1.0",True
+clean source rows valid under the checker at eps 0 (and no clean relation failures),1,985 / 985; clean relation failures 0,all; 0,True
+clean source rows predicted as label (through the torch preprocessing),2,985 / 985,all,True
+"preprocessing equivalence numpy vs torch (max |diff| float64, argmax agreement)",2,"6.7e-16, 1.0000","about 0, 1.0",True
+clean source rows valid under the checker at eps 0 (and no clean relation failures),2,985 / 985; clean relation failures 0,all; 0,True

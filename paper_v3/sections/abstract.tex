@@ -1,0 +1,21 @@
+% Abstract (Task 42): central claim of handoff/37_narrative_v2.md section 1.1 with the A6x result.
+\begin{abstract}
+Attention weights of transformer-based network intrusion detection systems (NIDS) are often read as explanations, and
+agreement between attention and attribution methods has been proposed as an attack signal.
+We tested both readings on FT-Transformers (feature tokenizer transformers; \nSeeds{} seeds) trained on LYCOS-IDS2017
+and LycoS-Unicas-IDS2018, using their \nCommonClasses{} common attack classes and excluding evaluation rows with a near
+duplicate in the training set.
+Rollout attention agreed weakly to moderately with attribution methods (Spearman correlation with GradientSHAP
+\spRolloutGShapVoneSeventeen{} on 2017 and \spRolloutGShapVoneEighteen{} on 2018), was less faithful than Integrated
+Gradients and occlusion, and was stiff under protocol-constrained attacks that targeted it.
+Attention-attribution consistency scores added to a confidence-and-distance detector helped against an attacker that
+ignored them, as did controls without attention.
+Against attackers that optimised the exact score of the detector they faced, with surrogate gradients only for the
+\nRankScores{} rank-based scores, the consistency scores instead raised the share of successful and undetected attack
+rows, by \axHeadVoneSeventeenAbs{} on 2017 (\paramCILevel{} confidence interval \axHeadVoneSeventeenCI) and by
+\axHeadVoneEighteenAbs{} on 2018 (\axHeadVoneEighteenCI), with \axHeadOppSeedsPhrase{} of the
+opposite sign.
+An attacker with differentiable stand-ins for the scores had shown a reduction of \axStandinVoneSeventeenAbs{} on 2017;
+giving the attacker of the base detector the same iterate selection as the exact-objective attacker changed no row.
+Adaptive evaluations of explanation-based attack detectors need attackers that optimise the detector's exact score.
+\end{abstract}

@@ -1,0 +1,15 @@
+label (file),rows,paper name,paper Table 1,difference
+Benign,10000000,Benign,"10,000,000",+0
+DoS Hulk,1802966,DoS Hulk,"1,802,966",+0
+DDoS HOIC,1074379,DDoS HOIC,"1,074,379",+0
+DDoS LOIC-HTTP,289328,DDoS LOIC-HTTP,"289,328",+0
+FTP-Patator,190300,FTP-Patator,"190,300",+0
+DoS Slowhttptest,105550,DoS Slowhttptest,"105,550",+0
+Bot,96154,Bot,"96,154",+0
+SSH-Patator,92648,SSH-Patator,"92,648",+0
+DoS GoldenEye,26861,DoS GoldenEye,"26,861",+0
+DoS Slowloris,10274,DoS Slowloris,"10,274",+0
+DDoS LOIC-UDP,2382,DDoS LOIC-UDP,"2,382",+0
+Web Attack - Brute Force,260,Web Attack - Brute Force,260,+0
+Web Attack - XSS,116,Web Attack - XSS,116,+0
+Web Attack - Sql Injection,50,Web Attack - Sql Injection,50,+0

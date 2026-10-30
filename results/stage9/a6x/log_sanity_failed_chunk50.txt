@@ -1,0 +1,12 @@
+[2026-10-30 12:22:31] start sanity years ['2017', '2018'] chunk 50 cap 3.0 h pid 35752
+[2026-10-30 12:23:20] 2017 sanity (s1) selection off, chunk 50: max |X - saved A6_lam1 X|: 1.398e+04 (abs tol 1e-05; FAIL)
+[2026-10-30 12:23:20] 2017 sanity (s1, info) rows with any difference > 1e-5: 3
+[2026-10-30 12:23:42] 2017 sanity (s1, diagnosis) original partition, rows 200: max |X - saved| 0.000e+00
+[2026-10-30 12:23:42] 2017 sanity (s2) msp max |inside - saved|: 1.788e-07 (abs tol 1e-05; PASS)
+[2026-10-30 12:23:42] 2017 sanity (s2) margin max |inside - saved|: 1.907e-06 (abs tol 1e-05; PASS)
+[2026-10-30 12:23:42] 2017 sanity (s2, info) mahalanobis_benign max |inside - saved| absolute: 3.986e-04
+[2026-10-30 12:23:42] 2017 sanity (s2) mahalanobis_benign max relative |inside - saved|: 4.993e-05 (rel tol 0.001; PASS)
+[2026-10-30 12:23:42] 2017 sanity (s2) knn5_benign max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 12:23:42] 2017 sanity (s2) D decision max |inside - saved|: 6.373e-05 (abs (Amendment 1) tol 0.001; PASS)
+[2026-10-30 12:23:42] 2017 sanity (margin, info) rows flipped 136; undetected: inside no margin 88, inside with margin 88, saved evaluation 88; differ margin vs no margin 0, inside no margin vs saved 0
+[2026-10-30 12:23:42] STOPPED: sanity check failed on 2017: ['(s1) selection off, chunk 50: max |X - saved A6_lam1 X|']

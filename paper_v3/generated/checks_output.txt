@@ -1,0 +1,48 @@
+[lint] sections: abstract.tex, appendix.tex, conclusion.tex, discussion.tex, intro.tex, limitations.tex, methods.tex, related.tex, results.tex, setup.tex
+[lint] math-mode parameters (allowed, listed): 32
+         appendix.tex:65: 1 in $  = 1$
+         appendix.tex:69: 1 in $  = 1$
+         appendix.tex:71: 0.5 in $  = 0.5$
+         appendix.tex:115: 100 in $  = 100$
+         appendix.tex:119: 2 in $R^2$
+         appendix.tex:131: 10 in $10^{-5}$
+         appendix.tex:131: 5 in $10^{-5}$
+         appendix.tex:132: 10 in $10^{-3}$
+         appendix.tex:132: 3 in $10^{-3}$
+         limitations.tex:17: 0.5 in $  = 0.5$
+         limitations.tex:29: 2 in $R^2$
+         methods.tex:87: 100 in $    \{100, 1000\}$
+         methods.tex:87: 1000 in $    \{100, 1000\}$
+         methods.tex:88: 0.05 in $0.05$
+         methods.tex:88: 2 in $2$
+         methods.tex:94: 1 in $    \{1, 100\}$
+         methods.tex:94: 100 in $    \{1, 100\}$
+         methods.tex:178: 0 in $0$
+         methods.tex:178: 0 in $0$
+         methods.tex:179: 0 in $0$
+         methods.tex:181: 10 in $10^{-5}$
+         methods.tex:181: 5 in $10^{-5}$
+         results.tex:46: 1000 in $  = 1000$
+         results.tex:47: 0.5 in $  = 0.5$
+         results.tex:98: 1 in $  = 1$
+         results.tex:118: 1 in $  = 1$
+         results.tex:151: 0 in $0$
+         results.tex:187: 1 in $  = 1$
+         results.tex:188: 100 in $  = 100$
+         results.tex:206: 2 in $R^2$
+         results.tex:220: 1 in $  = 1$
+         results.tex:237: 1 in $  = 1$
+[lint] year labels 134; seed indices 10
+[lint] FLAGGED numeric literals outside macros: 0
+[lint] references used 48; unresolved 0: {}
+[lint] em / en dashes: 0
+[flat] lines 3831; non-ASCII characters 0; '--' or longer 0
+[flat] labels 57 (duplicates []); \ref keys 49, unresolved []
+[flat] \cite keys 59; missing from bib []; bib entries 60; never cited ['repo_attn_nids']
+[flat] macros defined 1810; used control words 1880; not defined here and not used in the compiled CYSE file: ['emph', 'flipped']
+[flat] figures ['f_pipeline', 'f_mass_ratio', 'f_headline', 'f_evasion_eps', 'f_detection_tpr', 'f_per_class_heatmap']; missing files []
+[flat] forbidden wording hits: 0
+[flat] folder content: ['f_detection_tpr.pdf', 'f_evasion_eps.pdf', 'f_headline.pdf', 'f_mass_ratio.pdf', 'f_per_class_heatmap.pdf', 'f_pipeline.pdf', 'main.tex', 'references.bib']; subfolders: []
+[flat] 'Declaration' occurrences: 0
+[flat] 'Acknowledg' occurrences: 0
+[flat] author commands: ['\\author{}'] (anonymised if the only one is an empty \author{})

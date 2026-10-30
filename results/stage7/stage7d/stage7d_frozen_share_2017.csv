@@ -1,0 +1,11 @@
+class,family,n_rows,n_controls,family_frozen_controls,share_controls_frozen_mean,share_controls_frozen_other_reasons,share_rows_any_frozen,share_rows_all_frozen,clean_invariant_violators
+bot,botnet,144,18,0,0.0,0.0,0.0,0.0,0
+ddos,volumetric_dos,150,18,0,0.0,0.0,0.0,0.0,0
+dos_goldeneye,volumetric_dos,150,18,0,0.0,0.0,0.0,0.0,0
+dos_hulk,volumetric_dos,150,18,0,0.0,0.0,0.0,0.0,0
+dos_slowhttptest,slow_dos,150,18,10,0.5555555555555556,0.0,1.0,0.0,0
+dos_slowloris,slow_dos,150,18,10,0.5555555555555556,0.0,1.0,0.0,0
+ftp_patator,brute_force,150,18,0,0.0,0.0,0.0,0.0,0
+portscan,scan,150,18,10,0.5555555555555556,0.0,1.0,0.0,0
+ssh_patator,brute_force,150,18,0,0.0,0.0,0.0,0.0,0
+webattack,web,150,18,0,0.0,0.0,0.0,0.0,0

@@ -1,0 +1,182 @@
+% Supplementary Notes 1 to 5 (Task 46): v3 Appendices A to D and the limitation detail that the Discussion of the main
+% text does not keep (plan 42, section 1.5). Every result number is a macro. Supplementary items are referenced with
+% \ref inside this document and main-text items with the numbering macros of generated/srep_numbers.tex.
+
+\section*{Supplementary Note \suppNoteImpl: Implementation details}
+\label{sec:si_impl}
+Supplementary Table~\ref{t_impl} lists the settings used on both datasets.
+The FT-Transformer was trained with AdamW, a linear warm-up followed by cosine decay of the learning rate, gradient-norm
+clipping, class weights proportional to the square root of the inverse class frequency (\apClassWeight), bf16
+autocast during training and float32 for evaluation and attribution, and early stopping on validation macro-F1.
+On 2018 all three seeds ran to the maximum of \apMaxEpochs{} epochs without early stopping (best epochs
+\apBestEpochEighteen), and the validation macro-F1 ranged from \valFlatEighteenRange{} over the last
+\apPatience{} epochs of every seed; on 2017 early stopping ended the runs after \apEpochsRunSeventeen{} epochs.
+As a diagnostic of the attention explanations we selected, per seed, the single attention head (the classification-token
+row of one of the \apHeads{} heads in one of the \apBlocks{} layers) with the lowest deletion AUC on the validation
+explanation rows, macro-averaged over attack classes and with features masked by zero in the standardised space, and
+evaluated it on the test explanation rows with training-mean masking like the other methods.
+Features were log-transformed when non-negative with training skewness above the threshold, standardised with training
+statistics and clipped.
+Attacks used sign-gradient projected gradient descent with a cosine-decayed step size given as a fraction of the
+per-feature budget, the best projected iterate per row over all steps and restarts, and one random restart.
+The \nConsistency{} statistics of control c2 are the softmax entropy, energy, logit norm, the two largest logits and the
+gap between the second and third, the benign logit, the largest attack-class logit, the logit standard deviation, the
+benign probability, and the Mahalanobis and \paramKnn{}-nearest-neighbour distances for the predicted class.
+Detector D used a very large inverse regularisation strength (effectively unregularised); D$_+$ used the value in the
+table.
+For a1 and a2 the draw was repeated with a second shuffle seed, and regenerating the training rows, the scores and the
+A6 rows with the original random streams reproduced D, D$_+$ and the A6 rows exactly.
+A8x computes IG in the loss with the same Gauss-Legendre rule as the true scores and was checked against the captum
+implementation and against the saved true scores before any attack (Supplementary Table~\ref{t_runs}); A6x runs over
+all test source rows in chunks of the size used by A6, so that its random restart and batch shapes equal those of A6.
+The datasets, their classes and splits are in Supplementary Table~\ref{t_data}, and the constraint model in
+Supplementary Table~\ref{t_constraints}.
+
+\section*{Supplementary Note \suppNoteRand: Parameter randomisation check}
+\label{sec:si_rand}
+As a sanity check in the sense of Adebayo et al. \cite{adebayo2018}, we re-initialised parts of each trained
+FT-Transformer at \nRandLevels{} levels (the classifier head alone; the transformer blocks cascading down from the last
+block, and then also the feature tokenizer; and each block alone, with the classifier head kept) and recomputed the
+three attention variants and IG on the first \randRowsPerClass{} rows per class of the clean explanation set.
+Supplementary Table~\ref{t_randomisation} gives, for three of these levels, the Spearman correlation and the
+top-\paramTopK{} Jaccard overlap between the explanation of the original and of the randomised model.
+With all blocks and the tokenizer re-initialised, the rollout ranking was unrelated to the original one (Spearman
+\randRolloutAllSeventeen{} on 2017 and \randRolloutAllEighteen{} on 2018), and so was the signed IG
+(\randIGSignedAllSeventeen{} and \randIGSignedAllEighteen), while the absolute IG kept a Spearman of
+\randIGAbsAllSeventeen{} and \randIGAbsAllEighteen.
+Re-initialising only the last block left rollout almost unchanged (\randRolloutTopOneSeventeen{} and
+\randRolloutTopOneEighteen), which is expected because rollout also combines the attention of the unchanged lower
+blocks, whereas the last-layer attention was no longer related to the original (\randLastTopOneSeventeen{} and
+\randLastTopOneEighteen).
+The attention explanations and the signed IG therefore changed when the learned weights were replaced; no
+label-randomisation check was run.
+
+\section*{Supplementary Note \suppNoteNeardup: Near-duplicate analysis}
+\label{sec:si_neardup}
+For every test row we computed the exact Euclidean distance to its nearest training row in the standardised feature
+space of its dataset and flagged rows with a distance below \paramNDThr.
+These flags covered \ndSlowlorisSeventeen{} of the DoS Slowloris and \ndWebSeventeen{} of the web attack test rows on
+2017, \ndSlowlorisEighteen{} of the DoS Slowloris rows on 2018, and \ndAllSeventeen{} and \ndAllEighteen{} of all test
+rows.
+The 2018 attack source rows excluded flagged DoS Slowloris rows by design, while the 2017 attack and detector source
+rows were drawn without this filter: on the \nCommonClasses{} common classes they contained \ndSrcCommonSeventeen{}
+flagged rows per seed.
+Because the 2018 source rows had already been filtered for near duplicates, we decided before computing V1 that
+cross-dataset comparisons should use rows without near duplicates; we fixed V1 as the primary set only after seeing the
+sensitivity results.
+Supplementary Table~\ref{t_limitations_data} lists the small classes and the share of test rows with a near duplicate
+in the training set, and Supplementary Table~\ref{t_limitations_stages} the flagged source rows and benign test
+negatives of the attack and detector experiments and the seeds of every pipeline step.
+Supplementary Table~\ref{t_neardup_split} compares rows with and without a near duplicate.
+On 2017, flagged rows were easier for both detectors: on A6 rows ($\lambda = 1$) the TPR of D was \tprDNdSeventeen{} on
+flagged and \tprDOtherSeventeen{} on other source rows (D$_+$: \tprDplusNdSeventeen{} and \tprDplusOtherSeventeen), and
+the FPR of D was \fprDNdSeventeen{} on flagged and \fprDOtherSeventeen{} on other benign test negatives (D$_+$:
+\fprDplusNdSeventeen{} and \fprDplusOtherSeventeen).
+On 2018 no attack source row was flagged, and the FPR split was mixed: at $\epsilon = 1$, D \fprDNdEighteen{} on flagged
+and \fprDOtherEighteen{} on other negatives (D$_+$: \fprDplusNdEighteen{} and \fprDplusOtherEighteen); at
+$\epsilon = 0.5$, D \fprDNdEighteenHalf{} and \fprDOtherEighteenHalf{} (D$_+$: \fprDplusNdEighteenHalf{} and
+\fprDplusOtherEighteenHalf).
+Flagged rows made up \ndNegSeventeen{} and \ndNegEighteen{} of the benign test negatives.
+Supplementary Tables~\ref{t_sensitivity_2017_attacks} to~\ref{t_sensitivity_2018_defenders} give every attack and
+detector quantity on V0, V1 and V2; their detector rows use D$_+$ against A8, the stand-in attacker.
+Moving from V0 to V1 and V2 kept the levels of successful and undetected rows in their order of magnitude on both
+datasets (2017 D under A6: \undetDAsixOneVzeroSeventeen, \undetDAsixOneVoneSeventeen, \undetDAsixOneVtwoSeventeen).
+
+\section*{Supplementary Note \suppNoteResults: Supplementary results}
+\label{sec:si_results}
+\paragraph{Attacks by budget and all source rows.}
+Supplementary Fig.~\ref{f_evasion_eps} and Supplementary Table~\ref{t_evasion} give constrained evasion success by
+budget, and Supplementary Tables~\ref{t_clean_agreement}, \ref{t_clean_faith} and~\ref{t_faith_attack} the clean-data
+and attack tables of the main text on all rows (V0) next to V1, with the A3 variants and budgets that the main text
+omits.
+Supplementary Fig.~\ref{f_mass_ratio} shows the attention mass ratio of Table~\mainTabAttn{} of the main text, panel a.
+Supplementary Tables~\ref{t_defenders} and~\ref{t_per_class} give the detector results per attack and per class on all
+source rows (V0), and Supplementary Figs.~\ref{f_detection_tpr} and~\ref{f_per_class_heatmap} the corresponding TPR and
+per-class union; in these, D$_+$ faces the stand-in attacker A8.
+Supplementary Table~\ref{t_per_class_v1} gives the per-class shares on V1 behind the class statements of the main text.
+
+\paragraph{Clean-data results that did not replicate.}
+Three results on 2017 did not hold in the same direction on 2018 (all explanation-set rows): the advantage of a static
+class-mean rollout ranking over the per-row ranking (AOPC gap of static minus per-row rollout \staticGapSeventeen{},
+seed range \staticGapSeventeenRange, against \staticGapEighteen, \staticGapEighteenRange); the advantage of $|x|$ over
+rollout (deletion rank \rankDelAbsXSeventeen{} and \rankDelAbsXEighteen{} for $|x|$, \rankDelRolloutSeventeen{} and
+\rankDelRolloutEighteen{} for rollout); and the advantage of the single attention head selected on validation data
+(difference to rollout \headMinusRolloutSeventeen, seed range \headMinusRolloutSeventeenRange, against
+\headMinusRolloutEighteen, \headMinusRolloutEighteenRange).
+The method orderings on V0 and V2 correlated across the datasets with \ordSpDelVzero{} and \ordSpDelVtwo{} (deletion)
+and \ordSpInsVzero{} and \ordSpInsVtwo{} (insertion).
+
+\paragraph{Against the stand-in attacker A8.}
+Supplementary Table~\ref{t_union_a8} gives the equal-effort union with D$_+$ facing A8 on all row sets, and the
+comparison of each control with D$_+$ under A8.
+The 2017 difference D$_+$ minus D under A8 was \axStandinVzeroSeventeen{} (\axStandinVzeroSeventeenCI) on V0,
+\axStandinVoneSeventeen{} (\axStandinVoneSeventeenCI) on V1 and \axStandinVtwoSeventeen{} (\axStandinVtwoSeventeenCI)
+on V2, and the paired TPR difference on A8 rows changed sign with the row set for some settings (for $\lambda = 100$:
+\tprAeightHundredVzeroSeventeen, \tprAeightHundredVoneSeventeen, \tprAeightHundredVtwoSeventeen).
+The control columns of Supplementary Table~\ref{t_union_a8} compare each control with D$_+$ against the stand-in
+attacker A8; they are not a comparison at the stronger attacker, which is in Table~\mainTabUnion{} of the main text.
+The stand-ins reproduced the true consistency scores with a median $R^2$ of \standinMedSeventeenRange{} on 2017 and
+\standinMedEighteenRange{} on 2018 across seeds; Supplementary Table~\ref{t_standin} gives every score for A8 and for
+the attackers of a1 and a2.
+
+\paragraph{A8x and A6x.}
+Supplementary Table~\ref{t_a8x_setting} gives D$_+$ minus D under A8x per attack setting, the unequal-effort
+sensitivity unions and the A6x union, and Supplementary Table~\ref{t_a8x_tpr} the paired TPR and AUROC differences on
+the A8x and A8 rows on every row set.
+With the A8 and A8x candidates together against D$_+$, an unequal-effort sensitivity union that favours the attacker of
+D$_+$, the 2017 difference was \axSensVoneSeventeen{} (\axSensVoneSeventeenCI); with A6 and A6x together against D it
+was \sxSensVoneSeventeen{} (\sxSensVoneSeventeenCI).
+D's undetected share under A1 and A6x equalled that under A1 and A6 in every seed and row set (largest absolute
+difference \sxSelMaxAbs).
+Supplementary Table~\ref{t_runs} records the runs: rows, invalid rows, time, memory and the sanity checks that compared
+the quantities computed inside A8x and A6x with the saved values before any attack.
+The first sanity run of A8x failed at tolerance $10^{-5}$ on the Mahalanobis score and the D$_+$ decision, from
+single-precision noise of the batch shape; the tolerance was set to $10^{-3}$ for these two quantities and the
+\axMargin{} selection margin added before any pilot or attack, and the margin changed the in-loop count of
+undetected rows from \axInloopNoMarginSeventeen{} to \axInloopMarginSeventeen{} on 2017 and no evaluated row.
+The first sanity run of A6x, at a chunk smaller than that of A6, changed the path of \sxRunoneRows{} of the checked rows;
+at the chunk of A6 it reproduced the saved A6 rows exactly, and A6x was run at that chunk.
+
+\section*{Supplementary Note \suppNoteLimits: Further limitations}
+\label{sec:si_limits}
+\paragraph{Constraint model.}
+The split into \nControls{} controls, \nDerived{} derived and \nImmutable{} immutable features, the budget rule and the
+class-family freezes were designed by hand from feature definitions, and other reasonable choices could change attack
+success and the attention measurements.
+At $\epsilon = \paramEpsHead$ a control may change by up to its full clean value, and the random control A0 already
+flipped \azeroBenignShareVzeroSeventeen{} (2017, V0) and \azeroBenignShareVzeroEighteen{} (2018) of the row
+observations to benign, so the results at $\epsilon = 0.5$ and $\epsilon = \paramEpsHead$ should be read together.
+We did not attack IG at an equal budget, so the stability of attention is not compared with that of an attribution
+method.
+The attackers knew the model weights and, for A6, A6x, A8, A8x and the attackers of the controls, the detector; this is
+a strong assumption for evasion and a reasonable one for evaluating detectors, but results for weaker attackers may
+differ.
+The attackers of all controls kept the selection rule of A6; A6x showed that this rule and the rule of A8x give the
+same flipped and undetected status for D, which was not tested for the controls.
+The attackers of a1 and a2 used stand-ins with a median $R^2$ of \rtwoMedAoneSeventeen{} and \rtwoMedAtwoSeventeen{} on
+2017 and \rtwoMedAoneEighteen{} and \rtwoMedAtwoEighteen{} on 2018.
+
+\paragraph{Detectors.}
+D is a linear model on four scores and D$_+$ adds \nConsistency{} linear terms; non-linear detectors might use the same
+scores differently.
+Control a1 uses the true class of every row, also at test time, and keeps the class-conditional distribution of
+attention; its realised test FPR on 2017 (\ablFprAoneSeventeen) was higher than that of D$_+$
+(\ablFprDplusSeventeen; V1, $\epsilon = \paramEpsHead$).
+The validation AUROC of every detector is in-sample (D \valAurocDSeventeenRange{} on 2017 and \valAurocDEighteenRange{}
+on 2018 over seeds; D$_+$ \valAurocDplusSeventeenRange{} and \valAurocDplusEighteenRange), and the realised test FPR of
+D was \testFprDSeventeenRange{} and \testFprDEighteenRange.
+The consistency scores of D$_+$ include IG, which costs more than attention (on 2017, \msPerRowIGRange{} ms per row
+for IG with \apIGSteps{} steps against \msPerRowAttnRange{} ms for attention); we did not measure the end-to-end
+latency of the detectors.
+
+\paragraph{Data.}
+The 2018 data have no timestamps, so we split at random.
+Test rows within \paramNDThr{} of a training row were common in both datasets; the filter was applied after the
+experiments, and models and detectors were trained with these rows present.
+Web attack had \nWebTestEighteen{} test rows and \nWebValEighteen{} validation explanation rows on 2018, so its
+per-class estimates are uncertain; FTP-Patator and DoS Slowhttptest were removed from 2018 and PortScan does not occur
+in it, so all comparisons use the \nCommonClasses{} common classes.
+The 2018 models ran to the maximum number of epochs without early stopping, so they may not have converged
+(Supplementary Note~\suppNoteImpl).
+Known design and error issues exist in benchmark NIDS datasets more generally \cite{flood2024,lanvin2022}.
+Faithfulness was measured by deletion and insertion curves, not by human judgement.

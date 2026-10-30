@@ -1,0 +1,8 @@
+{
+  "best_iteration": 104,
+  "val_macro_f1": 0.997789,
+  "rounds_run": 155,
+  "train_time_s": 16.2,
+  "val_macro_f1_eval": 0.9977892469074995,
+  "test_macro_f1_eval": 0.9976555713908792
+}

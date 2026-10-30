@@ -1,0 +1,7 @@
+seed,seed_total_s,stage3_s,stage3c_s,static_s,peak_gpu_mem_gb
+"pre (selection, NN distances, val set)",74.9,,,,
+0,1423.3,746.3,422.9,254.0,2.244
+1,1438.5,767.6,421.9,249.0,2.244
+2,1410.4,740.1,421.5,248.8,2.244
+aggregation and tables,5.6,,,,
+total (this invocation),4352.8,,,,2.244

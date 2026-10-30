@@ -1,0 +1,8 @@
+class,fwd_len_family,fwd_len_total,fwd_non_empty,fwd_psh,flag_psh_sum,ack,header,pkt_len_family,fwd_iat_family,iat_family,no_bwd_timing,rates,down_up,subflow,window,fixed_timing_bounds,integer_features_nonintegral
+bot,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+ddos,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+dos_goldeneye,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+dos_hulk,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+dos_slowloris,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+ssh_patator,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+webattack,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

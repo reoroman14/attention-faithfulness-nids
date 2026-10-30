@@ -1,0 +1,7 @@
+year,check,value,tol,tol_kind,pass
+2017,"(s1) selection off, chunk 500: max |X - saved A6_lam1 X|",0.0,1e-05,abs,True
+2017,(s2) msp max |inside - saved|,1.7881393432617188e-07,1e-05,abs,True
+2017,(s2) margin max |inside - saved|,1.9073486328125e-06,1e-05,abs,True
+2017,(s2) mahalanobis_benign max relative |inside - saved|,4.993208579330981e-05,0.001,rel,True
+2017,(s2) knn5_benign max |inside - saved|,0.0,1e-05,abs,True
+2017,(s2) D decision max |inside - saved|,6.372698252121722e-05,0.001,abs (Amendment 1),True

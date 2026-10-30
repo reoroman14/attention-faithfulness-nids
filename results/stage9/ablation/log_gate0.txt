@@ -1,0 +1,40 @@
+[2026-10-11 01:09:36] start gate0 ['2017', '2018'] cap 4.0 h
+[2026-10-11 01:10:38] 2017 seed 0 val_train: max |diff| all 0.00e+00, cons12 0.00e+00
+[2026-10-11 01:12:30] 2017 seed 0 val_held: max |diff| all 0.00e+00, cons12 0.00e+00
+[2026-10-11 01:12:32] 2017 seed 0 test: max |diff| all 0.00e+00, cons12 0.00e+00
+[2026-10-11 01:12:34] 2017 seed 0: negatives and banks in 159 s (bank 20000 rows)
+[2026-10-11 01:13:29] 2017 seed 0 eps 0.5: positives 412 (saved 412), thr D 0.0e+00, D+ 0.0e+00, A1 score_Dplus 0.0e+00 [55 s]
+[2026-10-11 01:14:23] 2017 seed 0 eps 1.0: positives 854 (saved 854), thr D 0.0e+00, D+ 0.0e+00, A1 score_Dplus 0.0e+00 [54 s]
+[2026-10-11 01:15:19] 2017 seed 1 val_train: max |diff| all 0.00e+00, cons12 0.00e+00
+[2026-10-11 01:17:14] 2017 seed 1 val_held: max |diff| all 0.00e+00, cons12 0.00e+00
+[2026-10-11 01:17:16] 2017 seed 1 test: max |diff| all 0.00e+00, cons12 0.00e+00
+[2026-10-11 01:17:17] 2017 seed 1: negatives and banks in 161 s (bank 20000 rows)
+[2026-10-11 01:18:11] 2017 seed 1 eps 0.5: positives 123 (saved 123), thr D 0.0e+00, D+ 0.0e+00, A1 score_Dplus 0.0e+00 [54 s]
+[2026-10-11 01:19:05] 2017 seed 1 eps 1.0: positives 649 (saved 649), thr D 0.0e+00, D+ 0.0e+00, A1 score_Dplus 0.0e+00 [53 s]
+[2026-10-11 01:20:05] 2017 seed 2 val_train: max |diff| all 0.00e+00, cons12 0.00e+00
+[2026-10-11 01:21:59] 2017 seed 2 val_held: max |diff| all 0.00e+00, cons12 0.00e+00
+[2026-10-11 01:22:01] 2017 seed 2 test: max |diff| all 0.00e+00, cons12 0.00e+00
+[2026-10-11 01:22:03] 2017 seed 2: negatives and banks in 165 s (bank 20000 rows)
+[2026-10-11 01:22:58] 2017 seed 2 eps 0.5: positives 191 (saved 191), thr D 0.0e+00, D+ 0.0e+00, A1 score_Dplus 0.0e+00 [55 s]
+[2026-10-11 01:23:48] 2017 seed 2 eps 1.0: positives 538 (saved 538), thr D 0.0e+00, D+ 0.0e+00, A1 score_Dplus 0.0e+00 [50 s]
+[2026-10-11 01:23:48] 2017: gate 0 PASS (0 failed checks) [852 s]
+[2026-10-11 01:24:50] 2018 seed 0 val_train: max |diff| all 0.00e+00, cons12 0.00e+00
+[2026-10-11 01:26:47] 2018 seed 0 val_held: max |diff| all 0.00e+00, cons12 0.00e+00
+[2026-10-11 01:26:49] 2018 seed 0 test: max |diff| all 0.00e+00, cons12 0.00e+00
+[2026-10-11 01:26:50] 2018 seed 0: negatives and banks in 165 s (bank 20000 rows)
+[2026-10-11 01:27:36] 2018 seed 0 eps 0.5: positives 37 (saved 37), thr D 0.0e+00, D+ 0.0e+00, A1 score_Dplus 0.0e+00 [46 s]
+[2026-10-11 01:28:25] 2018 seed 0 eps 1.0: positives 228 (saved 228), thr D 0.0e+00, D+ 0.0e+00, A1 score_Dplus 0.0e+00 [48 s]
+[2026-10-11 01:29:19] 2018 seed 1 val_train: max |diff| all 0.00e+00, cons12 0.00e+00
+[2026-10-11 01:31:14] 2018 seed 1 val_held: max |diff| all 0.00e+00, cons12 0.00e+00
+[2026-10-11 01:31:17] 2018 seed 1 test: max |diff| all 0.00e+00, cons12 0.00e+00
+[2026-10-11 01:31:18] 2018 seed 1: negatives and banks in 163 s (bank 20000 rows)
+[2026-10-11 01:32:16] 2018 seed 1 eps 0.5: positives 263 (saved 263), thr D 0.0e+00, D+ 0.0e+00, A1 score_Dplus 0.0e+00 [58 s]
+[2026-10-11 01:33:11] 2018 seed 1 eps 1.0: positives 566 (saved 566), thr D 0.0e+00, D+ 0.0e+00, A1 score_Dplus 0.0e+00 [55 s]
+[2026-10-11 01:34:15] 2018 seed 2 val_train: max |diff| all 0.00e+00, cons12 0.00e+00
+[2026-10-11 01:36:04] 2018 seed 2 val_held: max |diff| all 0.00e+00, cons12 0.00e+00
+[2026-10-11 01:36:06] 2018 seed 2 test: max |diff| all 0.00e+00, cons12 0.00e+00
+[2026-10-11 01:36:07] 2018 seed 2: negatives and banks in 165 s (bank 20000 rows)
+[2026-10-11 01:36:46] 2018 seed 2 eps 0.5: positives 121 (saved 121), thr D 0.0e+00, D+ 0.0e+00, A1 score_Dplus 0.0e+00 [39 s]
+[2026-10-11 01:37:33] 2018 seed 2 eps 1.0: positives 448 (saved 448), thr D 0.0e+00, D+ 0.0e+00, A1 score_Dplus 0.0e+00 [47 s]
+[2026-10-11 01:37:33] 2018: gate 0 PASS (0 failed checks) [825 s]
+[2026-10-11 01:37:33] finished gate0 in 1677 s

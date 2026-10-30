@@ -1,0 +1,78 @@
+feature (2017 spec),position 2017 spec,position 2018 header,status vs spec,in preprocess.json,preprocess.json position
+flow_duration,0,2,identical,yes,0
+down_up_ratio,1,3,identical,yes,1
+pkt_len_max,2,4,identical,yes,2
+pkt_len_min,3,5,identical,yes,3
+pkt_len_mean,4,6,identical,yes,4
+pkt_len_var,5,7,identical,yes,5
+pkt_len_std,6,8,identical,yes,6
+bytes_per_s,7,9,identical,yes,7
+pkt_per_s,8,10,identical,yes,8
+fwd_pkt_per_s,9,11,identical,yes,9
+bwd_pkt_per_s,10,12,identical,yes,10
+fwd_pkt_cnt,11,13,identical,yes,11
+fwd_pkt_len_tot,12,14,identical,yes,12
+fwd_pkt_len_max,13,15,identical,yes,13
+fwd_pkt_len_min,14,16,identical,yes,14
+fwd_pkt_len_mean,15,17,identical,yes,15
+fwd_pkt_len_std,16,18,identical,yes,16
+fwd_pkt_hdr_len_tot,17,19,identical,yes,17
+fwd_pkt_hdr_len_min,18,20,identical,yes,18
+fwd_non_empty_pkt_cnt,19,21,identical,yes,19
+bwd_pkt_cnt,20,22,identical,yes,20
+bwd_pkt_len_tot,21,23,identical,yes,21
+bwd_pkt_len_max,22,24,identical,yes,22
+bwd_pkt_len_min,23,25,identical,yes,23
+bwd_pkt_len_mean,24,26,identical,yes,24
+bwd_pkt_len_std,25,27,identical,yes,25
+bwd_pkt_hdr_len_tot,26,28,identical,yes,26
+bwd_pkt_hdr_len_min,27,29,identical,yes,27
+bwd_non_empty_pkt_cnt,28,30,identical,yes,28
+iat_max,29,31,identical,yes,29
+iat_min,30,32,identical,yes,30
+iat_mean,31,33,identical,yes,31
+iat_std,32,34,identical,yes,32
+fwd_iat_tot,33,35,identical,yes,33
+fwd_iat_max,34,36,identical,yes,34
+fwd_iat_min,35,37,identical,yes,35
+fwd_iat_mean,36,38,identical,yes,36
+fwd_iat_std,37,39,identical,yes,37
+bwd_iat_tot,38,40,identical,yes,38
+bwd_iat_max,39,41,identical,yes,39
+bwd_iat_min,40,42,identical,yes,40
+bwd_iat_mean,41,43,identical,yes,41
+bwd_iat_std,42,44,identical,yes,42
+active_max,43,45,identical,yes,43
+active_min,44,46,identical,yes,44
+active_mean,45,47,identical,yes,45
+active_std,46,48,identical,yes,46
+idle_max,47,49,identical,yes,47
+idle_min,48,50,identical,yes,48
+idle_mean,49,51,identical,yes,49
+idle_std,50,52,identical,yes,50
+flag_syn,51,53,differs in letter case only (flag_SYN),yes,51
+flag_fin,52,54,identical,yes,52
+flag_rst,53,55,identical,yes,53
+flag_ack,54,56,identical,yes,54
+flag_psh,55,57,identical,yes,55
+fwd_flag_psh,56,58,identical,yes,56
+bwd_flag_psh,57,59,identical,yes,57
+flag_cwr,58,63,identical,yes,58
+flag_ece,59,64,identical,yes,59
+fwd_bulk_bytes_mean,60,65,identical,yes,60
+fwd_bulk_pkt_mean,61,66,identical,yes,61
+fwd_bulk_rate_mean,62,67,identical,yes,62
+bwd_bulk_bytes_mean,63,68,identical,yes,63
+bwd_bulk_pkt_mean,64,69,identical,yes,64
+bwd_bulk_rate_mean,65,70,identical,yes,65
+fwd_subflow_bytes_mean,66,71,identical,yes,66
+fwd_subflow_pkt_mean,67,72,identical,yes,67
+bwd_subflow_bytes_mean,68,73,identical,yes,68
+bwd_subflow_pkt_mean,69,74,identical,yes,69
+fwd_tcp_init_win_bytes,70,75,identical,yes,70
+bwd_tcp_init_win_bytes,71,76,identical,yes,71
+,,0,new in 2018 / not in the 72-feature spec: dst_port,no,
+,,1,new in 2018 / not in the 72-feature spec: ip_prot,no,
+,,60,new in 2018 / not in the 72-feature spec: flag_urg,no,
+,,61,new in 2018 / not in the 72-feature spec: fwd_flag_urg,no,
+,,62,new in 2018 / not in the 72-feature spec: bwd_flag_urg,no,

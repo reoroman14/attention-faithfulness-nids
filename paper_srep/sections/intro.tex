@@ -1,0 +1,83 @@
+% Introduction (Task 46, Scientific Reports): v3 Introduction and Related Work condensed (plan 42, section 1.3); no
+% subheadings. Every result number is a macro.
+\section*{Introduction}
+\label{sec:intro}
+
+Machine-learning network intrusion detection systems (NIDS) classify network flows from statistical features, and
+transformer models for tabular data have been applied to this task \cite{gorishniy2021,manocchio2024,borisov2024}.
+Their attention weights are an attractive explanation because they come with every prediction at no extra cost, and
+tabular transformers have used attention to describe feature importance \cite{arik2021,gorishniy2021,somepalli2021}.
+Whether attention is a faithful explanation, one that reflects what drives the prediction, has been argued in both
+directions for text models \cite{jain2019,wiegreffe2019,serrano2019,jacovi2020}, and methods that aggregate attention
+across layers or combine it with gradients were proposed because raw attention weights mix information across layers
+\cite{abnar2020,chefer2021,ferrando2022}.
+For flow-feature models the question has received less attention.
+Evaluations of explanation methods in security have proposed criteria for this setting \cite{warnecke2020}, shown
+that SHAP explanations of NIDS depend on the replacement data \cite{tritscher2023}, and compared white-box methods on
+intrusion datasets \cite{arreche2025}.
+Explanations have also been built into ensemble intrusion detectors, where SHAP-based explanations describe the
+detector or select its features \cite{ahmed2024haenid,ahmed2024shap,ahmed2025consensus,ahmed2025hcivad}.
+
+Two further questions arise once an attacker is present.
+First, an attacker who perturbs a flow to evade the classifier may also change the explanation.
+Explanations can be changed by small input perturbations without changing the prediction
+\cite{ghorbani2019,dombrowski2019}, attention can be made deceptive through training \cite{pruthi2020}, and
+explanations can be manipulated through the model \cite{heo2019,slack2020}; these attacks and their countermeasures
+have been surveyed \cite{baniecki2024}.
+How attention behaves under attack therefore matters for any analyst who reads it.
+Second, if attention and attribution methods agree on clean traffic but disagree on adversarial traffic, their
+consistency could serve as an attack signal.
+Explanation-based detection of adversarial inputs has been proposed with SHAP signatures \cite{fidel2020}, attacks that
+mislead a classifier and its interpretation together have been built \cite{zhang2020}, and for intrusion detection the
+drift of SHAP explanations under gradient attacks has been used as an auxiliary detection signal \cite{maseno2026}.
+Detectors of adversarial inputs have repeatedly been bypassed by attacks designed for them, so such a detector has to
+be evaluated against attackers that model it \cite{carlini2017,tramer2020}, and the strength of that attacker decides
+what the evaluation can show.
+
+Both questions only make sense for attacks whose flows respect the protocol.
+Feature-space attacks on NIDS can produce flows that no real traffic could generate, which motivates problem-space
+constraints, validity checks and realistic threat models \cite{pierazzi2020,alhussien2024,apruzzese2022}; constrained
+attacks on NIDS include saliency-map attacks under domain constraints \cite{sheatsley2022} and black-box botnet evasion
+\cite{debicha2023}, and learning-based security evaluations have known pitfalls \cite{arp2022}.
+We therefore restricted every attacker to a hand-built model of flow-feature constraints and checked every adversarial
+row with a separate validity checker.
+
+We asked three research questions.
+Is attention a faithful explanation of a flow classifier, on clean flows and under protocol-constrained attacks (RQ1)?
+Do attention-attribution consistency scores improve a confidence-and-distance attack detector, first against an
+attacker that ignores them and then against attackers that model them, from differentiable stand-ins to the
+detector's exact score, and is any gain specific to attention (RQ2)?
+How much do the answers depend on the dataset and its data quality (RQ3)?
+We answered them with a feature-tokenizer transformer (FT-Transformer) trained with \nSeeds{} seeds on two corrected
+intrusion datasets, LYCOS-IDS2017 and LycoS-Unicas-IDS2018, using the \nCommonClasses{} attack classes common to both
+(Fig.~\mainFigPipeline).
+The attack detector was evaluated against three levels of attacker: one that ignores the consistency scores, one that
+models them through differentiable stand-ins, and one that optimises the exact detector score with surrogate gradients
+only for the rank-based scores, compared under an equal-effort protocol with outcome rules recorded before the runs.
+\nControlsAll{} control detectors replace attention by other inputs to separate its role.
+
+Our central finding concerns the second question.
+Against attackers that optimised the exact score of the detector they faced, with surrogate gradients only for the
+\nRankScores{} rank-based consistency scores, adding the consistency scores raised the share of successful and
+undetected attack rows, by \axHeadVoneSeventeenAbs{} on 2017 and by \axHeadVoneEighteenAbs{} on 2018, with
+\axHeadOppSeedsPhrase{} of the opposite sign.
+An attacker with differentiable stand-ins for the same scores had shown a reduction of \axStandinVoneSeventeenAbs{}
+on 2017, so that result did not hold against the stronger attacker.
+Giving the attacker of the base detector the same iterate selection as the stronger attacker changed the outcome of
+\sxOutcomeChangedPhrase, so the reversal does not come from the selection rule.
+For RQ1, attention changed little under constrained attacks but was less faithful than integrated gradients and
+occlusion.
+
+The study makes three contributions.
+First, it compares three attention variants with four attribution methods on two intrusion datasets, by agreement and
+by deletion and insertion faithfulness on clean data and on protocol-constrained adversarial rows, and shows that the
+loss of faithfulness after an evasion follows the prediction flip rather than the explainer.
+Second, it evaluates consistency monitoring against three levels of attacker under an equal-effort protocol with outcome
+rules recorded before the runs, and gives a concrete case in which an adaptive attack with differentiable stand-ins
+overstated what a detector achieves.
+Third, it separates the role of attention with control detectors, \nControlsAttacked{} of them attacked by adversaries
+that modelled their own scores; the gain against the ignoring attacker was largely obtained without attention, and no
+control was clearly better than the base detector on both datasets under its own adaptive attacker.
+The constraint model with its validity checker and the near-duplicate analysis support these results.
+We do not propose a new explanation method or a new detector, and we do not claim that attention is unfaithful in
+general; the results refer to one model family and two datasets.

@@ -1,0 +1,92 @@
+% Main document of the restructured manuscript (Task 42). Sources: paper_v3/sections/*.tex; numbers, tables and
+% figures: paper_v3/generated (written by paper_v3/gen/*.py). paper_v3/gen/build.py inlines every \input into one flat
+% main.tex in C:\attn_submission_v3. Anonymised: \author is empty; no declarations or acknowledgements.
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{placeins}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[numbers]{natbib}
+\usepackage{authblk}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\usepackage{setspace}
+\usepackage{lineno}
+\doublespacing% journal requires double line spacing
+\linenumbers% journal requires line numbering
+
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.7}
+
+\graphicspath{{generated/}}
+
+\input{generated/numbers.tex}
+
+% Working title; replace this one line to change it.
+\newcommand{\paperTitle}{Stable but Not Faithful: Attention Explanations and the Limits of Consistency Monitoring under Protocol-Constrained Adaptive Attacks on Network Intrusion Detection}
+
+\title{\paperTitle}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract.tex}
+\noindent\textbf{Keywords:} Network intrusion detection; Explainable artificial intelligence; Attention mechanisms;
+Faithfulness evaluation; Adversarial machine learning; Adaptive attacks; Tabular transformers
+
+\input{sections/intro.tex}
+\input{sections/related.tex}
+\input{sections/methods.tex}
+\input{sections/setup.tex}
+\input{sections/results.tex}
+\input{sections/discussion.tex}
+\input{sections/limitations.tex}
+\input{sections/conclusion.tex}
+\input{sections/appendix.tex}
+\FloatBarrier
+
+\section*{List of abbreviations}
+\begin{description}\setlength{\itemsep}{0pt}
+  \item[A0 to A8x] attack variants of the experiments (see Section~\ref{sec:attacks})
+  \item[AOPC] area over the perturbation curve
+  \item[AUC] area under the curve
+  \item[AUROC] area under the receiver operating characteristic curve
+  \item[CI] confidence interval
+  \item[CIC] Canadian Institute for Cybersecurity
+  \item[CLS] classification token
+  \item[CSE] Communications Security Establishment
+  \item[D, D$_+$] confidence-and-distance detector without and with consistency scores
+  \item[DDoS] distributed denial of service
+  \item[DoS] denial of service
+  \item[FGSM] fast gradient sign method
+  \item[FPR] false-positive rate
+  \item[FT-Transformer] feature tokenizer transformer
+  \item[FTP] file transfer protocol
+  \item[IDS] intrusion detection system
+  \item[IG] Integrated Gradients
+  \item[LIME] local interpretable model-agnostic explanations
+  \item[NIDS] network intrusion detection system
+  \item[PGD] projected gradient descent
+  \item[RQ] research question
+  \item[SHAP] Shapley additive explanations
+  \item[SQL] structured query language
+  \item[SSH] secure shell
+  \item[TPR] true-positive rate
+  \item[V0, V1, V2] row sets of the experiments (see Section~\ref{sec:setup})
+  \item[XGBoost, XGB] extreme gradient boosting
+\end{description}
+
+\FloatBarrier
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

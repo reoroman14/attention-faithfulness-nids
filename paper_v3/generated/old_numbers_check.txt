@@ -1,0 +1,4 @@
+Old macros regenerated: 687; in paper/generated/numbers.tex: 687
+identical name and body: 687
+different: 0
+missing from regeneration: 0

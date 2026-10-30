@@ -1,0 +1,197 @@
+% Methods (Task 46, Scientific Reports): after the Discussion. v3 Threat Model and Methods plus Experimental Setup,
+% with the Statistics subsection required by the journal and the LLM-use paragraph verbatim from v3 (last subsection).
+% Every result number is a macro.
+\section*{Methods}
+\label{sec:methods}
+
+\subsection*{Threat model}
+\label{sec:threat}
+The defender runs a flow classifier, an FT-Transformer \cite{gorishniy2021}, and a learned attack detector on top of
+it (Fig.~\mainFigPipeline).
+The attacker holds a malicious flow and wants the classifier to predict it as benign while the detector stays below its
+threshold.
+The attacker knows the weights of the classifier and of the detector (white box) and can change only the flow features
+that a sender controls, within a per-feature budget and under the protocol relations of the constraint model below.
+We consider three levels of attacker knowledge about the detector: none, a differentiable approximation of its scores
+(stand-ins), and its exact score, with surrogate gradients only where the exact gradient is zero almost everywhere.
+Following the adaptive-attack principle \cite{tramer2020,carlini2017}, a detector is judged by the attacker that models
+it, and two detectors are compared at equal attacker effort.
+Packet-level attacks, black-box attackers and attacks on the training data are out of scope.
+
+\subsection*{Datasets and models}
+\label{sec:setup}
+We used LYCOS-IDS2017 \cite{rosay2021,rosay2022} and LycoS-Unicas-IDS2018 \cite{cantone2024} (called 2017 and 2018),
+which re-extract the flows of CIC-IDS2017 and CSE-CIC-IDS2018 \cite{sharafaldin2018,aws_cse_cic_ids2018} after the
+problems documented in the original datasets \cite{engelen2021,liu2022,lanvin2022}; both have the same \nFeatures{}
+flow features (Supplementary Table~\suppTabData).
+On 2017 we removed Heartbleed (\nHeartbleed{} rows) and the SQL injection web attack (\nSqlInjection{} rows, all after
+the temporal cut), merged the remaining web attacks, removed feature vectors that carried more than one label and exact
+duplicates, and split each (label, day) group in time with gaps between train, validation and test.
+On 2018 we removed FTP-Patator (\nFtpRemoved{} rows) and DoS Slowhttptest (\nSlowhttpRemoved{} rows) because the two
+classes were indistinguishable in the features, merged the DDoS and web attack variants, removed conflicting and
+duplicate vectors, capped large classes, and split at random with stratification, because the file has no timestamps.
+This left \nClassesSeventeen{} classes on 2017 and \nClassesEighteen{} on 2018; all cross-dataset comparisons use the
+\nCommonClasses{} common attack classes.
+We trained an FT-Transformer with \nSeeds{} seeds and an XGBoost reference with one recipe on both datasets, without
+tuning on 2018 (Supplementary Note~\suppNoteImpl).
+Test macro-F1 of the FT-Transformer was \fOneFTTSeventeen{} (seed range \fOneFTTSeventeenRange) on 2017 and
+\fOneFTTEighteen{} (\fOneFTTEighteenRange) on 2018; XGBoost reached \fOneXGBSeventeen{} and \fOneXGBEighteen.
+Clean explanations used up to \paramExplPerClass{} test rows per class that all seeds classified correctly, and attacks
+and detectors used the first \paramPerClass{} of these rows per attack class (fewer when a class had fewer), the same
+rows for every seed.
+
+For every test row we computed the Euclidean distance to its nearest training row in the standardised feature space
+and flagged rows with a distance below \paramNDThr.
+We report three row sets: V0 (all source rows), V1 (flagged source rows removed in both datasets) and V2 (DoS Slowloris
+and web attack also removed, \nVtwoClasses{} classes).
+V1 is the primary set; V0 and V2 are sensitivity analyses.
+The filter was applied after the attacks and after detector training, by removing source rows from the saved results,
+and V1 was fixed as the primary set after the sensitivity results were seen, which is why V0 and V2 are reported as
+well (Supplementary Note~\suppNoteNeardup).
+
+\subsection*{Constraint model and validity checker}
+\label{sec:constraints}
+Of the \nFeatures{} features, \nControls{} are controls the attacker may change within a budget, \nDerived{} are
+derived and recomputed from the controls, and \nImmutable{} are immutable (Supplementary Table~\suppTabConstraints),
+following the problem-space view of constrained attacks \cite{pierazzi2020,alhussien2024}.
+The budget of a control is $\epsilon$ times its clean value, or $\epsilon$ times the training median of its non-zero
+values when the clean value is zero; class families whose mechanism is the timing and packet count (slow DoS, port
+scan) have those controls frozen.
+A separate validity checker, written apart from the derivation and projection that the attacks use, re-derived every
+relation from the written specification and accepted every constrained adversarial row of every reported experiment
+(for the adaptive attacks of the controls, \sbInvalid{} invalid of \sbRows{} rows; \axInvalid{} of \axRows{} for A8x;
+\sxInvalid{} of \sxRowsWritten{} for A6x).
+It shares the specification file and a few helpers with the attack code, so it shows internal consistency rather than
+realisability.
+
+\subsection*{Explanations and faithfulness}
+For each FT-Transformer we computed three attention variants over the feature tokens.
+The first is the row of the classification token in the last layer, averaged over heads; the second is the same row
+averaged over layers and heads; the third is attention rollout \cite{abnar2020}.
+We compared them with these references: IG with the training mean as baseline \cite{sundararajan2017},
+Gradient\-SHAP \cite{lundberg2017}, occlusion of one feature at a time \cite{zeiler2014}, Tree\-SHAP of the XGBoost
+model, the absolute standardised input $|x|$, and a random ranking.
+Signed attributions were ranked by their absolute value.
+Agreement between two explanations is the Spearman correlation of their feature rankings per row.
+Faithfulness was measured by masking features in ranking order with the training mean and recording the probability
+of the explained class, as the AUC of the deletion curve (lower is more faithful) and of the insertion curve (higher is
+more faithful) \cite{petsiuk2018,samek2017}.
+On adversarial rows we used the logit margin of the original class and the gap between most- and least-relevant-first
+removal (AOPC gap, area over the perturbation curve) \cite{samek2017}, and subtracted the change measured under the
+random control A0 at the same budget.
+Removal-based scores can be confounded by the distribution shift of the masked inputs, can rank methods inconsistently
+across evaluation strategies and can be statistically unreliable \cite{hooker2019,rong2022,tomsett2020}; our curves
+mask with the training mean without retraining and share these caveats.
+A parameter-randomisation check \cite{adebayo2018} is in Supplementary Note~\suppNoteRand.
+All values are macro averages over classes and means over seeds.
+
+\subsection*{Attacks}
+\label{sec:attacks}
+Attacks perturbed the controls of the raw flow within their budgets, recomputed derived features, and projected every
+iterate back onto the constraint set; they used sign-gradient projected gradient descent with \paramSteps{} steps and
+one random restart.
+A0 draws one random point in the same box (random control), A1 maximises the benign logit margin (evasion), A1b targets
+another attack class, A2 keeps the prediction and minimises the share of rollout attention on the clean
+top-\paramTopK{} IG features, and A3 combines A1 with the A2 term ($\lambda \in \{100, 1000\}$ and a variant with
+normalised gradients).
+The budget $\epsilon$ ranged from $0.05$ to $2$; headline values use $\epsilon = \paramEpsHead$.
+An unconstrained reference applied the same objectives in standardised space with an $L_\infty$ bound and no
+constraints; its rows are not valid flows.
+
+Every adaptive attacker maximises the benign margin, capped at $\kappa = \paramKappa$, minus a hinge on the detector
+logit, in three settings ($\lambda \in \{1, 100\}$ and a normalised-gradient variant with weight \paramNormW), and
+keeps the best projected iterate per row.
+A6 attacks D, whose four scores are differentiable, so its objective is the exact score of D; it keeps the iterate
+that is flipped and below the threshold under this score, and among those the one with the highest objective.
+A8 attacks D$_+$ and replaces each consistency score by a differentiable stand-in: soft-rank Spearman correlation, a
+soft top-\paramTopK{} Jaccard overlap, exact cosine similarity, and IG with \paramIGLoss{} steps inside the loss.
+A8x attacks D$_+$ with its exact score wherever an exact gradient exists: attention, the four scores of D and the
+cosine scores are computed exactly, and IG inside the loss uses \axIGSteps{} Gauss-Legendre steps, as in the true
+scores.
+Only the \nRankScores{} rank-based scores (Spearman and top-\paramTopK{} Jaccard) keep a surrogate gradient, soft ranks
+whose temperature is annealed geometrically from \axTauStart{} to \axTauEnd{} over the steps, because their exact
+gradient is zero almost everywhere.
+At every step A8x evaluates the true D$_+$ score and keeps, per row, the flipped iterate with the lowest true score,
+counting it as undetected only if it lies more than \axMargin{} below the threshold.
+A6x is A6 with the selection rule of A8x: the same objective, settings, seeds and restart noise, with the iterate kept
+by the true D score and the same margin.
+It was added to test whether the different selection rules of A6 and A8x, rather than the consistency scores, explain
+the comparison between D and D$_+$.
+Detection was always evaluated with the true scores.
+The labels follow the numbering of the code; A4, A5 and A7 are earlier variants that are not part of the analysis.
+
+\subsection*{Detectors and controls}
+\label{sec:detectors}
+Detector D is a standardised, class-balanced logistic regression on four scores: maximum softmax probability, logit
+margin, Mahalanobis distance and mean distance to the \paramKnn{} nearest benign training rows.
+Detector D$_+$ adds \nConsistency{} consistency scores between attention (rollout, layer mean) and attribution (gradient
+times input, IG with \paramIGDet{} steps), each measured by Spearman correlation, top-\paramTopK{} Jaccard overlap and
+cosine similarity and oriented in the direction validated on validation data; its logistic regression is
+L2-regularised.
+Both detectors were trained only on validation data: \paramNegTrain{} benign validation rows predicted benign as
+negatives and A1 rows generated on validation source rows as positives; the threshold was set at \paramFPR{} FPR on
+\paramNegHeld{} held-out benign validation rows, and test negatives were \paramNegTest{} genuine benign test rows per
+seed.
+
+To test whether a difference between D and D$_+$ depends on attention, we trained \nControlsAll{} control detectors on
+the same rows, with the same threshold rule and the inverse regularisation strength of D$_+$ (\apCplus).
+Each keeps the four scores of D and replaces the \nConsistency{} consistency scores of D$_+$.
+In a1, each row receives the attention of another row of the same true class (a random cyclic shift), so a1 is a
+diagnostic control that no deployed system could compute; in a2, the attention is drawn from clean benign validation
+rows that were used neither for training nor for the threshold; in b, attention is replaced by occlusion and
+GradientSHAP; c0 is D with the regularisation of D$_+$ and no further score, c1 adds \nConsistency{} features of
+standard normal noise, and c2 adds \nConsistency{} statistics of the logits and distances that use no explanation.
+Each control was attacked with the same three settings by an attacker that models its own scores: exact gradients for
+c0, c1 and c2, and the stand-ins of A8 for a1 and a2, with the selection rule of A6.
+Control b was not attacked adaptively: its attack run exceeded the memory of the graphics card and was stopped before
+any row was written.
+
+\subsection*{Equal-effort evaluation, outcome rules and amendments}
+\label{sec:protocol}
+For each source row we counted an attack as successful and undetected if any candidate aimed at a detector flipped the
+prediction to benign and stayed below that detector's threshold: D faced A1 and the three A6 settings, D$_+$ faced A1
+and the three A8x settings, and each control faced A1 and the three settings of its own attacker.
+The union with A1 and the three A8 settings for D$_+$ is reported for comparison, and the union with A6x for D tests
+the selection rule.
+This union models an attacker with query access to the detector; equal effort means the same candidates (restarts,
+steps and settings) on both sides, not equal computation or equal optimiser quality.
+The headline quantity is the difference D$_+$ minus D in the share of such source rows on V1 at
+$\epsilon = \paramEpsHead$, per dataset; a positive difference means that D$_+$ left more rows undetected.
+We also report the paired TPR difference at the \paramFPR{} FPR threshold on the flipped rows of each attack; for
+attacks aimed at D$_+$ this difference is negative by construction and is not used as evidence on its own.
+
+The outcome rules for the comparisons with A8x and with A6x were recorded before the runs, before the code of each
+attacker was written, with the 2017 interval on V1 as the deciding quantity and 2018 reported without changing the
+conclusion, because D alone already left few rows undetected there.
+For A8x, an interval containing $0$ or lying above $0$ meant that the 2017 gain of D$_+$ measured with A8 did not hold
+against A8x; for A6x, an interval above $0$ meant that the comparison does not depend on the selection rule.
+Two amendments were recorded before any attack row of the attacker concerned existed: the tolerance of one sanity check
+of A8x and the \axMargin{} selection margin, after single-precision noise failed the check at $10^{-5}$, and the chunk
+size of A6x, set to that of A6 after a sanity check failed at a smaller chunk (Supplementary Table~\suppTabRuns).
+
+\subsection*{Statistics}
+\label{sec:statistics}
+Each comparison is paired: the same source rows, seeds and negatives enter both detectors.
+Per seed, V1 contains \nSrcVoneSeventeen{} source rows on 2017 (V0: \nSrcVzeroSeventeen) and \nSrcVoneEighteen{} on
+2018, the same rows in every seed, and each detector was evaluated on \paramNegTest{} benign test negatives per seed.
+For the equal-effort union the \paramCILevel{} interval of D$_+$ minus D is a paired percentile bootstrap over source
+rows within seed (\paramBoot{} draws); for the paired TPR differences it is a percentile bootstrap pooled over seeds.
+Neither interval captures variation between seeds, so the per-seed values are given next to every headline
+difference, and means are reported with the range over seeds.
+No hypothesis test was run, so no P value is reported; the comparisons are judged by their intervals and per-seed
+signs, and the deciding rules were the outcome rules above.
+
+\subsection*{Use of large language models}
+\label{sec:llm}
+During the preparation of this work the authors used Claude Opus 5.5 (Anthropic), through Claude Code, in order to write
+and debug the analysis code and to draft and edit the manuscript text under the direction of the first author, and
+Claude Sonnet 5.5 (Anthropic), used by the first author through the Claude app in a separate session, in order to review
+intermediate results and to draft the instructions given to Claude Code.
+After using these tools, the authors reviewed and edited the content as needed and take full responsibility for the
+content of the published article.
+The authors also checked the numerical results with scripts, and the first author checked them manually against the
+result files.
+The analysis code added in this version (the adaptive attacks on the control detectors, the attackers A8x and A6x
+and their summaries) was also written by Claude Opus 5.5 through Claude Code under the direction of the first author.
+
+Every number in the paper is generated from the result files by scripts and inserted as a macro, and the authors checked the numbers against the result files.

@@ -1,0 +1,7 @@
+variant,metric,spearman_orderings,rank2017_attn_rollout,rank2017_attn_mean,rank2017_attn_last,rank2017_ig_zero,rank2017_gshap,rank2017_occlusion,rank2017_abs_x,rank2017_random,rank2018_attn_rollout,rank2018_attn_mean,rank2018_attn_last,rank2018_ig_zero,rank2018_gshap,rank2018_occlusion,rank2018_abs_x,rank2018_random
+V0,del_auc,0.9761904761904763,5,6,7,1,3,2,4,8,4,6,7,1,3,2,5,8
+V0,ins_auc,0.9761904761904763,5,6,7,1,4,2,3,8,5,6,7,1,3,2,4,8
+V1,del_auc,0.9285714285714287,5,6,7,1,3,2,4,8,4,5,7,1,3,2,6,8
+V1,ins_auc,0.9285714285714287,5,6,7,1,4,2,3,8,4,6,7,1,3,2,5,8
+V2,del_auc,0.9761904761904763,5,6,8,1,3,2,4,7,5,6,7,1,3,2,4,8
+V2,ins_auc,0.9047619047619048,5,6,8,1,4,2,3,7,5,6,7,1,2,3,4,8

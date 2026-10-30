@@ -1,0 +1,11 @@
+{
+  "seed": 0,
+  "best_epoch": 19,
+  "val_macro_f1": 0.989726304841916,
+  "epochs_run": 20,
+  "n_params": 239432,
+  "peak_gpu_mem_gb": 3.998,
+  "nonfinite_steps": 0,
+  "train_time_s": 1576.1,
+  "test_macro_f1": 0.9915470432779605
+}

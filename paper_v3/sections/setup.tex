@@ -1,0 +1,58 @@
+% Experimental setup (Task 42): old Setup without the constraint model (now in Section 3) and without the two
+% limitations tables (now Appendix C); T1 and T2 merged into t_data.
+\section{Experimental Setup}
+\label{sec:setup}
+
+\paragraph{Datasets.}
+We used LYCOS-IDS2017 and LycoS-Unicas-IDS2018 (called 2017 and 2018 below), built from the traffic of CIC-IDS2017
+and CSE-CIC-IDS2018 \cite{sharafaldin2018,aws_cse_cic_ids2018}, both with the same \nFeatures{} flow features (Table~\ref{t_data}).
+On 2017 we removed Heartbleed (\nHeartbleed{} rows) and the structured query language (SQL) injection web attack (\nSqlInjection{} rows, all after
+the temporal cut), merged the remaining web attacks, removed feature vectors that carried more than one label and
+exact duplicates, and split each (label, day) group in time with gaps between train, validation and test.
+On 2018 we removed FTP-Patator (\nFtpRemoved{} rows) and DoS Slowhttptest (\nSlowhttpRemoved{} rows) because the two
+classes were indistinguishable in the features, merged the DDoS and web attack variants, removed conflicting and
+duplicate vectors, capped large classes, and split at random with stratification, because the file has no timestamps.
+This left \nClassesSeventeen{} classes on 2017 and \nClassesEighteen{} on 2018; all cross-dataset comparisons use the
+\nCommonClasses{} common attack classes.
+
+\input{generated/t_data.tex}
+
+\paragraph{Models.}
+We trained an FT-Transformer with \nSeeds{} seeds and an extreme gradient boosting (XGBoost) reference with one recipe on both datasets, without
+tuning on 2018.
+Test macro-F1 of the FT-Transformer was \fOneFTTSeventeen{} (seed range \fOneFTTSeventeenRange) on 2017 and
+\fOneFTTEighteen{} (\fOneFTTEighteenRange) on 2018; XGBoost reached \fOneXGBSeventeen{} and \fOneXGBEighteen{}
+(Table~\ref{t_data}).
+
+\paragraph{Explanation and attack sets.}
+Clean explanations used up to \paramExplPerClass{} test rows per class that all seeds classified correctly.
+Attacks and detectors used the first \paramPerClass{} of these rows per attack class (fewer when a class had fewer;
+web attack on 2018 has \nWebTestEighteen{} test rows), the same rows for every seed.
+
+\paragraph{Near-duplicate filter and primary row set.}
+For every test row we computed the exact Euclidean distance to its nearest training row in the standardised feature
+space of its dataset and flagged rows with a distance below \paramNDThr.
+These flags covered \ndSlowlorisSeventeen{} of the DoS Slowloris and \ndWebSeventeen{} of the web attack test rows on
+2017, \ndSlowlorisEighteen{} of the DoS Slowloris rows on 2018, and \ndAllSeventeen{} and \ndAllEighteen{} of all test
+rows (Appendix~\ref{sec:sens}).
+The 2018 attack source rows excluded flagged DoS Slowloris rows by design, while the 2017 attack and detector source
+rows were drawn without this filter: on the \nCommonClasses{} common classes they contained \ndSrcCommonSeventeen{}
+flagged rows per seed.
+We report three row sets: V0 (all source rows), V1 (flagged source rows removed in both datasets) and V2
+(DoS Slowloris and web attack removed in both datasets, \nVtwoClasses{} classes).
+V1 is the primary set for all results; V0 and V2 are sensitivity analyses (Section~\ref{sec:rq3} and
+Appendix~\ref{sec:sens}).
+The filter was applied after the attacks and after detector training, by removing source rows from the saved results;
+models, attacks and detector thresholds are unchanged.
+V1 was fixed as the primary set after the sensitivity results were seen (Appendix~\ref{sec:sens}), which is why V0 and
+V2 are reported as well.
+Per seed, V1 contains \nSrcVoneSeventeen{} source rows on 2017 (V0: \nSrcVzeroSeventeen) and \nSrcVoneEighteen{} on
+2018, where no source row was flagged.
+
+\paragraph{Seeds and uncertainty.}
+All reported analyses used seeds 0, 1 and 2 on both datasets (Appendix~\ref{sec:sens}); a preliminary
+detector run with seed 0 alone, used during development, is not reported.
+We report means with the range over seeds, and for paired detector comparisons \paramCILevel{} bootstrap intervals
+(\paramBoot{} draws): within seed for the equal-effort union, and pooled over seeds for the paired true-positive-rate
+(TPR) differences.
+Neither interval captures variation between seeds, so we give the per-seed values next to every headline difference.

@@ -1,0 +1,50 @@
+dataset,row_set,class,n_source_rows,n_neardup
+2017,Stage 5 rows,bot,144,0
+2017,Stage 5 rows,ddos,150,0
+2017,Stage 5 rows,dos_goldeneye,150,0
+2017,Stage 5 rows,dos_hulk,150,1
+2017,Stage 5 rows,dos_slowhttptest,150,128
+2017,Stage 5 rows,dos_slowloris,150,73
+2017,Stage 5 rows,ftp_patator,150,0
+2017,Stage 5 rows,portscan,150,0
+2017,Stage 5 rows,ssh_patator,150,0
+2017,Stage 5 rows,webattack,150,69
+2017,Stage 5 rows,ALL,1494,271
+2017,Stage 6 FINAL rows,bot,144,0
+2017,Stage 6 FINAL rows,ddos,150,0
+2017,Stage 6 FINAL rows,dos_goldeneye,150,0
+2017,Stage 6 FINAL rows,dos_hulk,150,1
+2017,Stage 6 FINAL rows,dos_slowhttptest,150,128
+2017,Stage 6 FINAL rows,dos_slowloris,150,73
+2017,Stage 6 FINAL rows,ftp_patator,150,0
+2017,Stage 6 FINAL rows,portscan,150,0
+2017,Stage 6 FINAL rows,ssh_patator,150,0
+2017,Stage 6 FINAL rows,webattack,150,69
+2017,Stage 6 FINAL rows,ALL,1494,271
+2017,Stage 6e rows,bot,144,0
+2017,Stage 6e rows,ddos,150,0
+2017,Stage 6e rows,dos_goldeneye,150,0
+2017,Stage 6e rows,dos_hulk,150,1
+2017,Stage 6e rows,dos_slowhttptest,150,128
+2017,Stage 6e rows,dos_slowloris,150,73
+2017,Stage 6e rows,ftp_patator,150,0
+2017,Stage 6e rows,portscan,150,0
+2017,Stage 6e rows,ssh_patator,150,0
+2017,Stage 6e rows,webattack,150,69
+2017,Stage 6e rows,ALL,1494,271
+2018,Stage 7d rows,bot,150,0
+2018,Stage 7d rows,ddos,150,0
+2018,Stage 7d rows,dos_goldeneye,150,0
+2018,Stage 7d rows,dos_hulk,150,0
+2018,Stage 7d rows,dos_slowloris,150,0
+2018,Stage 7d rows,ssh_patator,150,0
+2018,Stage 7d rows,webattack,85,0
+2018,Stage 7d rows,ALL,985,0
+2018,Stage 7e rows,bot,150,0
+2018,Stage 7e rows,ddos,150,0
+2018,Stage 7e rows,dos_goldeneye,150,0
+2018,Stage 7e rows,dos_hulk,150,0
+2018,Stage 7e rows,dos_slowloris,150,0
+2018,Stage 7e rows,ssh_patator,150,0
+2018,Stage 7e rows,webattack,85,0
+2018,Stage 7e rows,ALL,985,0

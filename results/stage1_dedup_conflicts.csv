@@ -1,0 +1,4 @@
+labels,n_distinct_vectors
+benign | dos_slowhttptest,14
+benign | portscan,1
+benign | dos_hulk | dos_slowloris | portscan,1

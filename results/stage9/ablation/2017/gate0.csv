@@ -1,0 +1,52 @@
+year,seed,eps,check,value,cons12_max_diff,n,pass,saved
+2017,0,,negatives val_train: 18 scores max |diff|,0.0,0.0,20000.0,True,
+2017,0,,negatives val_held: 18 scores max |diff|,0.0,0.0,50000.0,True,
+2017,0,,negatives test: 18 scores max |diff|,0.0,0.0,1000.0,True,
+2017,0,0.5,n_val_pos regenerated vs saved,412.0,,,True,412.0
+2017,0,0.5,D refit threshold |diff|,0.0,,,True,0.3152870487235188
+2017,0,0.5,D refit val AUROC |diff|,0.0,,,True,0.9854129611650485
+2017,0,0.5,Dplus refit threshold |diff|,0.0,,,True,-2.0678393884307713
+2017,0,0.5,Dplus refit val AUROC |diff|,0.0,,,True,0.9968173300970874
+2017,0,0.5,A1 test score_Dplus (refitted D_plus) max |diff|,0.0,,,True,
+2017,0,0.5,A1 test flipped equal to saved,1.0,,,True,
+2017,0,1.0,n_val_pos regenerated vs saved,854.0,,,True,854.0
+2017,0,1.0,D refit threshold |diff|,0.0,,,True,-0.21855756653234593
+2017,0,1.0,D refit val AUROC |diff|,0.0,,,True,0.9884430913348946
+2017,0,1.0,Dplus refit threshold |diff|,0.0,,,True,-0.9644348212189389
+2017,0,1.0,Dplus refit val AUROC |diff|,0.0,,,True,0.9926067213114754
+2017,0,1.0,A1 test score_Dplus (refitted D_plus) max |diff|,0.0,,,True,
+2017,0,1.0,A1 test flipped equal to saved,1.0,,,True,
+2017,1,,negatives val_train: 18 scores max |diff|,0.0,0.0,20000.0,True,
+2017,1,,negatives val_held: 18 scores max |diff|,0.0,0.0,50000.0,True,
+2017,1,,negatives test: 18 scores max |diff|,0.0,0.0,1000.0,True,
+2017,1,0.5,n_val_pos regenerated vs saved,123.0,,,True,123.0
+2017,1,0.5,D refit threshold |diff|,0.0,,,True,-10.52000933404263
+2017,1,0.5,D refit val AUROC |diff|,0.0,,,True,0.9995422764227643
+2017,1,0.5,Dplus refit threshold |diff|,0.0,,,True,-12.427933543896144
+2017,1,0.5,Dplus refit val AUROC |diff|,0.0,,,True,0.9999047154471544
+2017,1,0.5,A1 test score_Dplus (refitted D_plus) max |diff|,0.0,,,True,
+2017,1,0.5,A1 test flipped equal to saved,1.0,,,True,
+2017,1,1.0,n_val_pos regenerated vs saved,649.0,,,True,649.0
+2017,1,1.0,D refit threshold |diff|,0.0,,,True,-1.8667514999726689
+2017,1,1.0,D refit val AUROC |diff|,0.0,,,True,0.9956304468412943
+2017,1,1.0,Dplus refit threshold |diff|,0.0,,,True,-3.2877811607711513
+2017,1,1.0,Dplus refit val AUROC |diff|,0.0,,,True,0.9981900154083205
+2017,1,1.0,A1 test score_Dplus (refitted D_plus) max |diff|,0.0,,,True,
+2017,1,1.0,A1 test flipped equal to saved,1.0,,,True,
+2017,2,,negatives val_train: 18 scores max |diff|,0.0,0.0,20000.0,True,
+2017,2,,negatives val_held: 18 scores max |diff|,0.0,0.0,50000.0,True,
+2017,2,,negatives test: 18 scores max |diff|,0.0,0.0,1000.0,True,
+2017,2,0.5,n_val_pos regenerated vs saved,191.0,,,True,191.0
+2017,2,0.5,D refit threshold |diff|,0.0,,,True,0.5527936032072435
+2017,2,0.5,D refit val AUROC |diff|,0.0,,,True,0.9818507853403141
+2017,2,0.5,Dplus refit threshold |diff|,0.0,,,True,-1.3117693639482606
+2017,2,0.5,Dplus refit val AUROC |diff|,0.0,,,True,0.9935893193717278
+2017,2,0.5,A1 test score_Dplus (refitted D_plus) max |diff|,0.0,,,True,
+2017,2,0.5,A1 test flipped equal to saved,1.0,,,True,
+2017,2,1.0,n_val_pos regenerated vs saved,538.0,,,True,538.0
+2017,2,1.0,D refit threshold |diff|,0.0,,,True,-0.8198715663175322
+2017,2,1.0,D refit val AUROC |diff|,0.0,,,True,0.9903617843866171
+2017,2,1.0,Dplus refit threshold |diff|,0.0,,,True,-2.171158751448818
+2017,2,1.0,Dplus refit val AUROC |diff|,0.0,,,True,0.9957440520446097
+2017,2,1.0,A1 test score_Dplus (refitted D_plus) max |diff|,0.0,,,True,
+2017,2,1.0,A1 test flipped equal to saved,1.0,,,True,

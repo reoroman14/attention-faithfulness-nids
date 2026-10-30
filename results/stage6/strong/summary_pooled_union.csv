@@ -1,0 +1,3 @@
+candidates,n_source_rows,union_flipped,succ_undet_union_D,succ_undet_union_Dplus,Dplus - D [95% CI]
+"union of 7 (A1, A6 x 3, A7 x 3)",2988,0.7121820615796519,0.28882195448460507,0.2754350736278447,"-0.013 [-0.030, 0.001]"
+union of 10 (+ A8 x 3),2988,0.7168674698795181,0.2971887550200803,0.357095046854083,"0.060 [0.045, 0.075]"

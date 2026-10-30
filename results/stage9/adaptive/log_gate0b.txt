@@ -1,0 +1,16 @@
+[2026-10-29 06:33:23] start gate0b years ['2017', '2018'] controls ['c0', 'c1', 'c2', 'a1', 'a2', 'b'] seeds [0, 1, 2] cap 4.0 h
+[2026-10-29 06:33:49] 2017 seed 0 eps 0.5: gate0b PASS [25 s]
+[2026-10-29 06:34:16] 2017 seed 0 eps 1.0: gate0b PASS [27 s]
+[2026-10-29 06:34:41] 2017 seed 1 eps 0.5: gate0b PASS [24 s]
+[2026-10-29 06:35:06] 2017 seed 1 eps 1.0: gate0b PASS [25 s]
+[2026-10-29 06:35:28] 2017 seed 2 eps 0.5: gate0b PASS [21 s]
+[2026-10-29 06:35:49] 2017 seed 2 eps 1.0: gate0b PASS [21 s]
+[2026-10-29 06:35:49] 2017: gate0b PASS (180 checks, max threshold diff 0.0e+00)
+[2026-10-29 06:36:11] 2018 seed 0 eps 0.5: gate0b PASS [21 s]
+[2026-10-29 06:36:35] 2018 seed 0 eps 1.0: gate0b PASS [23 s]
+[2026-10-29 06:36:56] 2018 seed 1 eps 0.5: gate0b PASS [21 s]
+[2026-10-29 06:37:17] 2018 seed 1 eps 1.0: gate0b PASS [21 s]
+[2026-10-29 06:37:37] 2018 seed 2 eps 0.5: gate0b PASS [19 s]
+[2026-10-29 06:37:56] 2018 seed 2 eps 1.0: gate0b PASS [19 s]
+[2026-10-29 06:37:56] 2018: gate0b PASS (180 checks, max threshold diff 0.0e+00)
+[2026-10-29 06:37:56] finished gate0b in 272 s

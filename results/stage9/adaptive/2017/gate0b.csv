@@ -1,0 +1,181 @@
+year,seed,eps,detector,check,value,tol,pass
+2017,0,0.5,D,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,0,0.5,D,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,0,0.5,D,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,0,0.5,Dplus,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,0,0.5,Dplus,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,0,0.5,Dplus,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,0,0.5,a1,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,0,0.5,a1,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,0,0.5,a1,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,0,0.5,a1s,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,0,0.5,a1s,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,0,0.5,a1s,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,0,0.5,a2,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,0,0.5,a2,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,0,0.5,a2,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,0,0.5,a2s,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,0,0.5,a2s,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,0,0.5,a2s,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,0,0.5,b,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,0,0.5,b,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,0,0.5,b,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,0,0.5,c0,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,0,0.5,c0,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,0,0.5,c0,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,0,0.5,c1,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,0,0.5,c1,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,0,0.5,c1,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,0,0.5,c2,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,0,0.5,c2,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,0,0.5,c2,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,0,1.0,D,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,0,1.0,D,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,0,1.0,D,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,0,1.0,Dplus,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,0,1.0,Dplus,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,0,1.0,Dplus,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,0,1.0,a1,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,0,1.0,a1,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,0,1.0,a1,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,0,1.0,a1s,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,0,1.0,a1s,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,0,1.0,a1s,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,0,1.0,a2,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,0,1.0,a2,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,0,1.0,a2,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,0,1.0,a2s,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,0,1.0,a2s,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,0,1.0,a2s,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,0,1.0,b,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,0,1.0,b,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,0,1.0,b,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,0,1.0,c0,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,0,1.0,c0,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,0,1.0,c0,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,0,1.0,c1,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,0,1.0,c1,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,0,1.0,c1,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,0,1.0,c2,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,0,1.0,c2,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,0,1.0,c2,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,1,0.5,D,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,1,0.5,D,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,1,0.5,D,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,1,0.5,Dplus,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,1,0.5,Dplus,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,1,0.5,Dplus,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,1,0.5,a1,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,1,0.5,a1,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,1,0.5,a1,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,1,0.5,a1s,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,1,0.5,a1s,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,1,0.5,a1s,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,1,0.5,a2,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,1,0.5,a2,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,1,0.5,a2,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,1,0.5,a2s,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,1,0.5,a2s,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,1,0.5,a2s,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,1,0.5,b,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,1,0.5,b,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,1,0.5,b,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,1,0.5,c0,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,1,0.5,c0,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,1,0.5,c0,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,1,0.5,c1,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,1,0.5,c1,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,1,0.5,c1,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,1,0.5,c2,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,1,0.5,c2,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,1,0.5,c2,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,1,1.0,D,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,1,1.0,D,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,1,1.0,D,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,1,1.0,Dplus,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,1,1.0,Dplus,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,1,1.0,Dplus,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,1,1.0,a1,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,1,1.0,a1,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,1,1.0,a1,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,1,1.0,a1s,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,1,1.0,a1s,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,1,1.0,a1s,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,1,1.0,a2,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,1,1.0,a2,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,1,1.0,a2,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,1,1.0,a2s,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,1,1.0,a2s,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,1,1.0,a2s,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,1,1.0,b,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,1,1.0,b,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,1,1.0,b,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,1,1.0,c0,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,1,1.0,c0,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,1,1.0,c0,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,1,1.0,c1,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,1,1.0,c1,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,1,1.0,c1,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,1,1.0,c2,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,1,1.0,c2,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,1,1.0,c2,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,2,0.5,D,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,2,0.5,D,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,2,0.5,D,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,2,0.5,Dplus,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,2,0.5,Dplus,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,2,0.5,Dplus,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,2,0.5,a1,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,2,0.5,a1,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,2,0.5,a1,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,2,0.5,a1s,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,2,0.5,a1s,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,2,0.5,a1s,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,2,0.5,a2,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,2,0.5,a2,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,2,0.5,a2,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,2,0.5,a2s,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,2,0.5,a2s,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,2,0.5,a2s,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,2,0.5,b,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,2,0.5,b,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,2,0.5,b,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,2,0.5,c0,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,2,0.5,c0,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,2,0.5,c0,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,2,0.5,c1,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,2,0.5,c1,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,2,0.5,c1,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,2,0.5,c2,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,2,0.5,c2,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,2,0.5,c2,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,2,1.0,D,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,2,1.0,D,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,2,1.0,D,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,2,1.0,Dplus,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,2,1.0,Dplus,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,2,1.0,Dplus,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,2,1.0,a1,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,2,1.0,a1,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,2,1.0,a1,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,2,1.0,a1s,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,2,1.0,a1s,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,2,1.0,a1s,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,2,1.0,a2,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,2,1.0,a2,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,2,1.0,a2,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,2,1.0,a2s,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,2,1.0,a2s,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,2,1.0,a2s,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,2,1.0,b,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,2,1.0,b,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,2,1.0,b,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,2,1.0,c0,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,2,1.0,c0,val AUROC |diff| vs stageA_defenders.csv,1.1102230246251565e-16,1e-09,True
+2017,2,1.0,c0,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,2,1.0,c1,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,2,1.0,c1,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,2,1.0,c1,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True
+2017,2,1.0,c2,threshold |diff| vs saved thr,0.0,1e-05,True
+2017,2,1.0,c2,val AUROC |diff| vs stageA_defenders.csv,0.0,1e-09,True
+2017,2,1.0,c2,A6_lam1 rescoring max |diff| vs saved score,0.0,1e-05,True

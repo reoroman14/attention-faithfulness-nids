@@ -1,0 +1,5 @@
+check,value,pass
+2017 V0 deletion / insertion AUC vs T3 source (max abs diff; float16 curves),1.3882539357856771e-05,True
+2017 V0 Spearman agreement vs T3 source (max abs diff; float16 attributions),0.00011196939810670381,True
+2018 V0 deletion / insertion AUC vs T3 source (max abs diff; float16 curves),2.3334322528323348e-05,True
+2018 V0 Spearman agreement vs T3 source (max abs diff; float16 attributions),4.888679178734895e-05,True

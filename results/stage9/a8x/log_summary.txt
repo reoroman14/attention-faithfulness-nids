@@ -1,0 +1,3 @@
+[2026-10-30 10:30:41] start summary years ['2017', '2018'] chunk 50 cap 5.0 h pid 10336
+[2026-10-30 10:31:08] summary written: 144 union rows, 36 TPR rows
+[2026-10-30 10:31:08] finished summary in 27 s

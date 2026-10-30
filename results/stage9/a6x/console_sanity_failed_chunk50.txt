@@ -1,0 +1,1 @@
+STOPPED: sanity check failed on 2017: ['(s1) selection off, chunk 50: max |X - saved A6_lam1 X|']

@@ -1,0 +1,4 @@
+year,invocation,start_amman,end_amman,seconds,exit,last_line
+2017,1,2026-10-30 01:28:57,2026-10-30 06:20:37,17500,0,finished attack in 17496 s
+2018,1,2026-10-30 06:20:37,2026-10-30 10:30:38,15001,0,finished attack in 14996 s
+summary,1,2026-10-30 10:30:38,2026-10-30 10:31:08,0,0,summary

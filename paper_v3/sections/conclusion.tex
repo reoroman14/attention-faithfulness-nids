@@ -1,0 +1,26 @@
+% Conclusion (Task 42): handoff/37_narrative_v2.md section 3.6 applied.
+\section{Conclusion}
+\label{sec:conclusion}
+
+We compared attention explanations of FT-Transformer NIDS with attribution methods on two datasets, under clean data,
+protocol-constrained attacks and adaptive attacks on learned detectors.
+Rollout attention agreed weakly to moderately with the attributions (highest with GradientSHAP,
+\spRolloutGShapVoneSeventeen{} and \spRolloutGShapVoneEighteen; lowest with TreeSHAP, \spRolloutTreeShapVoneSeventeen{}
+and \spRolloutTreeShapVoneEighteen), was less faithful than IG and occlusion, and the ordering of \nMethods{}
+explanation methods by faithfulness was similar across datasets (rank correlation \ordSpDelVone).
+Under the feature constraints the top-\paramTopK{} rollout attention mass was reduced only to \massAtwoVoneEighteen{} to
+\massAtwoVoneSeventeen{} of its clean value, and the faithfulness loss on flipped rows affected IG, occlusion, rollout,
+layer-mean attention, the static class-mean rankings and $|x|$ alike.
+Attention-attribution consistency scores added detection power against an attacker that ignored them, more on 2017
+than on 2018, but this gain was not specific to attention: controls that used other attribution methods or logit and
+distance statistics instead of attention obtained most or all of it.
+Against an attacker that optimised the exact score of D$_+$, the consistency scores did not help: D$_+$ left more attack
+rows successful and undetected than D, by \axHeadVoneSeventeenAbs{} on 2017 (\axHeadVoneSeventeenCI) and
+\axHeadVoneEighteenAbs{} on 2018 (\axHeadVoneEighteenCI), with \axHeadOppSeedsPhrase{} of the
+opposite sign; the small gain measured with a stand-in attacker did not hold, and an attacker of D with the same iterate
+selection changed no row.
+Detector strength differed far more between the datasets than between the two detectors.
+Evaluations of explanation-based attack detectors need attackers that optimise the detector's exact score; on our two
+datasets the consistency scores did not pass that test.
+The attribution-only control b, the rank-based scores under an exact search and the relative optimiser strength of the
+attackers remain open.

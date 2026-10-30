@@ -1,0 +1,36 @@
+% Figure legends (Task 46): moved out of the figure floats, listed after Additional information as the journal asks.
+% At most 350 words each. Every number is a macro.
+\section*{Figure legends}
+\label{sec:legends}
+
+\noindent\textbf{Figure~\mainFigPipeline.}
+Study design.
+FT-Transformer classifiers (\nSeeds{} seeds) and an XGBoost reference were trained on LYCOS-IDS2017 and
+LycoS-Unicas-IDS2018.
+Clean explanations compare three attention variants with IG, GradientSHAP, occlusion and TreeSHAP by agreement and by
+deletion and insertion faithfulness.
+Constrained attacks (A0 random control, A1 evasion, A1b targeted, A2 attention, A3 evasion and attention) change only
+the controls of a flow within their budgets, recompute the derived features and are checked by a separate validity
+checker; their effect on attention and on faithfulness is measured on the attacked rows.
+The detectors D (confidence and distance scores) and D$_+$ (D plus \nConsistency{} attention-attribution consistency
+scores) and \nControlsAll{} control detectors are evaluated against the non-adaptive attacker A6 and against adaptive
+attackers: A8 (differentiable stand-ins for the consistency scores), A8x (the exact score of D$_+$, with surrogate
+gradients only for the \nRankScores{} rank-based scores), A6x (A6 with the iterate selection of A8x) and an attacker of
+each control that models its own scores, compared under the equal-effort union.
+
+\medskip
+\noindent\textbf{Figure~\mainFigHeadline.}
+D$_+$ minus D in the share of successful and undetected source rows under the equal-effort union at
+$\epsilon = \paramEpsHead$ on the primary row set V1, per dataset.
+A positive value means that D$_+$ left more attack rows successful and undetected than D.
+Top row: D$_+$ faces A1 and the three settings of the stand-in attacker A8, D faces A1 and A6.
+Middle row: D$_+$ faces A1 and the three settings of the exact-objective attacker A8x, D faces A1 and A6.
+Bottom row: as the middle row, with D facing A1 and A6x, which gives D's attacker the iterate selection of A8x.
+Filled marks: difference pooled over the \nSeeds{} seeds with the \paramCILevel{} paired percentile bootstrap interval
+over source rows within seed (\paramBoot{} draws); the printed values are the pooled difference and its interval.
+Open marks: the differences of seeds 0, 1 and 2 (labels s0, s1, s2).
+The intervals do not capture variation between seeds; \axHeadOppSeedsPhrase{} had the opposite sign in the middle and bottom rows.
+A8x uses surrogate gradients for the \nRankScores{} rank-based consistency scores.
+On LycoS-Unicas-IDS2018, D alone left only \axHeadVoneEighteenD{} of the source rows successful and undetected, so the
+difference there sits near a floor.
+Source rows per seed: \nSrcVoneSeventeen{} on LYCOS-IDS2017 and \nSrcVoneEighteen{} on LycoS-Unicas-IDS2018.

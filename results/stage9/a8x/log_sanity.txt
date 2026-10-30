@@ -1,0 +1,55 @@
+[2026-10-30 01:26:05] start sanity years ['2017', '2018'] chunk 50 cap 5.0 h pid 17396
+[2026-10-30 01:26:11] 2017 sanity rows: 200 from A6_lam1
+[2026-10-30 01:26:12] 2017 sanity (a) stand-in features max |A8x - A8|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:12] 2017 sanity (a) loss lambda 1 max |A8x - A8|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:12] 2017 sanity (a) loss lambda 100 max |A8x - A8|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:12] 2017 sanity (b) IG-20 raw max |A8x - captum|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:12] 2017 sanity (b) IG-20 normalised max |A8x - captum|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:12] 2017 sanity (b, info) IG-20 normalised max |A8x - saved set|: 0.000e+00
+[2026-10-30 01:26:13] 2017 sanity (c) msp max |inside - saved|: 2.384e-07 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:13] 2017 sanity (c) margin max |inside - saved|: 1.907e-06 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:13] 2017 sanity (c, info) mahalanobis_benign max |inside - saved| absolute: 2.403e-03
+[2026-10-30 01:26:13] 2017 sanity (c) mahalanobis_benign max relative |inside - saved|: 2.395e-04 (rel tol 0.001; PASS)
+[2026-10-30 01:26:13] 2017 sanity (c) knn5_benign max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:13] 2017 sanity (c) cons_rollout_gxi_spearman max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:13] 2017 sanity (c) cons_rollout_gxi_jacc10 max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:13] 2017 sanity (c) cons_rollout_gxi_cos max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:13] 2017 sanity (c) cons_rollout_ig20_spearman max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:13] 2017 sanity (c) cons_rollout_ig20_jacc10 max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:13] 2017 sanity (c) cons_rollout_ig20_cos max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:13] 2017 sanity (c) cons_attnmean_gxi_spearman max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:13] 2017 sanity (c) cons_attnmean_gxi_jacc10 max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:13] 2017 sanity (c) cons_attnmean_gxi_cos max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:13] 2017 sanity (c) cons_attnmean_ig20_spearman max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:13] 2017 sanity (c) cons_attnmean_ig20_jacc10 max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:13] 2017 sanity (c) cons_attnmean_ig20_cos max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:13] 2017 sanity (c) D_plus decision max |inside - saved|: 2.130e-04 (abs (Amendment 1) tol 0.001; PASS)
+[2026-10-30 01:26:13] 2017 sanity (margin, info) rows undetected: inside no margin 50, inside with margin 50, saved evaluation 50; differ margin vs no margin 0, inside no margin vs saved 0, inside with margin vs saved 0
+[2026-10-30 01:26:17] 2018 sanity rows: 127 from A6_lam1
+[2026-10-30 01:26:17] 2018 sanity rows: 73 from A6norm_w0.5
+[2026-10-30 01:26:18] 2018 sanity (a) stand-in features max |A8x - A8|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:18] 2018 sanity (a) loss lambda 1 max |A8x - A8|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:18] 2018 sanity (a) loss lambda 100 max |A8x - A8|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:18] 2018 sanity (b) IG-20 raw max |A8x - captum|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:18] 2018 sanity (b) IG-20 normalised max |A8x - captum|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:18] 2018 sanity (b, info) IG-20 normalised max |A8x - saved set|: 0.000e+00
+[2026-10-30 01:26:19] 2018 sanity (c) msp max |inside - saved|: 2.384e-07 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:19] 2018 sanity (c) margin max |inside - saved|: 1.907e-06 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:19] 2018 sanity (c, info) mahalanobis_benign max |inside - saved| absolute: 5.684e-04
+[2026-10-30 01:26:19] 2018 sanity (c) mahalanobis_benign max relative |inside - saved|: 6.199e-05 (rel tol 0.001; PASS)
+[2026-10-30 01:26:19] 2018 sanity (c) knn5_benign max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:19] 2018 sanity (c) cons_rollout_gxi_spearman max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:19] 2018 sanity (c) cons_rollout_gxi_jacc10 max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:19] 2018 sanity (c) cons_rollout_gxi_cos max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:19] 2018 sanity (c) cons_rollout_ig20_spearman max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:19] 2018 sanity (c) cons_rollout_ig20_jacc10 max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:19] 2018 sanity (c) cons_rollout_ig20_cos max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:19] 2018 sanity (c) cons_attnmean_gxi_spearman max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:19] 2018 sanity (c) cons_attnmean_gxi_jacc10 max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:19] 2018 sanity (c) cons_attnmean_gxi_cos max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:19] 2018 sanity (c) cons_attnmean_ig20_spearman max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:19] 2018 sanity (c) cons_attnmean_ig20_jacc10 max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:19] 2018 sanity (c) cons_attnmean_ig20_cos max |inside - saved|: 0.000e+00 (abs tol 1e-05; PASS)
+[2026-10-30 01:26:19] 2018 sanity (c) D_plus decision max |inside - saved|: 2.052e-04 (abs (Amendment 1) tol 0.001; PASS)
+[2026-10-30 01:26:19] 2018 sanity (margin, info) rows undetected: inside no margin 0, inside with margin 0, saved evaluation 0; differ margin vs no margin 0, inside no margin vs saved 0, inside with margin vs saved 0
+[2026-10-30 01:26:19] finished sanity in 14 s

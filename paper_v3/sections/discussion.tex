@@ -1,0 +1,66 @@
+% Discussion (Task 42): handoff/37_narrative_v2.md section 3.4 applied; implications paragraph added (plan 32).
+\section{Discussion}
+\label{sec:discussion}
+
+\paragraph{Stable but not faithful.}
+On both datasets, rollout attention agreed weakly to moderately with attribution methods and kept most of its
+top-\paramTopK{} mass under the feature constraints, yet it was clearly less faithful than IG and occlusion by deletion
+and insertion AUC (Section~\ref{sec:rq1}).
+An analyst who reads rollout attention as feature importance on these models would therefore see a stable picture that
+only partly reflects what drives the prediction.
+This holds for the two datasets and the FT-Transformer we studied; we do not claim that attention is unfaithful in
+general.
+
+\paragraph{Stiffness is not a security property.}
+The small change of attention under A2 and A3 is a statement about the feature constraints and budgets we used.
+Among the \paramTopK{} rollout features with the highest mass on clean explanation rows, on average
+\topImmRolloutSeventeen{} on 2017 and \topImmRolloutEighteen{} on 2018 were immutable, and among the clean
+top-\paramTopK{} IG features that A2 targets, \topImmIGSeventeen{} and \topImmIGEighteen{} (macro over the
+\nCommonClasses{} classes, mean over seeds).
+The stiffness is therefore partly structural, because the attacker cannot change these features.
+The unconstrained reference moved attention further, so stronger or differently constrained attackers might move it
+more.
+
+\paragraph{The faithfulness loss follows the prediction flip.}
+The faithfulness loss after an evasion attack appeared for most explanation methods, including the static class-mean
+rankings, which do not depend on the input.
+A plausible reading is that adversarial rows sit in a region where the model's output depends on the features
+differently from clean rows, so any fixed explanation becomes less faithful there.
+The comparison of flipped rows, unflipped rows and rows flipped by the random control supports this reading; the
+mechanism itself was not tested.
+
+\paragraph{Consistency monitoring.}
+Consistency scores helped against an attacker that ignored them; against an attacker that optimised the detector's
+exact score they did not help, and D$_+$ was easier to evade than D (Section~\ref{sec:rq2}).
+Against the attacker that ignored them, the gain was not specific to attention: controls that used other attribution
+methods instead of attention, or statistics of the logits and distances, obtained most or all of it, and a1 still
+carries the class information of the true label.
+The small gain that D$_+$ showed against A8 did not hold against A8x, which uses exact IG in the loop and selects
+iterates by the true score: the sign reversed on 2017 in the pooled estimate and in all but \axHeadOppSeedsSeventeen{} of the \nSeeds{} seeds,
+and giving D's attacker the same
+selection changed no row.
+An evaluation with stand-ins alone would therefore have overstated what D$_+$ achieves; this is the general point made by
+\cite{tramer2020}, shown here for consistency monitoring.
+We did not test why D$_+$ was easier to evade than D.
+One untested reading is that each added score gives the attacker a further direction to move in while the threshold
+stays at \paramFPR{} FPR; the label-shuffled control a1, under its own stand-in attacker, also left more rows
+undetected than D on 2017 (\cmdAoneVoneSeventeen, \cmdAoneVoneSeventeenCI), but a1 uses the true class label and a
+weaker attacker, so it does not test this reading.
+
+\paragraph{Dataset dependence.}
+The difference between the datasets in detector strength was much larger than the difference between D and D$_+$.
+On 2017 a single class dominated the successful and undetected rows under A6, and on 2018 a different single class did
+(Section~\ref{sec:rq3}).
+Conclusions about learned attack detectors on these benchmarks should therefore be reported per dataset and per class.
+
+\paragraph{Implications for NIDS practice.}
+For an analyst, attention maps of an FT-Transformer flow classifier are a stable but partial picture of what drives a
+prediction; when a decision rests on feature importance, IG or occlusion were the more faithful choice on both
+datasets, and any explanation of a row that an attack has flipped is less faithful than on clean traffic.
+For a defender, we do not recommend these consistency scores as an addition to a confidence-and-distance detector
+against adaptive attackers: they helped only against an attacker that ignored them, that help was available without
+attention, and against an attacker that modelled them exactly they made evasion easier on both datasets (on 2018
+close to the floor).
+For anyone evaluating an explanation-based attack detector, the attacker should optimise the detector's exact score
+wherever a gradient exists and select its iterates by the true score; an evaluation with differentiable stand-ins can
+reverse the sign of the result, as it did here.

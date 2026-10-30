@@ -1,0 +1,103 @@
+﻿[INFO] 2026-10-04 13:51:56 - Run dir: results\runs\20261004-135156_stage2_train  seed=2026
+[INFO] 2026-10-04 13:51:56 - Loaded train: 906981 rows
+[INFO] 2026-10-04 13:51:56 - Loaded val: 302329 rows
+[INFO] 2026-10-04 13:51:56 - Loaded test: 302327 rows
+[INFO] 2026-10-04 13:52:00 - Preprocess train: clipped 3335 of 65302632 values, negatives into log1p 0
+[INFO] 2026-10-04 13:52:01 - Preprocess val: clipped 602 of 21767688 values, negatives into log1p 0
+[INFO] 2026-10-04 13:52:01 - Preprocess test: clipped 1257 of 21767544 values, negatives into log1p 0
+[INFO] 2026-10-04 13:52:01 - Class weights (sqrt_inv), sampler=none:
+           class  train_count    weight
+          benign       740728  0.601669
+             bot          431 24.943002
+            ddos        56261  2.183150
+   dos_goldeneye         3977  8.211255
+        dos_hulk        93476  1.693703
+dos_slowhttptest         2770  9.838921
+   dos_slowloris         3080  9.330652
+     ftp_patator         2351 10.679749
+        portscan          981 16.533045
+     ssh_patator         1739 12.417597
+       webattack         1187 15.030104
+[INFO] 2026-10-04 13:52:02 - [ftt seed=0] params=239,723 steps/epoch=886 amp=True
+[INFO] 2026-10-04 13:53:11 - [ftt seed=0] epoch  1 loss=0.3374 val_macroF1=0.9299 (60.7s) *
+[INFO] 2026-10-04 13:54:19 - [ftt seed=0] epoch  2 loss=0.0195 val_macroF1=0.9754 (59.5s) *
+[INFO] 2026-10-04 13:55:30 - [ftt seed=0] epoch  3 loss=0.0138 val_macroF1=0.9725 (62.7s)
+[INFO] 2026-10-04 13:56:43 - [ftt seed=0] epoch  4 loss=0.0120 val_macroF1=0.9807 (64.0s) *
+[INFO] 2026-10-04 13:57:53 - [ftt seed=0] epoch  5 loss=0.0109 val_macroF1=0.9754 (62.4s)
+[INFO] 2026-10-04 13:59:02 - [ftt seed=0] epoch  6 loss=0.0097 val_macroF1=0.9646 (60.6s)
+[INFO] 2026-10-04 14:00:10 - [ftt seed=0] epoch  7 loss=0.0092 val_macroF1=0.9806 (60.3s)
+[INFO] 2026-10-04 14:01:18 - [ftt seed=0] epoch  8 loss=0.0085 val_macroF1=0.9780 (60.2s)
+[INFO] 2026-10-04 14:02:27 - [ftt seed=0] epoch  9 loss=0.0084 val_macroF1=0.9774 (60.2s)
+[INFO] 2026-10-04 14:02:27 - [ftt seed=0] early stop at epoch 9 (best epoch 4)
+[INFO] 2026-10-04 14:02:27 - [ftt seed=0] best epoch 4 val macro-F1 0.9807, peak GPU mem 3.91 GB
+[INFO] 2026-10-04 14:02:43 - [ftt seed=0] val macro-F1 0.9807  test macro-F1 0.9249
+[INFO] 2026-10-04 14:02:43 - [ftt seed=1] params=239,723 steps/epoch=886 amp=True
+[INFO] 2026-10-04 14:03:51 - [ftt seed=1] epoch  1 loss=0.3394 val_macroF1=0.9200 (60.1s) *
+[INFO] 2026-10-04 14:05:00 - [ftt seed=1] epoch  2 loss=0.0193 val_macroF1=0.9762 (60.3s) *
+[INFO] 2026-10-04 14:06:08 - [ftt seed=1] epoch  3 loss=0.0143 val_macroF1=0.9679 (60.1s)
+[INFO] 2026-10-04 14:07:16 - [ftt seed=1] epoch  4 loss=0.0121 val_macroF1=0.9778 (60.2s) *
+[INFO] 2026-10-04 14:08:28 - [ftt seed=1] epoch  5 loss=0.0107 val_macroF1=0.9735 (63.8s)
+[INFO] 2026-10-04 14:09:41 - [ftt seed=1] epoch  6 loss=0.0094 val_macroF1=0.9752 (64.0s)
+[INFO] 2026-10-04 14:10:55 - [ftt seed=1] epoch  7 loss=0.0092 val_macroF1=0.9638 (64.6s)
+[INFO] 2026-10-04 14:12:08 - [ftt seed=1] epoch  8 loss=0.0083 val_macroF1=0.9777 (64.3s)
+[INFO] 2026-10-04 14:13:22 - [ftt seed=1] epoch  9 loss=0.0078 val_macroF1=0.9749 (65.0s)
+[INFO] 2026-10-04 14:13:22 - [ftt seed=1] early stop at epoch 9 (best epoch 4)
+[INFO] 2026-10-04 14:13:22 - [ftt seed=1] best epoch 4 val macro-F1 0.9778, peak GPU mem 3.91 GB
+[INFO] 2026-10-04 14:13:39 - [ftt seed=1] val macro-F1 0.9778  test macro-F1 0.9309
+[INFO] 2026-10-04 14:13:40 - [ftt seed=2] params=239,723 steps/epoch=886 amp=True
+[INFO] 2026-10-04 14:14:49 - [ftt seed=2] epoch  1 loss=0.3457 val_macroF1=0.9278 (61.6s) *
+[INFO] 2026-10-04 14:16:03 - [ftt seed=2] epoch  2 loss=0.0187 val_macroF1=0.9696 (65.0s) *
+[INFO] 2026-10-04 14:17:11 - [ftt seed=2] epoch  3 loss=0.0135 val_macroF1=0.9366 (60.4s)
+[INFO] 2026-10-04 14:18:22 - [ftt seed=2] epoch  4 loss=0.0116 val_macroF1=0.9782 (62.7s) *
+[INFO] 2026-10-04 14:19:35 - [ftt seed=2] epoch  5 loss=0.0103 val_macroF1=0.9740 (63.9s)
+[INFO] 2026-10-04 14:20:48 - [ftt seed=2] epoch  6 loss=0.0101 val_macroF1=0.9721 (64.1s)
+[INFO] 2026-10-04 14:21:59 - [ftt seed=2] epoch  7 loss=0.0090 val_macroF1=0.9834 (63.3s) *
+[INFO] 2026-10-04 14:23:12 - [ftt seed=2] epoch  8 loss=0.0083 val_macroF1=0.9705 (64.4s)
+[INFO] 2026-10-04 14:24:26 - [ftt seed=2] epoch  9 loss=0.0081 val_macroF1=0.9772 (65.4s)
+[INFO] 2026-10-04 14:25:36 - [ftt seed=2] epoch 10 loss=0.0074 val_macroF1=0.9691 (62.2s)
+[INFO] 2026-10-04 14:26:46 - [ftt seed=2] epoch 11 loss=0.0068 val_macroF1=0.9804 (62.1s)
+[INFO] 2026-10-04 14:27:58 - [ftt seed=2] epoch 12 loss=0.0068 val_macroF1=0.9806 (62.8s)
+[INFO] 2026-10-04 14:27:58 - [ftt seed=2] early stop at epoch 12 (best epoch 7)
+[INFO] 2026-10-04 14:27:58 - [ftt seed=2] best epoch 7 val macro-F1 0.9834, peak GPU mem 3.91 GB
+[INFO] 2026-10-04 14:28:15 - [ftt seed=2] val macro-F1 0.9834  test macro-F1 0.9133
+[0]	val-macro_f1:0.15926
+[50]	val-macro_f1:0.98657
+[69]	val-macro_f1:0.98356
+[INFO] 2026-10-04 14:28:32 - [xgb] best iteration 19 val macro-F1 0.9875 (15.4 s)
+[INFO] 2026-10-04 14:28:34 - [xgb] val macro-F1 0.9875  test macro-F1 0.9515
+[INFO] 2026-10-04 14:28:34 - Summary:
+model split      metric  n_seeds     mean      std             per_seed
+  ftt  test    macro_f1        3 0.923070 0.008962 0.9249;0.9309;0.9133
+  ftt  test weighted_f1        3 0.997121 0.000188 0.9973;0.9971;0.9970
+  ftt  test    accuracy        3 0.996980 0.000211 0.9972;0.9969;0.9968
+  ftt   val    macro_f1        3 0.980622 0.002796 0.9807;0.9778;0.9834
+  ftt   val weighted_f1        3 0.999151 0.000121 0.9992;0.9990;0.9993
+  ftt   val    accuracy        3 0.999137 0.000120 0.9991;0.9990;0.9992
+  xgb  test    macro_f1        1 0.951521      NaN               0.9515
+  xgb  test weighted_f1        1 0.996610      NaN               0.9966
+  xgb  test    accuracy        1 0.996686      NaN               0.9967
+  xgb   val    macro_f1        1 0.987530      NaN               0.9875
+  xgb   val weighted_f1        1 0.999278      NaN               0.9993
+  xgb   val    accuracy        1 0.999286      NaN               0.9993
+[INFO] 2026-10-04 14:28:51 - [day_confound] benign test accuracy 0.2705, balanced 0.2333 (majority 0.2746, chance 0.2) in 16.7s
+[INFO] 2026-10-04 14:28:51 - Day confusion (benign test):
+pred_day   Monday  Tuesday  Wednesday  Thursday  Friday
+true_day                                               
+Monday      19987    12604      27456       954    6802
+Tuesday     17276    15169      15713       241    7877
+Wednesday   11535    10406      22686       488   10132
+Thursday     3657     4129       7572       221    3473
+Friday      10541    12342      15961       951    8735
+[INFO] 2026-10-04 14:28:51 - Top day-predictive features:
+xgb_feature      gain                feature
+        f70 74.900932 fwd_tcp_init_win_bytes
+        f56 22.578823           fwd_flag_psh
+        f53 22.325514               flag_rst
+        f23 21.953936        bwd_pkt_len_min
+        f18 21.005114    fwd_pkt_hdr_len_min
+        f52 19.392246               flag_fin
+        f55 19.085413               flag_psh
+        f22 18.460033        bwd_pkt_len_max
+        f29 16.282953                iat_max
+        f16 15.439468        fwd_pkt_len_std
+[INFO] 2026-10-04 14:28:51 - Finished in 2215.4 s

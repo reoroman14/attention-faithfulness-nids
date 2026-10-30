@@ -1,0 +1,10 @@
+{
+  "benign": 0,
+  "bot": 1,
+  "ddos": 2,
+  "dos_goldeneye": 3,
+  "dos_hulk": 4,
+  "dos_slowloris": 5,
+  "ssh_patator": 6,
+  "webattack": 7
+}

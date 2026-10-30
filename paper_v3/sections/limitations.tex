@@ -1,0 +1,72 @@
+% Limitations (Task 42): five grouped paragraphs (plan 32); handoff/37_narrative_v2.md section 3.5 applied; items
+% closed by Stage B removed.
+\section{Limitations}
+\label{sec:limitations}
+
+\paragraph{Threat model scope.}
+All attacks changed flow features, not packets, and a feature vector that our checker accepts may still not correspond
+to traffic that an attacker can produce.
+The attackers knew the model weights and, for A6, A6x, A8, A8x and the attackers of the controls, the detector; this is
+a strong assumption for evasion and a reasonable one for evaluating detectors, but results for weaker attackers may
+differ.
+The split into \nControls{} controls, \nDerived{} derived and \nImmutable{} immutable features, the budget rule and the
+class-family freezes were designed by hand from feature definitions, and other reasonable choices could change attack
+success and the attention measurements.
+At $\epsilon = \paramEpsHead$ a control may change by up to its full clean value, and the random control A0 already
+flipped \azeroBenignShareVzeroSeventeen{} (2017, V0) and \azeroBenignShareVzeroEighteen{} (2018) of the row observations
+to benign, so the results at $\epsilon = 0.5$ and $\epsilon = \paramEpsHead$ should be read together
+(Appendix~\ref{sec:supp}).
+We did not attack IG at an equal budget, so the stability of attention is not compared with that of an attribution
+method.
+
+\paragraph{Attacker strength.}
+A8x used surrogate gradients (soft ranks, temperature annealed from \axTauStart{} to \axTauEnd) for the
+\nRankScores{} rank-based consistency scores, which have no informative exact gradient; a better surrogate or a
+gradient-free search on these terms could find further undetected rows, which could only raise the share for D$_+$.
+The equal-effort protocol equalises candidates, steps and settings, not optimiser quality, and we did not measure
+whether A6 is as strong an attack on D as A8x is on D$_+$; the A8x rows evaded D about as often as the A6 rows aimed at
+it (Section~\ref{sec:a6x}), but this does not settle the question.
+The attackers of a1 and a2 used stand-ins (median $R^2$ \rtwoMedAoneSeventeen{} and \rtwoMedAtwoSeventeen{} on 2017,
+\rtwoMedAoneEighteen{} and \rtwoMedAtwoEighteen{} on 2018), like A8, so their results may understate how easily these
+controls can be evaded, and their comparison with D$_+$ under A8x is not at equal attacker strength.
+The attackers of all controls kept the selection rule of A6; A6x showed that this rule and the rule of A8x give the
+same flipped and undetected status for D, which was not tested for the controls.
+The attribution-only control b was not attacked adaptively: its run exceeded the memory of the graphics card and was
+stopped before any row was written, and an exact-objective attacker for b was not designed, so its family is untested
+against an adaptive attacker.
+
+\paragraph{Detector scope.}
+D is a linear model on four scores and D$_+$ adds \nConsistency{} linear terms; non-linear detectors might use the same
+scores differently.
+Control a1 uses the true class of every row, also at test time, and keeps the class-conditional distribution of
+attention; its realised test FPR on 2017 (\ablFprAoneSeventeen) was slightly higher than that of D$_+$
+(\ablFprDplusSeventeen; V1, $\epsilon = \paramEpsHead$).
+The validation AUROC of every detector is in-sample.
+The consistency scores of D$_+$ include IG, which costs much more than attention (on 2017, \msPerRowIGRange{} ms per
+row for IG with \apIGSteps{} steps against \msPerRowAttnRange{} ms for attention); we did not measure the end-to-end
+latency of the detectors.
+
+\paragraph{Data.}
+The 2018 data have no timestamps, so we split at random.
+Test rows within \paramNDThr{} of a training row were common in both datasets (Section~\ref{sec:rq3}); the filter was
+applied after the experiments, and models and detectors were trained with these rows present.
+Known design and error issues exist in benchmark NIDS datasets more generally \cite{flood2024,lanvin2022}.
+Web attack had \nWebTestEighteen{} test rows and \nWebValEighteen{} validation explanation rows on 2018, so its per-class
+estimates are uncertain; FTP-Patator and DoS Slowhttptest were removed from 2018 and PortScan does not occur in it, so
+all comparisons use the \nCommonClasses{} common classes.
+On 2018 D alone left only \axHeadVoneEighteenD{} of the source rows successful and undetected, so the detector
+comparisons there have little room to differ.
+The 2018 models ran to the maximum number of epochs without early stopping, so they may not have converged
+(Appendix~\ref{sec:appendix}).
+
+\paragraph{Statistics and scope.}
+We used \nSeeds{} seeds per dataset, and several results varied in sign across seeds; in the equal-effort comparison
+against A8x, \axHeadOppSeedsSeventeen{} seed on 2017 and \axHeadOppSeedsEighteen{} on 2018 had the opposite sign.
+Our bootstrap intervals resample source rows within seed (equal-effort union) or pooled over seeds (paired TPR
+differences), reuse the same source rows in every seed and do not capture seed variance, so they do not show that an
+effect holds across seeds.
+The attackers A8x and A6x were designed after the earlier results were known; their outcome rules and both amendments
+were recorded before any of their attack rows existed (Section~\ref{sec:protocol}).
+We studied two datasets and one model family, without human evaluation or deployment; faithfulness was measured by
+deletion and insertion curves, not by human judgement, and we ran a parameter-randomisation check
+(Appendix~\ref{sec:rand}) but no label-randomisation check.

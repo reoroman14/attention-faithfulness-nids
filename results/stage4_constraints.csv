@@ -1,0 +1,73 @@
+feature,family,role,mutable,direction,integer,derived_from,budgeted,frozen_for_class_families,zero_floor_scale,rationale
+flow_duration,IAT/timing,control,yes,add-only,yes,,yes,slow_dos;scan,133607.5,"attacker can delay its own packets, which only lengthens the flow; it cannot make the server answer faster"
+down_up_ratio,rates/ratios,derived,yes,either,no,bwd_pkt_cnt / fwd_pkt_cnt,no,,1.0,verified: equals bwd_pkt_cnt / fwd_pkt_cnt (0 when fwd_pkt_cnt = 0) on 100% of train rows
+pkt_len_max,packet length stats,derived,yes,either,yes,"max(fwd_pkt_len_max, bwd_pkt_len_max)",no,,214.0,verified on 100% of train rows
+pkt_len_min,packet length stats,derived,yes,either,yes,"fwd_pkt_len_min if clean pkt_len_min == clean fwd_pkt_len_min, else min(clean pkt_len_min, fwd_pkt_len_min)",no,,42.0,"bwd_pkt_len_min is 0 on 99.8% of train rows (extractor quirk), so the backward minimum is only known through pkt_len_min; this rule is exact given the observed values"
+pkt_len_mean,packet length stats,derived,yes,either,no,(fwd_pkt_len_tot + bwd_pkt_len_tot) / (fwd_pkt_cnt + bwd_pkt_cnt),no,,106.0,verified on 100% of train rows
+pkt_len_var,packet length stats,derived,yes,either,no,pooled sample variance of the fwd and bwd length families (ddof 1),no,,11552.0,verified on 100% of train rows
+pkt_len_std,packet length stats,derived,yes,either,no,sqrt(pkt_len_var),no,,107.48023223876953,verified on 100% of train rows
+bytes_per_s,rates/ratios,derived,yes,either,no,(fwd_pkt_len_tot + bwd_pkt_len_tot) / flow_duration * 1e6 (0 if flow_duration = 0),no,,6485.14208984375,verified on 100% of train rows
+pkt_per_s,rates/ratios,derived,yes,either,no,(fwd_pkt_cnt + bwd_pkt_cnt) / flow_duration * 1e6,no,,49.24703407287598,verified on 100% of train rows
+fwd_pkt_per_s,rates/ratios,derived,yes,either,no,fwd_pkt_cnt / flow_duration * 1e6,no,,20.53177261352539,verified on 100% of train rows
+bwd_pkt_per_s,rates/ratios,derived,yes,either,no,bwd_pkt_cnt / flow_duration * 1e6,no,,24.018831253051758,verified on 100% of train rows
+fwd_pkt_cnt,packet counts,control,yes,add-only,yes,,yes,slow_dos;scan,3.0,attacker can inject extra forward packets; it cannot remove packets the attack needs
+fwd_pkt_len_tot,byte counts,control,yes,add-only,yes,,yes,,102.0,payload padding and injected packets only add bytes; the attack payload cannot be removed
+fwd_pkt_len_max,packet length stats,control,yes,add-only,yes,,yes,,52.0,padding or a larger injected packet can only raise the maximum
+fwd_pkt_len_min,packet length stats,control,yes,either,yes,,yes,,42.0,"padding raises it, an injected small packet lowers it; it can only decrease when packets are added, and it cannot rise when it is also the flow minimum (the backward minimum is unknown)"
+fwd_pkt_len_mean,packet length stats,derived,yes,either,no,fwd_pkt_len_tot / fwd_pkt_cnt,no,,47.0,verified on 100% of train rows
+fwd_pkt_len_std,packet length stats,control,yes,either,no,,yes,,151.52047729492188,"redistributing padding changes the spread; kept inside the exact feasibility bounds for (n, min, mean, max)"
+fwd_pkt_hdr_len_tot,window/header,control,yes,add-only,yes,,yes,,72.0,TCP options can be added and injected packets add headers; each added packet adds at least fwd_pkt_hdr_len_min bytes; at most 60 bytes per packet
+fwd_pkt_hdr_len_min,window/header,immutable,no,none,yes,,no,,20.0,8 (UDP) / 20+ (TCP) is protocol-defining; injected packets are assumed to use at least this header length
+fwd_non_empty_pkt_cnt,packet counts,control,yes,add-only,yes,,yes,,2.0,padding an empty packet or injecting a data packet adds non-empty packets; equals fwd_pkt_cnt iff fwd_pkt_len_min > 0 (verified)
+bwd_pkt_cnt,packet counts,immutable,no,none,yes,,no,,2.0,backward packets are sent by the victim
+bwd_pkt_len_tot,byte counts,immutable,no,none,yes,,no,,358.0,backward bytes are sent by the victim
+bwd_pkt_len_max,packet length stats,immutable,no,none,yes,,no,,198.0,victim-side
+bwd_pkt_len_min,packet length stats,immutable,no,none,yes,,no,,38.0,"victim-side (and 0 on 99.8% of rows, an extractor quirk)"
+bwd_pkt_len_mean,packet length stats,immutable,no,none,no,,no,,158.0,victim-side
+bwd_pkt_len_std,packet length stats,immutable,no,none,no,,no,,746.2312927246094,victim-side
+bwd_pkt_hdr_len_tot,window/header,immutable,no,none,yes,,no,,32.0,victim-side
+bwd_pkt_hdr_len_min,window/header,immutable,no,none,yes,,no,,20.0,victim-side
+bwd_non_empty_pkt_cnt,packet counts,immutable,no,none,yes,,no,,2.0,victim-side
+iat_max,IAT/timing,control,yes,either,yes,,yes,slow_dos;scan,90886.5,"delays lengthen gaps, injected packets split gaps; <= flow_duration and >= idle_max"
+iat_min,IAT/timing,control,yes,either,yes,,yes,slow_dos;scan,4.0,as iat_max; frozen when the clean value is negative (clock artefact)
+iat_mean,IAT/timing,derived,yes,either,no,flow_duration / (fwd_pkt_cnt + bwd_pkt_cnt - 1),no,,30570.0,verified on 100% of train rows
+iat_std,IAT/timing,control,yes,either,no,,yes,slow_dos;scan,48295.4296875,kept inside the feasibility bounds of the IAT family
+fwd_iat_tot,IAT/timing,control,yes,add-only,yes,,yes,slow_dos;scan,30349.0,time from first to last forward packet; delays only lengthen it; <= flow_duration (== when no bwd packets)
+fwd_iat_max,IAT/timing,control,yes,either,yes,,yes,slow_dos;scan,25384.0,delays and injected packets; <= fwd_iat_tot
+fwd_iat_min,IAT/timing,control,yes,either,yes,,yes,slow_dos;scan,6.0,delays and injected packets
+fwd_iat_mean,IAT/timing,derived,yes,either,no,fwd_iat_tot / (fwd_pkt_cnt - 1),no,,9809.3984375,verified on 100% of train rows
+fwd_iat_std,IAT/timing,control,yes,either,no,,yes,slow_dos;scan,112853.4453125,kept inside the feasibility bounds
+bwd_iat_tot,IAT/timing,immutable,no,none,yes,,no,,94543.5,victim-side packet timing
+bwd_iat_max,IAT/timing,immutable,no,none,yes,,no,,56487.0,victim-side packet timing
+bwd_iat_min,IAT/timing,immutable,no,none,yes,,no,,16.0,victim-side packet timing
+bwd_iat_mean,IAT/timing,immutable,no,none,no,,no,,17449.5830078125,victim-side packet timing
+bwd_iat_std,IAT/timing,immutable,no,none,no,,no,,99531.68359375,victim-side packet timing
+active_max,active/idle,immutable,no,none,yes,,no,,268227.0,depends on the 5 s idle threshold and per-packet timing that the flow statistics do not determine; held fixed (conservative: no direct attacker control)
+active_min,active/idle,immutable,no,none,yes,,no,,50669.0,depends on the 5 s idle threshold and per-packet timing that the flow statistics do not determine; held fixed (conservative: no direct attacker control)
+active_mean,active/idle,immutable,no,none,no,,no,,133975.0,depends on the 5 s idle threshold and per-packet timing that the flow statistics do not determine; held fixed (conservative: no direct attacker control)
+active_std,active/idle,immutable,no,none,no,,no,,144386.03125,depends on the 5 s idle threshold and per-packet timing that the flow statistics do not determine; held fixed (conservative: no direct attacker control)
+idle_max,active/idle,immutable,no,none,yes,,no,,10027234.0,depends on the 5 s idle threshold and per-packet timing that the flow statistics do not determine; held fixed (conservative: no direct attacker control)
+idle_min,active/idle,immutable,no,none,yes,,no,,9996706.0,depends on the 5 s idle threshold and per-packet timing that the flow statistics do not determine; held fixed (conservative: no direct attacker control)
+idle_mean,active/idle,immutable,no,none,no,,no,,10009951.5,depends on the 5 s idle threshold and per-packet timing that the flow statistics do not determine; held fixed (conservative: no direct attacker control)
+idle_std,active/idle,immutable,no,none,no,,no,,66572.703125,depends on the 5 s idle threshold and per-packet timing that the flow statistics do not determine; held fixed (conservative: no direct attacker control)
+flag_syn,flag counts,immutable,no,none,yes,,no,,2.0,"handshake semantics, protocol-defining"
+flag_fin,flag counts,immutable,no,none,yes,,no,,1.0,"teardown semantics, protocol-defining"
+flag_rst,flag counts,immutable,no,none,yes,,no,,1.0,"teardown semantics, protocol-defining"
+flag_ack,flag counts,control,yes,add-only,yes,,yes,slow_dos;scan,10.0,injected packets may carry ACK; increase <= number of injected forward packets
+flag_psh,flag counts,derived,yes,either,yes,fwd_flag_psh + bwd_flag_psh,no,,4.0,verified on 100% of train rows
+fwd_flag_psh,flag counts,control,yes,add-only,yes,,yes,,2.0,attacker sets PSH on its own data packets; <= fwd_non_empty_pkt_cnt (verified)
+bwd_flag_psh,flag counts,immutable,no,none,yes,,no,,1.0,victim-side
+flag_cwr,flag counts,immutable,no,none,yes,,no,,1.0,"congestion signalling, protocol-defining"
+flag_ece,flag counts,immutable,no,none,yes,,no,,2.0,"congestion signalling, protocol-defining"
+fwd_bulk_bytes_mean,bulk,immutable,no,none,no,,no,,180.0,"bulk detection is a per-packet state machine (>= 4 consecutive data packets, 1 s gaps) that the flow statistics do not determine; held fixed (conservative)"
+fwd_bulk_pkt_mean,bulk,immutable,no,none,no,,no,,4.0,"bulk detection is a per-packet state machine (>= 4 consecutive data packets, 1 s gaps) that the flow statistics do not determine; held fixed (conservative)"
+fwd_bulk_rate_mean,bulk,immutable,no,none,no,,no,,5177.826171875,"bulk detection is a per-packet state machine (>= 4 consecutive data packets, 1 s gaps) that the flow statistics do not determine; held fixed (conservative)"
+bwd_bulk_bytes_mean,bulk,immutable,no,none,no,,no,,11595.0,"bulk detection is a per-packet state machine (>= 4 consecutive data packets, 1 s gaps) that the flow statistics do not determine; held fixed (conservative)"
+bwd_bulk_pkt_mean,bulk,immutable,no,none,no,,no,,4.0,"bulk detection is a per-packet state machine (>= 4 consecutive data packets, 1 s gaps) that the flow statistics do not determine; held fixed (conservative)"
+bwd_bulk_rate_mean,bulk,immutable,no,none,no,,no,,15338235.0,"bulk detection is a per-packet state machine (>= 4 consecutive data packets, 1 s gaps) that the flow statistics do not determine; held fixed (conservative)"
+fwd_subflow_bytes_mean,subflow,derived,yes,either,no,fwd_pkt_len_tot / n_sub,no,,84.0,n_sub = fwd_pkt_cnt / fwd_subflow_pkt_mean is an integer shared by all 4 subflow features (verified); held at its clean value (delays assumed not to create or merge subflows)
+fwd_subflow_pkt_mean,subflow,derived,yes,either,no,fwd_pkt_cnt / n_sub,no,,2.0,see fwd_subflow_bytes_mean
+bwd_subflow_bytes_mean,subflow,immutable,no,none,no,bwd_pkt_len_tot / n_sub,no,,288.0,"bwd bases and n_sub are fixed, so it never changes"
+bwd_subflow_pkt_mean,subflow,immutable,no,none,no,bwd_pkt_cnt / n_sub,no,,2.0,"bwd bases and n_sub are fixed, so it never changes"
+fwd_tcp_init_win_bytes,window/header,control,yes,either,yes,,yes,,256.0,"attacker chooses its initial window (0..65535); frozen when -1 (no TCP handshake seen, e.g. UDP)"
+bwd_tcp_init_win_bytes,window/header,immutable,no,none,yes,,no,,122.0,victim-side

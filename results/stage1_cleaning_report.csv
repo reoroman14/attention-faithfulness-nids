@@ -1,0 +1,6 @@
+day,rows_read,rows_written,dropped_labels,dropped_nan_inf,dropped_nan_inf_by_class,rows_with_inf,rows_with_nan,float32_overflow_rows,coerced_columns,coerce_failures
+Monday,367181,367181,{},0,{},0,0,0,,0
+Tuesday,319637,319637,{},0,{},0,0,0,,0
+Wednesday,495237,495226,"{""heartbleed"": 11}",0,{},0,0,0,,0
+Thursday,112481,112469,"{""webattack_sql_injection"": 12}",0,{},0,0,0,,0
+Friday,542962,542962,{},0,{},0,0,0,,0

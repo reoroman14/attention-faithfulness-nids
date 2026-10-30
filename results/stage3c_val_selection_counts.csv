@@ -1,0 +1,12 @@
+class,test_support,correct_seed0,correct_seed1,correct_seed2,correct_all_seeds,selected,below_min,survivors_by_day,selected_by_day
+benign,246910,246739,246710,246730,246694,500,False,Friday:48510;Monday:67759;Thursday:19047;Tuesday:56180;Wednesday:55198,Friday:98;Monday:137;Thursday:39;Tuesday:114;Wednesday:112
+bot,144,143,144,144,143,143,False,Friday:143,Friday:143
+ddos,18754,18754,18754,18754,18754,500,False,Friday:18754,Friday:500
+dos_goldeneye,1326,1326,1326,1326,1326,500,False,Wednesday:1326,Wednesday:500
+dos_hulk,31159,31141,31146,31146,31141,500,False,Wednesday:31141,Wednesday:500
+dos_slowhttptest,923,860,844,891,814,500,False,Wednesday:814,Wednesday:500
+dos_slowloris,1027,1027,1027,1027,1027,500,False,Wednesday:1027,Wednesday:500
+ftp_patator,784,784,784,784,784,500,False,Tuesday:784,Tuesday:500
+portscan,327,326,327,327,326,326,False,Friday:326,Friday:326
+ssh_patator,580,579,579,580,579,500,False,Tuesday:579,Tuesday:500
+webattack,395,393,389,393,389,389,False,Thursday:389,Thursday:389

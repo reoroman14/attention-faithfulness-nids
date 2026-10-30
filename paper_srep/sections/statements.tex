@@ -1,0 +1,31 @@
+% Statements after the references (Task 46), in the order of the journal: Funding, Author contributions, Data
+% availability, Additional information (competing interests). Acknowledgements are omitted (optional; the earlier
+% submission had "Not applicable"). The texts are decision macros in decisions.tex.
+\section*{Funding}
+\fundingStatement
+
+\section*{Author contributions}
+\contributionsStatement
+
+\section*{Data availability}
+\label{sec:data}
+The datasets analysed in this study are publicly available from their original sources: LYCOS-IDS2017
+\cite{rosay2021,rosay2022}, LycoS-Unicas-IDS2018 \cite{cantone2024}, and CIC-IDS2017 and CSE-CIC-IDS2018
+\cite{sharafaldin2018}, the latter through AWS Open Data \cite{aws_cse_cic_ids2018}.
+Per-flow rows and features are not redistributed.
+The code, configuration files, summary result files and the scripts that generate every table, figure and number in
+this article are in a GitHub repository \cite{repo_attn_nids}.
+\repositoryStatus{}
+Per-row intermediate files (parquet, npz and pkl) are not in the repository because of their size.
+
+\ifethics
+\section*{Ethics declarations}
+\ethicsStatement
+\fi
+
+\section*{Additional information}
+\textbf{Competing interests.} \competingStatement
+
+\textbf{Supplementary information} accompanies this paper as a separate file (Supplementary Notes
+\suppNoteImpl{} to \suppNoteLimits, Supplementary Tables \suppTabData{} to \suppTabRuns{} and Supplementary Figures
+\suppFigMassRatio{} to \suppFigPerClass).

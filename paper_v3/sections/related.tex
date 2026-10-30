@@ -1,0 +1,73 @@
+% Related work (Task 42): the submitted text, trimmed; every citation of the submitted version kept; positioning
+% paragraph updated for A8x (handoff/37_narrative_v2.md section 6, rows 2 and 3).
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Attention as explanation.}
+Whether attention weights explain model decisions has been argued in both directions for text models
+\cite{jain2019,wiegreffe2019,serrano2019}, and Jacovi and Goldberg argue for a graded notion of faithfulness and give
+guidelines for its evaluation \cite{jacovi2020}.
+Because a Transformer mixes information across layers, attention rollout and attention flow aggregate attention across
+layers \cite{abnar2020}, relevance propagation combines attention with gradients \cite{chefer2021}, and ALTI also
+accounts for the residual connection and layer normalisation \cite{ferrando2022}.
+For tabular data, TabNet derives feature attributions from its sequential attention \cite{arik2021}, the authors of the
+FT-Transformer averaged the attention maps of the classification token ([CLS]) as a feature-importance estimate
+\cite{gorishniy2021}, and attention maps of tabular transformers have been used qualitatively \cite{somepalli2021};
+neither use establishes that the maps are faithful.
+
+\paragraph{Attribution methods and faithfulness evaluation.}
+We compared attention with Integrated Gradients \cite{sundararajan2017}, GradientSHAP, which builds on Shapley additive explanations (SHAP) \cite{lundberg2017} and is computed as expected gradients \cite{erion2021},
+occlusion \cite{zeiler2014}, and TreeSHAP on a gradient-boosted reference model \cite{lundberg2020}, using deletion and
+insertion curves \cite{petsiuk2018,samek2017}, the perturbation curve gap \cite{samek2017} and a parameter-randomisation
+check \cite{adebayo2018}.
+Removal-based scores can be confounded by the distribution shift of the masked inputs \cite{hooker2019}, can rank
+methods inconsistently across evaluation strategies \cite{rong2022}, and can be statistically unreliable
+\cite{tomsett2020}; our curves mask with the training mean without retraining and share these caveats.
+
+\paragraph{Fragility of explanations and of explanation-based monitors.}
+Explanations can be changed by small input perturbations without changing the prediction
+\cite{ghorbani2019,dombrowski2019}, attention can be made deceptive through training \cite{pruthi2020}, and
+explanations can be manipulated through the model \cite{heo2019,slack2020}; Baniecki and Biecek survey these attacks
+and the proposed countermeasures \cite{baniecki2024}, and a review of user-centric intelligent systems treats
+explainability together with fairness \cite{zahid2025}.
+Explanation methods have been used to detect adversarial inputs \cite{fidel2020}, and Zhang et al. construct inputs that
+mislead a classifier and its interpretation model at the same time \cite{zhang2020}.
+Detectors of adversarial inputs have repeatedly been bypassed by attacks designed for them, so such detectors need to be
+evaluated with adaptive attacks that model the detector \cite{carlini2017,tramer2020}.
+
+\paragraph{Explainability for network intrusion detection.}
+Warnecke et al. propose criteria for evaluating explanation methods in security \cite{warnecke2020}; Tritscher et al.
+find that the quality of SHAP explanations for NIDS depends on the replacement data \cite{tritscher2023}; and Arreche
+and Abdallah compare white-box and black-box methods on three intrusion datasets, among them CIC-IDS2017 (from the
+Canadian Institute for Cybersecurity, CIC) \cite{arreche2025}.
+Several NIDS studies pair ensemble detectors with explanations to describe the detector or to select its features
+\cite{ahmed2024haenid,ahmed2025hcivad,ahmed2025consensus,ahmed2024shap}, deep learning has been applied to
+denial-of-service (DoS) and distributed denial-of-service (DDoS) detection in 5G networks \cite{albashayreh2025}, and
+transformer models for flow-based NIDS \cite{manocchio2024} and deep models for tabular data \cite{borisov2024} have been
+compared.
+Closest to our monitoring question, Maseno et al. attack recurrent intrusion detection system (IDS) models with the fast
+gradient sign method (FGSM) and projected gradient descent (PGD) and use the drift of SHAP explanations as an auxiliary
+detection signal, which they report as informative but not perfectly separable at larger scale \cite{maseno2026}.
+
+\paragraph{Adversarial attacks on NIDS and dataset quality.}
+Feature-space attacks on NIDS can produce flows that no real traffic could generate, which motivates problem-space
+constraints and validity checks \cite{pierazzi2020,alhussien2024} and realistic threat models \cite{apruzzese2022};
+constrained attacks on NIDS include JSMA under domain constraints \cite{sheatsley2022} and black-box botnet evasion
+\cite{debicha2023}, and Khaleel et al. review countermeasures \cite{khaleel2024}.
+Our constraint model follows this line in feature space; it does not generate packets.
+LYCOS-IDS2017 re-extracts the features of CIC-IDS2017 after an analysis of problems in the original flows
+\cite{rosay2021,rosay2022}, and LycoS-Unicas-IDS2018 applies the corresponding corrections to CSE-CIC-IDS2018 (a collaboration of the Communications Security Establishment, CSE, and CIC) \cite{cantone2024}.
+Issues of the original datasets \cite{sharafaldin2018} are documented in \cite{engelen2021,liu2022,lanvin2022}, of
+benchmark NIDS datasets in general in \cite{flood2024}, and pitfalls of learning-based security evaluations in
+\cite{arp2022}.
+
+\paragraph{Positioning.}
+These lines of work treat the faithfulness of attention, explanation-based monitors and constrained attacks on NIDS
+largely separately.
+We bring them together for one model and task: an FT-Transformer on two corrected flow datasets, with attention
+compared to four attribution methods on clean data and under protocol-constrained attacks, and attention-attribution
+consistency scores evaluated as an addition to a confidence-and-distance detector against an attacker that ignores them,
+one that models them through differentiable stand-ins and one that optimises their exact values, with control detectors
+that separate the role of attention.
+We do not propose a new explanation method or a new detector, and we do not claim that attention is unfaithful in
+general; the consistency scores gave no gain against the strongest adaptive attacker we built.

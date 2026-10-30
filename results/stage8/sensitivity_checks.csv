@@ -1,0 +1,46 @@
+check,value,expected,pass
+"2017 Stage 5 near-duplicate count, bot",0.0,0,True
+"2017 Stage 5 near-duplicate count, ddos",0.0,0,True
+"2017 Stage 5 near-duplicate count, dos_goldeneye",0.0,0,True
+"2017 Stage 5 near-duplicate count, dos_hulk",1.0,1,True
+"2017 Stage 5 near-duplicate count, dos_slowhttptest",128.0,128,True
+"2017 Stage 5 near-duplicate count, dos_slowloris",73.0,73,True
+"2017 Stage 5 near-duplicate count, ftp_patator",0.0,0,True
+"2017 Stage 5 near-duplicate count, portscan",0.0,0,True
+"2017 Stage 5 near-duplicate count, ssh_patator",0.0,0,True
+"2017 Stage 5 near-duplicate count, webattack",69.0,69,True
+"2017 Stage 5 near-duplicate count, ALL",271.0,271,True
+2018 Stage 7d dos_slowloris near-duplicate count (filtered by design),0.0,0,True
+"2017 seed 0 V0 success vs T5 source (max abs diff, 1098 merged rows)",9.71445146547012e-17,0 (< 1e-12),True
+2017 seed 0 V0 mass ratio vs T6 source (max abs diff; float32 values via CSV),4.707794198921533e-08,< 1e-6,True
+2017 seed 0 V0 margin AOPC gap excess vs T6 source (max abs diff; via CSV),1.7763568394002505e-15,< 1e-6,True
+"2017 seed 1 V0 success vs T5 source (max abs diff, 1071 merged rows)",8.326672684688674e-17,0 (< 1e-12),True
+2017 seed 1 V0 mass ratio vs T6 source (max abs diff; float32 values via CSV),4.811553955264003e-08,< 1e-6,True
+2017 seed 1 V0 margin AOPC gap excess vs T6 source (max abs diff; via CSV),1.7763568394002505e-15,< 1e-6,True
+"2017 seed 2 V0 success vs T5 source (max abs diff, 1143 merged rows)",1.1102230246251565e-16,0 (< 1e-12),True
+2017 seed 2 V0 mass ratio vs T6 source (max abs diff; float32 values via CSV),4.871063241651541e-08,< 1e-6,True
+2017 seed 2 V0 margin AOPC gap excess vs T6 source (max abs diff; via CSV),3.552713678800501e-15,< 1e-6,True
+2017 V0 defender table vs T7 (max abs diff),0.0,0.0,True
+2017 V0 per-class table vs T9 source (max abs diff),0.0,0.0,True
+"2017 V0 equal-effort union vs T8 (incl. CI, max abs diff)",0.0,0.0,True
+2017 seed 0 recovered test negatives: max |msp - saved msp| (CPU recompute),2.384185791015625e-07,< 1e-4,True
+2017 seed 1 recovered test negatives: max |msp - saved msp| (CPU recompute),2.384185791015625e-07,< 1e-4,True
+2017 seed 2 recovered test negatives: max |msp - saved msp| (CPU recompute),3.5762786865234375e-07,< 1e-4,True
+"2018 seed 0 V0 success vs T5 source (max abs diff, 1107 merged rows)",1.1102230246251565e-16,0 (< 1e-12),True
+2018 seed 0 V0 mass ratio vs T6 source (max abs diff; float32 values via CSV),4.417572019299598e-08,< 1e-6,True
+2018 seed 0 V0 margin AOPC gap excess vs T6 source (max abs diff; via CSV),1.7763568394002505e-15,< 1e-6,True
+"2018 seed 1 V0 success vs T5 source (max abs diff, 1179 merged rows)",1.1102230246251565e-16,0 (< 1e-12),True
+2018 seed 1 V0 mass ratio vs T6 source (max abs diff; float32 values via CSV),4.9465942453252865e-08,< 1e-6,True
+2018 seed 1 V0 margin AOPC gap excess vs T6 source (max abs diff; via CSV),3.552713678800501e-15,< 1e-6,True
+"2018 seed 2 V0 success vs T5 source (max abs diff, 1134 merged rows)",9.71445146547012e-17,0 (< 1e-12),True
+2018 seed 2 V0 mass ratio vs T6 source (max abs diff; float32 values via CSV),4.047851565047722e-08,< 1e-6,True
+2018 seed 2 V0 margin AOPC gap excess vs T6 source (max abs diff; via CSV),3.552713678800501e-15,< 1e-6,True
+2018 V0 defender table vs T7 (max abs diff),0.0,0.0,True
+2018 seed 0 V0 succ_undet vs results/stage7/stage7e/seed0/summary_attacks.csv,7.632783294297951e-17,0.0,True
+2018 seed 1 V0 succ_undet vs results/stage7/stage7e/seed1/summary_attacks.csv,7.979727989493313e-17,0.0,True
+2018 seed 2 V0 succ_undet vs results/stage7/stage7e/seed2/summary_attacks.csv,7.37257477290143e-17,0.0,True
+2018 V0 per-class table vs T9 source (max abs diff),8.326672684688674e-17,0.0,True
+"2018 V0 equal-effort union vs T8 (incl. CI, max abs diff)",9.020562075079397e-17,0.0,True
+2018 seed 0 recovered test negatives: max |msp - saved msp| (CPU recompute),3.5762786865234375e-07,< 1e-4,True
+2018 seed 1 recovered test negatives: max |msp - saved msp| (CPU recompute),3.5762786865234375e-07,< 1e-4,True
+2018 seed 2 recovered test negatives: max |msp - saved msp| (CPU recompute),2.384185791015625e-07,< 1e-4,True

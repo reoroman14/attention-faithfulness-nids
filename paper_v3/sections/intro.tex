@@ -1,0 +1,66 @@
+% Introduction (Task 42): three RQs and the contributions of handoff/37_narrative_v2.md section 4.
+\section{Introduction}
+\label{sec:intro}
+
+Machine-learning network intrusion detection systems (NIDS) classify network flows from statistical features, and transformer models for tabular data have
+been applied to this task \cite{gorishniy2021,manocchio2024}.
+Whether attention is a faithful explanation is debated in natural language processing
+\cite{jain2019,wiegreffe2019,serrano2019}, and the question has received less attention for flow-feature models.
+
+Two further questions arise in a security setting.
+First, an attacker who perturbs a flow to evade the detector may also change the explanation, so the behaviour of
+attention under attack matters for any analyst who reads it \cite{ghorbani2019,dombrowski2019,pruthi2020}.
+Second, if attention and attribution methods agree on clean traffic but disagree on adversarial traffic, their
+consistency could serve as an attack signal \cite{fidel2020}.
+A detector built on such a signal has to be evaluated against attackers that model it \cite{tramer2020,carlini2017},
+and the strength of that attacker decides what the evaluation can show.
+Both questions only make sense for attacks whose flows are consistent with written protocol constraints, so we
+restricted the attacker to a hand-built model of flow-feature constraints and checked every adversarial row with a
+separate validity checker \cite{pierazzi2020,alhussien2024}.
+
+Our central finding concerns the second question.
+Against attackers that optimised the exact score of the detector they faced, with surrogate gradients only for the
+\nRankScores{} rank-based consistency scores, adding attention-attribution consistency scores to a
+confidence-and-distance detector raised the share of successful and undetected attack rows, by \axHeadVoneSeventeenAbs{}
+on 2017 and by \axHeadVoneEighteenAbs{} on 2018, with \axHeadOppSeedsPhrase{} of the opposite sign.
+An attacker with differentiable stand-ins for the same scores had shown a reduction of \axStandinVoneSeventeenAbs{} on
+2017, so that result did not hold.
+Giving the attacker of the base detector the same iterate selection as the stronger attacker of the extended detector
+changed no row, so the reversal does not come from the selection rule.
+
+We asked three research questions (RQ).
+\begin{description}
+  \item[RQ1] Is attention a faithful explanation of the FT-Transformer, on clean flows and under protocol-constrained
+             attacks?
+  \item[RQ2] Do attention-attribution consistency scores improve a confidence-and-distance detector, first against an
+             attacker that ignores them and then against attackers that model them, from differentiable stand-ins to
+             the detector's exact score? Is any gain specific to attention?
+  \item[RQ3] How much do the answers depend on the dataset and its data quality?
+\end{description}
+We answered them with an FT-Transformer trained with \nSeeds{} seeds on two datasets, LYCOS-IDS2017 and
+LycoS-Unicas-IDS2018, using the \nCommonClasses{} attack classes common to both for every comparison.
+The contributions are the following.
+\begin{enumerate}
+  \item \emph{Faithfulness of attention in NIDS.} On clean data, a comparison of three attention variants with four
+        attribution methods by agreement and by deletion and insertion faithfulness on two datasets; under
+        protocol-constrained attacks, measurements showing that attention was stiff but less faithful than Integrated
+        Gradients (IG) and occlusion, and that the faithfulness loss after an evasion follows the prediction flip
+        (RQ1; Section~\ref{sec:rq1}).
+  \item \emph{An adaptive evaluation of consistency monitoring with three attacker levels.} An attacker that ignores
+        the consistency scores (A6), one with differentiable stand-ins (A8) and one that optimises the exact detector
+        score with surrogate gradients only for the rank-based scores (A8x), compared under an equal-effort protocol
+        with outcome rules recorded before the runs.
+        The gain of the extended detector against the stand-in attacker reversed against the exact-objective attacker:
+        on 2017 the difference went from \axStandinVoneSeventeen{} to \axHeadVoneSeventeen.
+        This is a concrete case in which a stand-in adaptive attack overstated what a detector achieves
+        (RQ2; Sections~\ref{sec:protocol} and~\ref{sec:rq2}).
+  \item \emph{Control detectors that separate attention from other scores.} \nControlsAll{} controls, \nControlsAttacked{} of them
+        attacked by adversaries that modelled their own scores.
+        The gain against the ignoring attacker was largely obtained without attention, and no control was clearly
+        better than the confidence-and-distance detector on both datasets under its own adaptive attacker
+        (RQ2; Section~\ref{sec:rq2}).
+\end{enumerate}
+The constraint model with its validity checker and the near-duplicate analysis are method details that support these
+results (Sections~\ref{sec:constraints} and~\ref{sec:rq3}).
+Both halves of the title, stable but not faithful attention and the limits of consistency monitoring, refer to these two
+datasets only.

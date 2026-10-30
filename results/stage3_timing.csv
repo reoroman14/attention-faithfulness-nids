@@ -1,0 +1,41 @@
+seed,method,n_rows,seconds,ms_per_row,peak_gpu_mem_gb
+xgb,treeshap_xgb,4766,0.09,0.02,0.011
+0,attention (all variants),4766,0.19,0.039,0.292
+0,ig_zero,4766,26.21,5.499,1.747
+0,ig_benign (K=10),4766,259.72,54.494,1.755
+0,"gshap (bg=100, n=50)",4766,41.96,8.803,2.24
+0,"occlusion (LOFO, train mean)",4766,8.88,1.862,1.755
+0,curves x13 rankings (train_mean),4766,355.72,74.638,1.758
+0,curves x13 rankings (benign_sample),4766,350.88,73.622,1.758
+0,robustness extra: attention (all variants),21,0.01,0.262,0.037
+0,robustness extra: ig_zero,21,0.2,9.701,1.128
+0,robustness extra: ig_benign (K=10),21,0.92,43.96,1.128
+0,"robustness extra: gshap (bg=100, n=50)",21,0.16,7.557,1.475
+0,"robustness extra: occlusion (LOFO, train mean)",21,0.04,2.088,0.66
+0,randomisation (8 levels),550,21.0,38.176,1.133
+1,attention (all variants),4766,0.15,0.032,0.3
+1,ig_zero,4766,19.54,4.1,1.755
+1,ig_benign (K=10),4766,199.6,41.879,1.755
+1,"gshap (bg=100, n=50)",4766,34.54,7.247,2.239
+1,"occlusion (LOFO, train mean)",4766,8.86,1.858,1.755
+1,curves x13 rankings (train_mean),4766,347.78,72.972,1.758
+1,curves x13 rankings (benign_sample),4766,347.95,73.008,1.758
+1,robustness extra: attention (all variants),82,0.01,0.102,0.074
+1,robustness extra: ig_zero,82,0.63,7.734,1.131
+1,robustness extra: ig_benign (K=10),82,3.42,41.721,1.131
+1,"robustness extra: gshap (bg=100, n=50)",82,0.59,7.211,2.237
+1,"robustness extra: occlusion (LOFO, train mean)",82,0.15,1.863,1.722
+1,randomisation (8 levels),550,18.67,33.954,1.131
+2,attention (all variants),4766,0.15,0.032,0.3
+2,ig_zero,4766,18.74,3.933,1.755
+2,ig_benign (K=10),4766,188.16,39.48,1.755
+2,"gshap (bg=100, n=50)",4766,33.57,7.043,2.239
+2,"occlusion (LOFO, train mean)",4766,8.87,1.862,1.755
+2,curves x13 rankings (train_mean),4766,348.17,73.054,1.758
+2,curves x13 rankings (benign_sample),4766,348.31,73.081,1.758
+2,robustness extra: attention (all variants),58,0.01,0.151,0.061
+2,robustness extra: ig_zero,58,0.45,7.829,1.131
+2,robustness extra: ig_benign (K=10),58,2.37,40.931,1.131
+2,"robustness extra: gshap (bg=100, n=50)",58,0.43,7.353,2.237
+2,"robustness extra: occlusion (LOFO, train mean)",58,0.11,1.857,1.722
+2,randomisation (8 levels),550,19.4,35.267,1.131

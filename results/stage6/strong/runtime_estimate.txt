@@ -1,0 +1,1 @@
+1.021 h, chunk 100, 0.883 s/step/500 rows

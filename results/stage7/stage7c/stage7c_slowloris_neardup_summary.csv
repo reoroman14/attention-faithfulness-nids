@@ -1,0 +1,3 @@
+set,n,n_neardup,share_neardup,n_exact_0,median_dist,p5_dist,kept_after_exclusion
+all dos_slowloris test rows,1809,824,0.45550027639579876,112,0.00258939266637065,0.0,985
+selected dos_slowloris rows (explanation set),500,234,0.468,28,0.0022238364315685212,0.0,266

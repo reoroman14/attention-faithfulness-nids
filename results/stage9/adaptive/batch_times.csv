@@ -1,0 +1,4 @@
+batch,invocation,start_amman,end_amman,seconds,exit,last_line
+1,1,2026-10-29 13:53:22,2026-10-29 18:56:50,18208,2,STOPPED: runtime cap reached
+1,2,2026-10-29 18:56:50,2026-10-29 22:28:35,12706,0,finished attack in 12702 s
+2,1,2026-10-29 22:28:36,2026-10-29 23:21:42,3186,127,

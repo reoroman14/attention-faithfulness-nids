@@ -1,0 +1,12 @@
+metric,value
+accuracy,0.27053801415912
+balanced_accuracy,0.23330944175869978
+majority_class_accuracy,0.274608356148849
+chance_balanced_accuracy,0.2
+n_train_benign,740728.0
+n_test_benign,246908.0
+recall_Monday,0.2947804669409908
+recall_Tuesday,0.26954652071931196
+recall_Wednesday,0.41062863141890055
+recall_Thursday,0.011599832038631115
+recall_Friday,0.17999175767566453

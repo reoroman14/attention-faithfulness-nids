@@ -1,0 +1,12 @@
+check,value,pass
+seed 0 stand-in quality reproduces results/stage6/strong/standin_quality.csv (max abs diff),1.1102230246251565e-16,True
+seed 0 stand-in median R^2 at eps 1.0 (n rows 2852),0.9634605323934726,True
+seed 1 stand-in median R^2 at eps 1.0 (n rows 2638),0.972310911589005,True
+seed 2 stand-in median R^2 at eps 1.0 (n rows 2535),0.9365892068052681,True
+seed 1 A8_lam1: same pos / class / order as Stage 6 FINAL seed 1 (1494 rows),True,True
+seed 1 A8_lam1: rows flagged valid,1494,True
+seed 1 A8_lam100: same pos / class / order as Stage 6 FINAL seed 1 (1494 rows),True,True
+seed 1 A8_lam100: rows flagged valid,1494,True
+seed 1 A8norm_w0.5: same pos / class / order as Stage 6 FINAL seed 1 (1494 rows),True,True
+seed 1 A8norm_w0.5: rows flagged valid,1494,True
+Stage 6e seed 1 run: every variant passed check_valid_or_stop (no STOP in the log),True,True

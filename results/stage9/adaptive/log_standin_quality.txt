@@ -1,0 +1,44 @@
+[2026-10-29 06:54:14] start standin_quality years ['2017', '2018'] controls ['c0', 'c1', 'c2', 'a1', 'a2', 'b'] seeds [0, 1, 2] cap 4.0 h
+[2026-10-29 06:54:21] 2017 seed 0 c0: stand-ins on 2854 rows in 0 s
+[2026-10-29 06:54:21] 2017 seed 0 c1: stand-ins on 2854 rows in 0 s
+[2026-10-29 06:54:21] 2017 seed 0 c2: stand-ins on 2854 rows in 0 s
+[2026-10-29 06:54:23] 2017 seed 0 a1: stand-ins on 2854 rows in 2 s
+[2026-10-29 06:54:25] 2017 seed 0 a2: stand-ins on 2854 rows in 2 s
+[2026-10-29 06:57:36] 2017 seed 0 b: stand-ins on 2854 rows in 191 s
+[2026-10-29 06:57:36] 2017 seed 0: stand-in quality in 197 s
+[2026-10-29 06:57:39] 2017 seed 1 c0: stand-ins on 2649 rows in 0 s
+[2026-10-29 06:57:39] 2017 seed 1 c1: stand-ins on 2649 rows in 0 s
+[2026-10-29 06:57:40] 2017 seed 1 c2: stand-ins on 2649 rows in 0 s
+[2026-10-29 06:57:47] 2017 seed 1 a1: stand-ins on 2649 rows in 8 s
+[2026-10-29 06:57:54] 2017 seed 1 a2: stand-ins on 2649 rows in 7 s
+[2026-10-29 07:00:37] 2017 seed 1 b: stand-ins on 2649 rows in 162 s
+[2026-10-29 07:00:37] 2017 seed 1: stand-in quality in 180 s
+[2026-10-29 07:00:38] 2017 seed 2 c0: stand-ins on 2538 rows in 0 s
+[2026-10-29 07:00:39] 2017 seed 2 c1: stand-ins on 2538 rows in 0 s
+[2026-10-29 07:00:39] 2017 seed 2 c2: stand-ins on 2538 rows in 0 s
+[2026-10-29 07:01:11] 2017 seed 2 a1: stand-ins on 2538 rows in 32 s
+[2026-10-29 07:01:45] 2017 seed 2 a2: stand-ins on 2538 rows in 34 s
+[2026-10-29 07:03:35] 2017 seed 2 b: stand-ins on 2538 rows in 110 s
+[2026-10-29 07:03:35] 2017 seed 2: stand-in quality in 178 s
+[2026-10-29 07:03:40] 2018 seed 0 c0: stand-ins on 2228 rows in 1 s
+[2026-10-29 07:03:41] 2018 seed 0 c1: stand-ins on 2228 rows in 0 s
+[2026-10-29 07:03:41] 2018 seed 0 c2: stand-ins on 2228 rows in 1 s
+[2026-10-29 07:04:05] 2018 seed 0 a1: stand-ins on 2228 rows in 24 s
+[2026-10-29 07:04:23] 2018 seed 0 a2: stand-ins on 2228 rows in 17 s
+[2026-10-29 07:05:38] 2018 seed 0 b: stand-ins on 2228 rows in 75 s
+[2026-10-29 07:05:38] 2018 seed 0: stand-in quality in 120 s
+[2026-10-29 07:05:40] 2018 seed 1 c0: stand-ins on 2566 rows in 0 s
+[2026-10-29 07:05:41] 2018 seed 1 c1: stand-ins on 2566 rows in 1 s
+[2026-10-29 07:05:41] 2018 seed 1 c2: stand-ins on 2566 rows in 1 s
+[2026-10-29 07:05:53] 2018 seed 1 a1: stand-ins on 2566 rows in 11 s
+[2026-10-29 07:05:58] 2018 seed 1 a2: stand-ins on 2566 rows in 5 s
+[2026-10-29 07:07:22] 2018 seed 1 b: stand-ins on 2566 rows in 84 s
+[2026-10-29 07:07:22] 2018 seed 1: stand-in quality in 103 s
+[2026-10-29 07:07:24] 2018 seed 2 c0: stand-ins on 2448 rows in 1 s
+[2026-10-29 07:07:24] 2018 seed 2 c1: stand-ins on 2448 rows in 1 s
+[2026-10-29 07:07:25] 2018 seed 2 c2: stand-ins on 2448 rows in 1 s
+[2026-10-29 07:07:38] 2018 seed 2 a1: stand-ins on 2448 rows in 12 s
+[2026-10-29 07:07:41] 2018 seed 2 a2: stand-ins on 2448 rows in 4 s
+[2026-10-29 07:08:46] 2018 seed 2 b: stand-ins on 2448 rows in 64 s
+[2026-10-29 07:08:46] 2018 seed 2: stand-in quality in 84 s
+[2026-10-29 07:08:46] finished standin_quality in 872 s

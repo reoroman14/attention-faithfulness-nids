@@ -1,0 +1,51 @@
+check,seed,value,expected,pass
+dos_slowloris test rows with exact nearest-train distance < 0.001 (share of all test rows),pre,0.4555 (824 of 1809),"informative; Stage 7b reported 0.2250, but it measured the exact distance to the cdist argmin, which is often not the nearest row at tiny distances (checked against a float64 CPU brute force)",True
+runtime estimate after the first seed (h),all,1.24,<= 2.5,True
+selected rows predicted as label,0,3585,3585,True
+attention max |row sum - 1|,0,3.58e-07,< 1e-5,True
+"ig_zero completeness |delta| / |f(x)-f(b)| (median, p95, max)",0,"5.52e-03, 3.09e-02, 7.81e+00; max |delta| 9.06e-01",reported as is (50 steps),True
+"ig_benign completeness |delta| / |f(x)-f(b)| (median, p95, max)",0,"1.25e-02, 2.59e-01, 3.45e+02; max |delta| 2.66e+00",reported as is (50 steps),True
+"gshap mean |convergence delta| (50-sample estimate, informative only)",0,3.688e+00,informative,True
+target prob matches Stage 3,0,0.0e+00,< 1e-5,True
+fp32 attention vs stored float16 (max abs diff),0,2.4e-04,< 1e-3 (float16 rounding),True
+"gradattn: (row, layer) pairs with an all-zero CLS row in A_bar",0,0,small,True
+val ig_zero completeness |delta|/|f(x)-f(b)| p95,0,3.25e-02,reported as is (50 steps),True
+selected rows predicted as label,1,3585,3585,True
+attention max |row sum - 1|,1,2.98e-07,< 1e-5,True
+"ig_zero completeness |delta| / |f(x)-f(b)| (median, p95, max)",1,"6.61e-03, 2.08e-02, 3.44e+00; max |delta| 5.10e-01",reported as is (50 steps),True
+"ig_benign completeness |delta| / |f(x)-f(b)| (median, p95, max)",1,"2.37e-02, 2.45e+00, 4.78e+02; max |delta| 7.80e+00",reported as is (50 steps),True
+"gshap mean |convergence delta| (50-sample estimate, informative only)",1,3.698e+00,informative,True
+target prob matches Stage 3,1,0.0e+00,< 1e-5,True
+fp32 attention vs stored float16 (max abs diff),1,2.4e-04,< 1e-3 (float16 rounding),True
+"gradattn: (row, layer) pairs with an all-zero CLS row in A_bar",1,5,small,True
+val ig_zero completeness |delta|/|f(x)-f(b)| p95,1,2.17e-02,reported as is (50 steps),True
+selected rows predicted as label,2,3585,3585,True
+attention max |row sum - 1|,2,4.17e-07,< 1e-5,True
+"ig_zero completeness |delta| / |f(x)-f(b)| (median, p95, max)",2,"4.29e-03, 2.78e-02, 1.56e+01; max |delta| 7.04e-01",reported as is (50 steps),True
+"ig_benign completeness |delta| / |f(x)-f(b)| (median, p95, max)",2,"1.21e-02, 2.92e-01, 4.76e+01; max |delta| 6.61e+00",reported as is (50 steps),True
+"gshap mean |convergence delta| (50-sample estimate, informative only)",2,3.542e+00,informative,True
+target prob matches Stage 3,2,0.0e+00,< 1e-5,True
+fp32 attention vs stored float16 (max abs diff),2,2.4e-04,< 1e-3 (float16 rounding),True
+"gradattn: (row, layer) pairs with an all-zero CLS row in A_bar",2,0,small,True
+val ig_zero completeness |delta|/|f(x)-f(b)| p95,2,2.40e-02,reported as is (50 steps),True
+random vs every method: macro Spearman (max |.|),0,0.003,about 0,True
+"random vs every method: macro Jaccard@5 (min, max)",0,"0.037, 0.040",about 0.040,True
+random ranking: macro AOPC MoRF-LeRF gap per baseline,0,train_mean -0.0001; benign_sample -0.0019,about 0,True
+random floor (train_mean): ig_zero / occlusion / gshap beat random on macro del AUC and AOPC gap,0,ig_zero 0.038/0.702; occlusion 0.067/0.582; gshap 0.066/0.554; random 0.376/-0.000,all below random del AUC and above random AOPC gap,True
+random floor (benign_sample): ig_zero / occlusion / gshap beat random on macro del AUC and AOPC gap,0,ig_zero 0.057/0.621; occlusion 0.056/0.644; gshap 0.044/0.700; random 0.276/-0.002,all below random del AUC and above random AOPC gap,True
+"randomisation head_only: attention unchanged (trivial), macro Spearman min",0,1.0000,>= 0.999,True
+"randomisation cascade_top3_tokenizer: explanation changed, macro Spearman per method",0,attn_last +0.024; attn_mean +0.026; attn_rollout +0.066; ig_zero +0.384; ig_zero_signed -0.015,"every method < 0.7 (2017: max 0.36, |IG|)",True
+random vs every method: macro Spearman (max |.|),1,0.003,about 0,True
+"random vs every method: macro Jaccard@5 (min, max)",1,"0.038, 0.041",about 0.040,True
+random ranking: macro AOPC MoRF-LeRF gap per baseline,1,train_mean +0.0018; benign_sample -0.0027,about 0,True
+random floor (train_mean): ig_zero / occlusion / gshap beat random on macro del AUC and AOPC gap,1,ig_zero 0.025/0.785; occlusion 0.032/0.754; gshap 0.052/0.624; random 0.328/0.002,all below random del AUC and above random AOPC gap,True
+random floor (benign_sample): ig_zero / occlusion / gshap beat random on macro del AUC and AOPC gap,1,ig_zero 0.055/0.645; occlusion 0.048/0.664; gshap 0.051/0.658; random 0.283/-0.003,all below random del AUC and above random AOPC gap,True
+"randomisation head_only: attention unchanged (trivial), macro Spearman min",1,1.0000,>= 0.999,True
+"randomisation cascade_top3_tokenizer: explanation changed, macro Spearman per method",1,attn_last -0.044; attn_mean -0.085; attn_rollout -0.142; ig_zero +0.379; ig_zero_signed +0.038,"every method < 0.7 (2017: max 0.36, |IG|)",True
+random vs every method: macro Spearman (max |.|),2,0.003,about 0,True
+"random vs every method: macro Jaccard@5 (min, max)",2,"0.039, 0.042",about 0.040,True
+random ranking: macro AOPC MoRF-LeRF gap per baseline,2,train_mean +0.0037; benign_sample -0.0004,about 0,True
+random floor (train_mean): ig_zero / occlusion / gshap beat random on macro del AUC and AOPC gap,2,ig_zero 0.028/0.771; occlusion 0.047/0.678; gshap 0.044/0.673; random 0.319/0.004,all below random del AUC and above random AOPC gap,True
+random floor (benign_sample): ig_zero / occlusion / gshap beat random on macro del AUC and AOPC gap,2,ig_zero 0.047/0.662; occlusion 0.056/0.632; gshap 0.039/0.709; random 0.269/-0.000,all below random del AUC and above random AOPC gap,True
+"randomisation head_only: attention unchanged (trivial), macro Spearman min",2,1.0000,>= 0.999,True
+"randomisation cascade_top3_tokenizer: explanation changed, macro Spearman per method",2,attn_last +0.010; attn_mean -0.049; attn_rollout -0.075; ig_zero +0.367; ig_zero_signed +0.043,"every method < 0.7 (2017: max 0.36, |IG|)",True

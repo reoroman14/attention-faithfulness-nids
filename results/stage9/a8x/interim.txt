@@ -1,0 +1,1 @@
+2026-10-30 03:03 2017 V1, lambda 1 only, D+ union (A1 + A8x_lam1) minus D union (A1 + A6_lam1): seed 0 +0.152, seed 1 -0.051, seed 2 +0.121

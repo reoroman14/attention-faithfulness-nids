@@ -1,0 +1,83 @@
+% Discussion (Task 46, Scientific Reports): v3 Discussion, Limitations and Conclusion folded into one section without
+% subheadings (plan 42, section 1.3). The limitation detail that does not stay here is Supplementary Note 5.
+\section*{Discussion}
+\label{sec:discussion}
+
+On both datasets, rollout attention agreed weakly to moderately with attribution methods and kept most of its
+top-\paramTopK{} mass under the feature constraints, yet it was less faithful than IG and occlusion by deletion and
+insertion AUC.
+An analyst who reads rollout attention as feature importance on these models would therefore see a stable picture that
+only partly reflects what drives the prediction; when a decision rests on feature importance, IG or occlusion were the
+more faithful choice on both datasets.
+The stiffness of attention is a statement about the constraints and budgets we used, not a security property: among
+the clean top-\paramTopK{} IG features that A2 targets, on average \topImmIGSeventeen{} on 2017 and \topImmIGEighteen{}
+on 2018 were immutable, so the stiffness is partly structural, and the unconstrained reference moved attention
+further.
+The faithfulness loss after an evasion appeared for most explanation methods, including static class-mean rankings that
+do not depend on the input, so any explanation of a row that an attack has flipped is less faithful than on clean
+traffic; a plausible reading is that adversarial rows sit where the model's output depends on the features
+differently, but this mechanism was not tested.
+
+The consistency scores helped against an attacker that ignored them, but that gain was not specific to attention:
+controls that used other attribution methods instead of attention, or statistics of the logits and distances, obtained
+most or all of it, and the shuffled-attention control a1 still carries the class information of the true label.
+The small gain that D$_+$ showed against A8 did not hold against A8x, which uses exact IG in the loop and selects
+iterates by the true score: the sign reversed on 2017 in the pooled estimate and in all but
+\axHeadOppSeedsSeventeen{} of the \nSeeds{} seeds, and giving D's attacker the same selection changed the outcome of
+\sxOutcomeChangedPhrase.
+An evaluation with stand-ins alone would therefore have overstated what D$_+$ achieves; this is the general point made
+about adaptive attacks on detectors of adversarial examples \cite{tramer2020}, shown here for consistency monitoring.
+We did not test why D$_+$ was easier to evade than D.
+One untested reading is that each added score gives the attacker a further direction to move in while the threshold
+stays at \paramFPR{} false-positive rate (FPR); the control a1, under its own stand-in attacker, also left more rows
+undetected than D on 2017, but a1 uses the true class label and a weaker attacker, so it does not test this reading.
+For a defender, we do not recommend these consistency scores as an addition to a confidence-and-distance detector
+against adaptive attackers: they helped only against an attacker that ignored them, that help was available without
+attention, and against an attacker that modelled them exactly they made evasion easier on both datasets, on 2018
+close to the floor.
+For anyone evaluating an explanation-based attack detector, the attacker should optimise the detector's exact score
+wherever a gradient exists and select its iterates by the true score; an evaluation with differentiable stand-ins alone
+can give a result of the opposite sign, as it did here.
+
+The difference between the datasets in detector strength was larger than the difference between D and D$_+$, and on
+each dataset a single class dominated the successful and undetected rows.
+Conclusions about learned attack detectors on these benchmarks should therefore be reported per dataset and per class,
+and on 2018 the detector comparisons have little room to differ, because D alone left only \axHeadVoneEighteenD{} of
+the source rows successful and undetected.
+Near duplicates between the training and test sets were common in both datasets and made the affected rows easier for
+both detectors on 2017; removing them did not change any conclusion here, but evaluations on these benchmarks that keep
+them may report detectors as stronger than they are on new traffic.
+The headline difference under the exact-objective attacker kept its sign on all three row sets, whereas the difference
+under the stand-in attacker changed more with the row set, which is a further reason to read the stand-in result as
+fragile.
+
+Several limitations bound these conclusions.
+The results rest on \nSeeds{} seeds, and in the equal-effort comparison against A8x \axHeadOppSeedsPhrase{} had the
+opposite sign; our bootstrap intervals resample source rows within seed, reuse the same source rows in every seed and
+do not capture seed variance, so they do not show that an effect holds across seeds.
+A8x used surrogate gradients, soft ranks with an annealed temperature, for the \nRankScores{} rank-based consistency
+scores, which have no informative exact gradient; a better surrogate or a gradient-free search on these terms could
+only raise the share for D$_+$.
+The equal-effort protocol equalises candidates, steps and settings, not optimiser quality, and whether A6 is as strong
+an attack on D as A8x is on D$_+$ was not measured; A6x matched the selection rule, not the optimiser.
+The attackers of the controls a1 and a2 used stand-ins like A8, so their results may understate how easily these
+controls can be evaded, and their comparison with D$_+$ under A8x is not at equal attacker strength.
+The attribution-only control b was not attacked adaptively, because its attack run exceeded the memory of the graphics
+card, so its family is untested against an adaptive attacker.
+All attacks changed flow features, not packets, and a feature vector that our checker accepts may still not correspond
+to traffic that an attacker can produce; the attackers knew the weights of the model and, where stated, of the
+detector.
+The attackers A8x and A6x were designed after the earlier results were known; their outcome rules and both amendments
+were recorded before any of their attack rows existed.
+We studied two datasets and one model family, without human evaluation or deployment, and both datasets carry known
+design and labelling issues of benchmark NIDS data \cite{flood2024,lanvin2022}.
+Further limitations on the constraint model, the detectors and the data are in Supplementary
+Note~\suppNoteLimits.
+
+In summary, attention in this flow classifier was stable under protocol-constrained attacks but only a partial
+explanation, and attention-attribution consistency scores did not make a confidence-and-distance detector harder to
+evade for attackers that optimised its exact score.
+Evaluations of explanation-based attack detectors need such attackers; on our two datasets the consistency scores did
+not pass that test.
+The attribution-only control under an adaptive attacker, the rank-based scores under an exact search and the relative
+optimiser strength of the attackers remain open.

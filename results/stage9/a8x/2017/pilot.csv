@@ -1,0 +1,2 @@
+year,rows,chunk,steps,attack_s,scoring_s,sec_per_iter_all_rows,max_reserved_gb,max_allocated_gb,shared_gb_start,shared_gb_after_attack,shared_gb_after_scoring,shared_gb_max,est_min_per_run,est_hours_9_runs,valid_rows,pass_shared,pass_reserved
+2017,1044,50,5,45.617090702056885,3.307147264480591,7.602848450342814,4.1640625,3.000481605529785,0.07421875,0.076171875,0.076171875,0.076171875,25.651375570562152,3.8477063355843226,1044,True,True

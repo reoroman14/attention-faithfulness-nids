@@ -1,0 +1,84 @@
+% Main document of the Scientific Reports version (Task 46). Sources: paper_srep/sections/*.tex and decisions.tex;
+% numbers, tables and figures: paper_srep/generated (written by paper_srep/gen/*.py). paper_srep/gen/build_srep.py
+% inlines every \input into one flat main.tex in C:\attn_submission_srep and writes the Nature-style reference list
+% at the %%BIBLIOGRAPHY%% line. Title page with authors and affiliations from C:\attn_submission\delete\main.tex
+% (named version of the earlier submission); the corresponding author is marked with an asterisk, not a footnote.
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[numbers,square,sort&compress]{natbib}
+\usepackage{authblk}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+\graphicspath{{generated/}}
+
+\input{generated/numbers.tex}
+\input{generated/srep_numbers.tex}
+\input{decisions.tex}
+
+\title{\paperTitle}
+\author[1,*]{Abdulla Amin Aburomman}
+\author[2]{Mamun Bin Ibne Reaz}
+\author[1]{Mwaffaq Abualhaija}
+\author[1]{Marwan Alakhras}
+\author[1]{Fadi Batah}
+\author[3]{Saleh AlTakrouri}
+\affil[1]{Department of Cybersecurity and Cloud Computing, Faculty of Information Technology, Applied Science Private
+  University, Amman, Jordan}
+\affil[2]{Department of Electrical and Electronic Engineering, Faculty of Engineering and Technology, Islamic University
+  of Technology, Gazipur, Bangladesh}
+\affil[3]{Department of Extended-Reality and Games Development, Faculty of Information Technology, Applied Science
+  Private University, Amman, Jordan}
+% Repository copy: the e-mail addresses of the title page are removed here; the submitted manuscript has them.
+\affil[*]{Corresponding author}
+\date{}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract.tex}
+
+\input{sections/intro.tex}
+\input{sections/results.tex}
+\input{sections/discussion.tex}
+\input{sections/methods.tex}
+
+%%BIBLIOGRAPHY%%
+
+\input{sections/statements.tex}
+\input{sections/legends.tex}
+
+\clearpage
+\section*{Tables}
+\input{generated/main_t_clean.tex}
+\clearpage
+\input{generated/main_t_attn_flip.tex}
+\clearpage
+\input{generated/main_t_attacks.tex}
+\clearpage
+\input{generated/main_t_dplus_ablation.tex}
+\clearpage
+\input{generated/main_t_union_adaptive.tex}
+\clearpage
+\input{generated/main_t_neardup_compact.tex}
+\clearpage
+
+\section*{Figures}
+\begin{center}
+\includegraphics[width=\textwidth]{f_pipeline}\par\smallskip
+\textbf{Figure~\mainFigPipeline}
+\end{center}
+\clearpage
+\begin{center}
+\includegraphics[width=\textwidth]{f_headline}\par\smallskip
+\textbf{Figure~\mainFigHeadline}
+\end{center}
+
+\end{document}

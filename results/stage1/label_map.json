@@ -1,0 +1,13 @@
+{
+  "benign": 0,
+  "bot": 1,
+  "ddos": 2,
+  "dos_goldeneye": 3,
+  "dos_hulk": 4,
+  "dos_slowhttptest": 5,
+  "dos_slowloris": 6,
+  "ftp_patator": 7,
+  "portscan": 8,
+  "ssh_patator": 9,
+  "webattack": 10
+}

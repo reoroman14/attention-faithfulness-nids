@@ -1,0 +1,22 @@
+[2026-10-30 12:41:50] start attack years ['2017'] chunk 500 cap 3.0 h pid 33144
+[2026-10-30 12:42:51] 2017 seed 0 A6x_lam1: success 0.740, succ+undet D 0.250 [attack 56 s, total 58 s, max reserved 4.15 GB]
+[2026-10-30 12:43:51] 2017 seed 1 A6x_lam1: success 0.316, succ+undet D 0.127 [attack 57 s, total 59 s, max reserved 4.15 GB]
+[2026-10-30 12:44:54] 2017 seed 2 A6x_lam1: success 0.542, succ+undet D 0.176 [attack 62 s, total 64 s, max reserved 4.15 GB]
+[2026-10-30 12:46:02] 2017 seed 0 A6x_lam100: success 0.519, succ+undet D 0.213 [attack 65 s, total 67 s, max reserved 4.15 GB]
+[2026-10-30 12:47:02] 2017 seed 1 A6x_lam100: success 0.141, succ+undet D 0.006 [attack 58 s, total 60 s, max reserved 4.15 GB]
+[2026-10-30 12:48:02] 2017 seed 2 A6x_lam100: success 0.365, succ+undet D 0.129 [attack 59 s, total 61 s, max reserved 4.15 GB]
+[2026-10-30 12:49:19] 2017 seed 0 A6x_norm_w0.5: success 0.759, succ+undet D 0.273 [attack 74 s, total 77 s, max reserved 4.15 GB]
+[2026-10-30 12:50:39] 2017 seed 1 A6x_norm_w0.5: success 0.615, succ+undet D 0.084 [attack 79 s, total 80 s, max reserved 4.15 GB]
+[2026-10-30 12:52:03] 2017 seed 2 A6x_norm_w0.5: success 0.585, succ+undet D 0.122 [attack 81 s, total 83 s, max reserved 4.15 GB]
+[2026-10-30 12:52:03] finished attack in 613 s
+[2026-10-30 12:52:06] start attack years ['2018'] chunk 500 cap 3.0 h pid 23148
+[2026-10-30 12:53:01] 2018 seed 0 A6x_lam1: success 0.129, succ+undet D 0.036 [attack 49 s, total 51 s, max reserved 4.20 GB]
+[2026-10-30 12:53:47] 2018 seed 1 A6x_lam1: success 0.504, succ+undet D 0.002 [attack 44 s, total 46 s, max reserved 4.20 GB]
+[2026-10-30 12:54:30] 2018 seed 2 A6x_lam1: success 0.277, succ+undet D 0.003 [attack 41 s, total 43 s, max reserved 4.20 GB]
+[2026-10-30 12:55:24] 2018 seed 0 A6x_lam100: success 0.092, succ+undet D 0.014 [attack 52 s, total 53 s, max reserved 4.20 GB]
+[2026-10-30 12:56:12] 2018 seed 1 A6x_lam100: success 0.481, succ+undet D 0.001 [attack 46 s, total 48 s, max reserved 4.20 GB]
+[2026-10-30 12:57:01] 2018 seed 2 A6x_lam100: success 0.267, succ+undet D 0.004 [attack 48 s, total 49 s, max reserved 4.20 GB]
+[2026-10-30 12:58:06] 2018 seed 0 A6x_norm_w0.5: success 0.281, succ+undet D 0.025 [attack 63 s, total 64 s, max reserved 4.20 GB]
+[2026-10-30 12:59:01] 2018 seed 1 A6x_norm_w0.5: success 0.722, succ+undet D 0.001 [attack 53 s, total 55 s, max reserved 4.20 GB]
+[2026-10-30 12:59:55] 2018 seed 2 A6x_norm_w0.5: success 0.476, succ+undet D 0.011 [attack 52 s, total 54 s, max reserved 4.20 GB]
+[2026-10-30 12:59:55] finished attack in 469 s

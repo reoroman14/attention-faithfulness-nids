@@ -1,0 +1,19 @@
+% Abstract (Task 46): the draft of handoff/42_srep_plan.md section 5, unstructured, no citations, at most 200 words.
+\begin{abstract}
+Attention weights of transformer-based network intrusion detectors are often read as explanations, and agreement
+between attention and attribution methods has been proposed as a signal of attack.
+We tested both readings on feature-tokenizer transformers trained on LYCOS-IDS2017 and LycoS-Unicas-IDS2018, with
+\nSeeds{} seeds and near-duplicate rows removed from evaluation.
+Rollout attention agreed weakly to moderately with attribution methods, was less faithful than integrated gradients
+and occlusion, and changed little under protocol-constrained attacks that targeted it.
+Consistency scores added to a confidence-and-distance detector helped against an attacker that ignored them, as did
+controls without attention.
+Against attackers that optimised the exact score of each detector, with surrogate gradients only for \nRankScores{}
+rank-based scores, the consistency scores raised the share of successful and undetected attack rows by
+\axHeadVoneSeventeenAbs{} on 2017 (\paramCILevel{} confidence interval \axHeadVoneSeventeenCI) and by
+\axHeadVoneEighteenAbs{} on 2018 (\axHeadVoneEighteenCI), with \axHeadOppSeedsPhrase{} of the opposite sign.
+An attacker that used differentiable stand-ins for these scores had shown a reduction of \axStandinVoneSeventeenAbs{}
+on 2017.
+Giving the attacker of the base detector the same iterate selection changed the outcome of \sxOutcomeChangedPhrase.
+Adaptive evaluations of explanation-based attack detectors need attackers that optimise the exact detection score.
+\end{abstract}

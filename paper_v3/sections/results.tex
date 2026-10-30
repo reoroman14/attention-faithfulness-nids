@@ -1,0 +1,249 @@
+% Results (Task 42): three RQs; claims table of handoff/37_narrative_v2.md sections 3.3 and 3.7 applied; A6x answers
+% the selection question. Every result number is a macro.
+\section{Results}
+\label{sec:results}
+
+Unless stated otherwise, numbers in this section are V1 values (Section~\ref{sec:setup}) on the \nCommonClasses{}
+common classes at $\epsilon = \paramEpsHead$, given as the mean over seeds with the seed range in brackets.
+V1 is the primary row set; V0 and V2 are in Section~\ref{sec:rq3} and Appendices~\ref{sec:sens} and~\ref{sec:supp}.
+
+\subsection{RQ1: attention is stable but not faithful}
+\label{sec:rq1}
+\emph{Answer: rollout attention agreed weakly to moderately with attribution methods and was less faithful than IG and
+occlusion on both datasets; it changed little under constrained attacks that targeted it, and after an evasion its
+faithfulness fell together with that of the other explanation methods.}
+
+\paragraph{Clean data.}
+Rollout attention agreed weakly to moderately with the attribution methods on both datasets: its Spearman correlation
+was highest with GradientSHAP (\spRolloutGShapVoneSeventeen{} on 2017, \spRolloutGShapVoneEighteen{} on 2018), about one
+third with IG (\spRolloutIGVoneSeventeen{}, range \spRolloutIGVoneSeventeenRange; \spRolloutIGVoneEighteen{}, range
+\spRolloutIGVoneEighteenRange), \spRolloutOcclVoneSeventeen{} and \spRolloutOcclVoneEighteen{} with occlusion, and
+lowest with TreeSHAP of the XGBoost model (\spRolloutTreeShapVoneSeventeen{} and \spRolloutTreeShapVoneEighteen;
+Table~\ref{t_clean}).
+Last-layer attention showed almost no agreement (Spearman with IG \spLastIGVoneSeventeen{} and \spLastIGVoneEighteen).
+Rollout was more faithful than random and less faithful than IG and occlusion.
+Its deletion AUC was \aucDelRolloutVoneSeventeen{} on 2017 and \aucDelRolloutVoneEighteen{} on 2018, against
+\aucDelIGVoneSeventeen{} and \aucDelIGVoneEighteen{} for IG, \aucDelOcclVoneSeventeen{} and \aucDelOcclVoneEighteen{}
+for occlusion, and \aucDelRandomVoneSeventeen{} and \aucDelRandomVoneEighteen{} for random, and insertion AUC gave the
+same picture (Table~\ref{t_clean}).
+Among the \nMethods{} methods, rollout ranked \rankDelRolloutSeventeen{} and \rankDelRolloutEighteen{} by deletion AUC,
+and the ordering of the methods was similar across the datasets (Spearman correlation between the two orderings
+\ordSpDelVone{} for deletion and \ordSpInsVone{} for insertion AUC).
+Three smaller 2017 results that did not hold on 2018 and a parameter-randomisation check are in
+Appendices~\ref{sec:supp} and~\ref{sec:rand}.
+
+\input{generated/t_clean.tex}
+
+\paragraph{Attention under constrained attacks.}
+Under the constrained attack A2, which kept the prediction and minimised the rollout attention on the clean
+top-\paramTopK{} IG features, the attention mass on these features kept \massAtwoVoneSeventeen{}
+(\massAtwoVoneSeventeenRange) of its clean value on 2017 and \massAtwoVoneEighteen{} (\massAtwoVoneEighteenRange) on
+2018, a mean reduction of \massRedAtwoVoneSeventeen{} and \massRedAtwoVoneEighteen{} (Figure~\ref{f_mass_ratio},
+Table~\ref{t_attn_attack}).
+Under the random control A0 at the same budget the mass kept \massAzeroVoneSeventeen{} (\massAzeroVoneSeventeenRange)
+on 2017 and \massAzeroVoneEighteen{} (\massAzeroVoneEighteenRange) on 2018; no comparison with IG at an equal budget
+was run.
+The joint attack A3 with $\lambda = 1000$ reached \massAthreeVoneSeventeen{} and \massAthreeVoneEighteen.
+The unconstrained reference moved the mass further at a standardised budget of $\epsilon = 0.5$ (\massUncVoneSeventeen{}
+and \massUncVoneEighteen, a reduction of \massRedUncVoneSeventeen{} and \massRedUncVoneEighteen), with rows that are not
+valid flows and with a budget that is not in the units of the constrained attacks.
+Attention was therefore stiff under the feature constraints; this does not show that attention cannot be manipulated.
+For context, the evasion attack A1 succeeded on \succAoneVoneSeventeen{} and \succAoneVoneEighteen{} of the source
+rows (macro over classes), \aoneMinusAzeroVoneSeventeen{} and \aoneMinusAzeroVoneEighteen{} more than A0 (budgets in
+Appendix~\ref{sec:supp}).
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{f_mass_ratio}
+  \caption{Top-\paramTopK{} rollout attention mass ratio under A2 and A3, with the unconstrained reference.}
+  \label{f_mass_ratio}
+\end{figure*}
+
+\input{generated/t_attn_attack.tex}
+
+\paragraph{Faithfulness on flipped rows.}
+On rows whose prediction A1 flipped, the margin AOPC gap fell after subtracting the change under A0 for IG, occlusion,
+rollout, layer-mean attention, the static class-mean rankings and $|x|$ (Table~\ref{t_flip}).
+The change was \flipIGVoneSeventeen{} and \flipIGVoneEighteen{} for IG, \flipOcclVoneSeventeen{} and
+\flipOcclVoneEighteen{} for occlusion, \flipRolloutVoneSeventeen{} and \flipRolloutVoneEighteen{} for rollout,
+\flipStaticRolloutVoneSeventeen{} and \flipStaticRolloutVoneEighteen{} for the static class-mean rollout, and
+\flipAbsXVoneSeventeen{} and \flipAbsXVoneEighteen{} for $|x|$, while the random ranking stayed near zero
+(\flipRandomVoneSeventeen{} and \flipRandomVoneEighteen).
+The last-layer attention changed with a sign that varied across seeds: \flipLastVoneSeventeen{} on 2017 (seed range
+\flipLastVoneSeventeenRange) and \flipLastVoneEighteen{} on 2018 (\flipLastVoneEighteenRange).
+On A1 rows that did not flip the change was small for every explainer (IG \notflipIGVoneSeventeen{} and
+\notflipIGVoneEighteen), while on rows that the random control A0 flipped to benign by chance (as few as
+\nAzeroFlipVoneEighteenMin{} rows in one 2018 seed) the loss was of the same size as on flipped A1 rows on 2017 and
+larger on 2018 (IG \azeroflipIGVoneSeventeen{} and \azeroflipIGVoneEighteen).
+Because the loss appeared for these explainers on both datasets, including static rankings that the attack cannot
+change, was small on rows that did not flip, and appeared also on rows flipped by a random perturbation, it is
+consistent with a property of the model at the adversarial point rather than with attack-specific manipulation of
+attention; we did not test the mechanism directly.
+
+\input{generated/t_flip.tex}
+
+\subsection{RQ2: consistency monitoring against adaptive attackers}
+\label{sec:rq2}
+\emph{Answer: the consistency scores helped against an attacker that ignored them, largely without attention, but not
+against attackers that optimised the detector's exact score; against those, D$_+$ left more attack rows successful and
+undetected than D on both datasets, and the gain measured with a stand-in attacker did not hold.}
+
+\paragraph{Detectors and the non-adaptive attacker.}
+Both detectors separated validation positives well (validation AUROC of D \valAurocDSeventeenRange{} on 2017 and
+\valAurocDEighteenRange{} on 2018 over seeds, D$_+$ \valAurocDplusSeventeenRange{} and \valAurocDplusEighteenRange;
+realised test FPR of D \testFprDSeventeenRange{} and \testFprDEighteenRange).
+The validation AUROC is measured on the flipped validation positives that were also used to fit the detectors, so it
+is in-sample; the realised test FPR is the out-of-sample figure.
+Against A6, which ignores the consistency scores, D$_+$ detected more of the evading rows than D: the paired TPR
+difference D$_+$ minus D on A6 rows ($\lambda = 1$) was \tprAsixOneVoneSeventeen{} (\tprAsixOneVoneSeventeenCI) on 2017
+and \tprAsixOneVoneEighteen{} (\tprAsixOneVoneEighteenCI) on 2018 (Table~\ref{t_attacks}).
+
+\input{generated/t_attacks.tex}
+
+The controls (Section~\ref{sec:detectors}, Table~\ref{t_dplus_ablation}) show that this gain against A6 is largely
+obtained without attention: the TPR difference to D was \ablBMinusDSeventeen{} and \ablBMinusDEighteen{} for the
+attribution-only control b and \ablCtwoMinusDSeventeen{} and \ablCtwoMinusDEighteen{} for c2 with logit and distance
+statistics, while c0 (\ablCzeroMinusDSeventeen) and c1 (\ablConeMinusDSeventeen) show that the regulariser and the
+number of scores do not explain it.
+Shuffled attention from another row of the same class (a1) kept most of the gain on 2017 and all of it on 2018
+(\ablAoneMinusDSeventeen{} and \ablAoneMinusDEighteen), attention from clean benign rows (a2) kept
+\ablAtwoMinusDSeventeen{} and \ablAtwoMinusDEighteen, and the pairing of a row's own attention with its attribution,
+D$_+$ minus a1 against A6, added \ablPairSeventeen{} (\ablPairSeventeenCI) on 2017 and nothing detectable on 2018
+(\ablPairEighteen, \ablPairEighteenCI).
+
+\input{generated/t_dplus_ablation.tex}
+
+\paragraph{Attackers that model the consistency scores.}
+Against A8, which models the consistency scores through stand-ins, the gain largely disappeared: the paired TPR
+difference on A8 rows ($\lambda = 1$) was \tprAeightOneVoneSeventeen{} (\tprAeightOneVoneSeventeenCI) on 2017 and
+\tprAeightOneVoneEighteen{} (\tprAeightOneVoneEighteenCI) on 2018.
+Against A8x, which optimises the exact score of D$_+$ (Section~\ref{sec:attacks}), D$_+$ detected fewer of the attack
+rows than D: \xtprAxOneVoneSeventeen{} (\xtprAxOneVoneSeventeenCI) on 2017 and \xtprAxOneVoneEighteen{}
+(\xtprAxOneVoneEighteenCI) on 2018, and from \xtprAxVoneRangeSeventeen{} over the three settings on 2017
+(Table~\ref{t_attacks}).
+A8x flipped about as many rows as A8 (success \xsuccAxOneVoneSeventeen{} against \xsuccAeightOneVoneSeventeen{} on 2017)
+but left more of them undetected by D$_+$ (\xundetAxOneVoneSeventeen{} against \xundetAeightOneVoneSeventeen).
+These rows were optimised against D$_+$, so this comparison alone is not evidence; the equal-effort union is.
+
+\paragraph{Equal-effort comparison.}
+Under equal attacker effort (Table~\ref{t_union_adaptive}, Figure~\ref{f_headline}), with D facing A1 and A6 and D$_+$
+facing A1 and A8x, D$_+$ left more source rows successful and undetected than D: \axHeadVoneSeventeenDplus{} against
+\axHeadVoneSeventeenD{} on 2017, a difference of \axHeadVoneSeventeen{} (\paramCILevel{} CI \axHeadVoneSeventeenCI),
+and \axHeadVoneEighteenDplus{} against \axHeadVoneEighteenD{} on 2018, a difference of \axHeadVoneEighteen{}
+(\axHeadVoneEighteenCI).
+With A8 instead of A8x the 2017 difference had been \axStandinVoneSeventeen{} (\axStandinVoneSeventeenCI), and on 2018
+\axStandinVoneEighteen{} (\axStandinVoneEighteenCI).
+Per seed, the 2017 differences were \axHeadVoneSeventeenSeeds{} and the 2018 differences \axHeadVoneEighteenSeeds{}
+(seeds 0, 1 and 2); \axHeadOppSeedsSeventeen{} seed on 2017 and \axHeadOppSeedsEighteen{} on 2018 had the opposite
+sign.
+By the outcome rule recorded before the A8x runs (Section~\ref{sec:protocol}), the 2017 gain of D$_+$ against A8 did
+not hold against the exact-objective attacker.
+
+These numbers come with caveats that limit how far they generalise.
+They rest on \nSeeds{} seeds, and on each dataset \axHeadOppSeedsSeventeen{} seed (2017) and
+\axHeadOppSeedsEighteen{} seed (2018) had the opposite sign; the interval is a bootstrap over source rows within seed
+and does not capture variation between seeds.
+A8x still uses surrogate gradients for the \nRankScores{} rank-based scores; a better search on these terms could only
+find further undetected rows for D$_+$.
+The controls a1 and a2 faced stand-in attackers, so their comparison with D$_+$ under A8x is not at equal attacker
+strength, and control b was not attacked adaptively because its run exceeded the memory of the graphics card.
+On 2018 D alone left only \axHeadVoneEighteenD{} of the source rows undetected, so the 2018 difference sits near a floor
+and its lower bound is close to $0$.
+Finally, the equal-effort protocol fixes candidates, steps and settings, not optimiser quality: whether A6 is as strong
+an attack on D as A8x is on D$_+$ was not measured (see below and Section~\ref{sec:limitations}).
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{f_headline}
+  \caption{Equal-effort union at $\epsilon = \paramEpsHead$ (V1): D$_+$ minus D in the share of successful and
+    undetected source rows when D$_+$ faces the stand-in attacker A8 or the exact-objective attacker A8x (D faces A6 in
+    both). Filled marks: pooled difference with the \paramCILevel{} paired bootstrap interval (within seed); open
+    marks: seeds 0, 1 and 2.}
+  \label{f_headline}
+\end{figure*}
+
+\input{generated/t_union_adaptive.tex}
+
+On 2017 the direction held per attack setting (\axLamOneVoneSeventeen, \axLamHundredVoneSeventeen{} and
+\axNormVoneSeventeen; Table~\ref{t_a8x_setting}) and on the other row sets (Section~\ref{sec:rq3}), and the paired TPR
+difference on A8x rows was negative for every setting and row set (largest value \xtprAxMaxSeventeen;
+Table~\ref{t_a8x_tpr}).
+
+\paragraph{Selection rule (A6x).}
+\label{sec:a6x}
+A8x keeps the iterate with the lowest true D$_+$ score, while A6 keeps its own rule, so part of the reversal could have
+come from the selection rather than from the consistency scores.
+A6x gives the attacker of D the selection rule of A8x.
+It kept a different iterate in \sxRowsDiffer{} of \sxRowsAll{} attacked rows, but changed the flipped status of
+\sxFlipChanged{} rows and the undetected status of \sxUndetChanged{} rows, because A6 already ranks iterates that are
+flipped and below the threshold under the exact score of D first.
+D's undetected share under A1 and A6x therefore equalled that under A1 and A6 in every seed and row set (largest
+absolute difference \sxSelMaxAbs), and the 2017 difference D$_+$ minus D kept a lower bound of \sxHeadVoneSeventeenLo{}
+(\sxHeadVoneSeventeenCI, separate bootstrap draws).
+By the rule recorded before the A6x runs, the reversal does not come from the selection rule.
+
+Whether A8x is simply a stronger optimiser than A6 is a different question.
+The A8x rows were not aimed at D, yet D left a similar share of them undetected as of the A6 rows aimed at it (2017,
+share of source rows: \evadeDAxOneSeventeen{} against \evadeDAsixOneSeventeen{} for $\lambda = 1$,
+\evadeDAxHundredSeventeen{} against \evadeDAsixHundredSeventeen{} for $\lambda = 100$); the remaining differences between
+the two attackers concern scores that D does not have, so the relative optimiser strength remains unmeasured.
+
+\paragraph{Controls under their own adaptive attackers.}
+\nControlsAttacked{} of the \nControlsAll{} controls were attacked by adversaries that modelled their own scores
+(Table~\ref{t_union_adaptive}).
+Against D, the controls with exact attackers stayed close to D on 2017 (c0 \cmdCzeroVoneSeventeen{},
+\cmdCzeroVoneSeventeenCI; c1 \cmdConeVoneSeventeen{}, \cmdConeVoneSeventeenCI; c2 \cmdCtwoVoneSeventeen{},
+\cmdCtwoVoneSeventeenCI), while a1 left more rows undetected (\cmdAoneVoneSeventeen{}, \cmdAoneVoneSeventeenCI); on
+2018, c0 (\cmdCzeroVoneEighteen) and a1 (\cmdAoneVoneEighteen) left fewer rows undetected than D and c2 more
+(\cmdCtwoVoneEighteen).
+No control left clearly fewer rows undetected than D on both datasets.
+Against D$_+$ under A8x, every control except a1 on 2017 and c2 on 2018 left fewer rows undetected (2017: c0
+\cmxCzeroVoneSeventeen, c1 \cmxConeVoneSeventeen, c2 \cmxCtwoVoneSeventeen, a1 \cmxAoneVoneSeventeen{}
+\cmxAoneVoneSeventeenCI, a2 \cmxAtwoVoneSeventeen; 2018: c2 \cmxCtwoVoneEighteen{} \cmxCtwoVoneEighteenCI).
+For c0, c1 and c2 this comparison is at roughly equal attacker strength (exact against exact apart from the surrogate
+ranks of A8x; their attackers keep the selection rule of A6, which A6x showed to be equivalent for D but which was not
+tested for them).
+For a1 and a2 it is not: their attackers used stand-ins (median $R^2$ \rtwoMedAoneSeventeen{} and
+\rtwoMedAtwoSeventeen{} on 2017), so their shares may be too low, as A8's were for D$_+$.
+The comparisons with D$_+$ under A8 are in Table~\ref{t_union_a8}.
+On these two datasets, consistency monitoring did not make the confidence-and-distance detector harder to evade for an
+attacker that optimised its exact score.
+
+\subsection{RQ3: dataset dependence and near duplicates}
+\label{sec:rq3}
+\emph{Answer: the level of successful and undetected rows depended strongly on the dataset and was dominated by one
+class on each; the sign of D$_+$ minus D under A8x was the same on both datasets, its size was not; removing near
+duplicates changed no conclusion.}
+
+\paragraph{Dataset dependence.}
+Detector strength differed strongly between the datasets.
+Under A6 with $\lambda = 1$, the share of source rows that evaded D undetected was \undetDAsixOneVoneSeventeen{}
+(\undetDAsixOneVoneSeventeenRange) on 2017 and \undetDAsixOneVoneEighteen{} (\undetDAsixOneVoneEighteenRange) on 2018
+(Table~\ref{t_attacks}), and under the equal-effort union \axHeadVoneSeventeenD{} and \axHeadVoneEighteenD.
+On 2018, \pcTopClassEighteen{} was the only class with a non-trivial share (\pcTopEighteen; every other class at most
+\pcRestMaxEighteen), while on 2017 \pcTopClassSeventeen{} dominated (\pcTopSeventeen; every other class at most
+\pcRestMaxSeventeen; Table~\ref{t_per_class_v1}).
+Under A8x against D$_+$, DDoS again dominated on 2018, while on 2017 SSH-Patator joined Bot, with a seed range that
+spans almost the whole scale (Table~\ref{t_per_class_v1}).
+The difference between the datasets in detector strength was much larger than the difference between D and D$_+$:
+the sign of D$_+$ minus D under A8x was the same on both datasets, its size was not (\axHeadVoneSeventeen{} and
+\axHeadVoneEighteen).
+
+\input{generated/t_per_class_v1.tex}
+
+\paragraph{Near duplicates.}
+Test rows with a near duplicate in the training set were common in both datasets (\ndAllSeventeen{} and
+\ndAllEighteen{} of all test rows) and concentrated in DoS Slowloris and, on 2017, web attack (Section~\ref{sec:setup}).
+On 2017, flagged rows were easier for both detectors: on A6 rows ($\lambda = 1$) the TPR of D was \tprDNdSeventeen{} on
+flagged and \tprDOtherSeventeen{} on other source rows, and the FPR of D was \fprDNdSeventeen{} on flagged and
+\fprDOtherSeventeen{} on other benign test negatives (Appendix~\ref{sec:sens}).
+Moving from V0 to V1 and V2 (Table~\ref{t_neardup_compact}) changed the attention mass ratio under A2 and A3 by at
+most \sensMaxMassChange{} and the faithfulness loss on flipped rows for IG and rollout by at most \sensMaxFlipChange{}
+(absolute values from the unrounded means over seeds, both datasets).
+The 2017 equal-effort difference under A8x was \axHeadVzeroSeventeen{}, \axHeadVoneSeventeen{} and
+\axHeadVtwoSeventeen{} on V0, V1 and V2, and on 2018, where V1 equals V0, \axHeadVoneEighteen{} and
+\axHeadVtwoEighteen{} (\axHeadVtwoEighteenCI) on V2.
+With the stand-in attacker A8 the 2017 difference changed more with the row set (\axStandinVzeroSeventeen,
+\axStandinVoneSeventeen, \axStandinVtwoSeventeen).
+
+\input{generated/t_neardup_compact.tex}

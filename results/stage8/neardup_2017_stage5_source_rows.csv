@@ -1,0 +1,12 @@
+class,n_source_rows,n_lt_1e3,share_lt_1e-3
+bot,144,0,0.0
+ddos,150,0,0.0
+dos_goldeneye,150,0,0.0
+dos_hulk,150,1,0.006666666666666667
+dos_slowhttptest,150,128,0.8533333333333334
+dos_slowloris,150,73,0.4866666666666667
+ftp_patator,150,0,0.0
+portscan,150,0,0.0
+ssh_patator,150,0,0.0
+webattack,150,69,0.46
+ALL,1494,271,0.1813922356091031

@@ -1,0 +1,288 @@
+{
+  "stage": "stage7e_defense_2018",
+  "started": "2026-10-06T14:45:18",
+  "command": "python.exe C:\\attn_faithfulness_nids\\src\\stage7e_defense_2018.py",
+  "overrides": [],
+  "seed": 2026,
+  "config": {
+    "seed": 2026,
+    "paths": {
+      "pcap_lycos_dir": "data/pcap_lycos",
+      "labelling_script": "data/labelling.py",
+      "labelled_dir": "data/lycos-ids2017",
+      "reference_labelling_log": "data/python_logs/labelling_info.log",
+      "reference_create_log": "data/python_logs/create_datasets_info.log",
+      "labelling_workdir": "results/stage1/_labelling_work",
+      "stage1_dir": "results/stage1",
+      "stage2_dir": "results/stage2"
+    },
+    "labelling": {
+      "n_processes": 3,
+      "keep_extracted_csv": false
+    },
+    "stage1": {
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "chunk_rows": 200000,
+      "identifier_columns": [
+        "flow_id",
+        "src_addr",
+        "src_port",
+        "dst_addr",
+        "dst_port",
+        "ip_prot",
+        "timestamp"
+      ],
+      "include_dst_port": false,
+      "include_ip_prot": false,
+      "drop_constant_columns": [
+        "flag_urg",
+        "fwd_flag_urg",
+        "bwd_flag_urg"
+      ],
+      "drop_train_constant": true,
+      "label_merge": {
+        "webattack_bruteforce": "webattack",
+        "webattack_xss": "webattack",
+        "webattack_sql_injection": "webattack"
+      },
+      "drop_labels": [
+        "heartbleed",
+        "webattack_sql_injection"
+      ],
+      "dedup_drop_conflicts": true,
+      "split": {
+        "mode": "per_group_temporal",
+        "group_label_merge": {
+          "webattack_sql_injection": "webattack_xss"
+        },
+        "fractions": [
+          0.6,
+          0.2,
+          0.2
+        ],
+        "gap_frac": 0.01,
+        "cross_day": {
+          "train": [
+            "Monday",
+            "Tuesday",
+            "Wednesday"
+          ],
+          "val": [
+            "Thursday"
+          ],
+          "test": [
+            "Friday"
+          ]
+        }
+      }
+    },
+    "stage2": {
+      "models": [
+        "ftt",
+        "xgb",
+        "day_confound"
+      ],
+      "preprocess": {
+        "log1p_skew_threshold": 2.0,
+        "clip": 10.0
+      },
+      "class_weight": "sqrt_inv",
+      "sampler": "none",
+      "ftt": {
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "d_model": 96,
+        "n_blocks": 3,
+        "n_heads": 4,
+        "ffn_factor": 1.3333333333333333,
+        "attn_dropout": 0.1,
+        "ffn_dropout": 0.1,
+        "residual_dropout": 0.0,
+        "batch_size": 1024,
+        "eval_batch_size": 8192,
+        "lr": 0.0003,
+        "weight_decay": 1e-05,
+        "warmup_steps": 500,
+        "max_epochs": 20,
+        "patience": 5,
+        "finite_check_every": 50,
+        "grad_clip": 1.0,
+        "amp": true
+      },
+      "xgb": {
+        "seed": 0,
+        "device": "cuda",
+        "max_depth": 8,
+        "eta": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "min_child_weight": 1.0,
+        "num_boost_round": 2000,
+        "early_stopping_rounds": 50
+      },
+      "day_confound": {
+        "seed": 0,
+        "device": "cuda",
+        "max_depth": 6,
+        "eta": 0.2,
+        "num_boost_round": 300
+      }
+    },
+    "stage7e": {
+      "pilot": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "pilot_seeds": [
+        0
+      ],
+      "n_per_class": 150,
+      "pilot_n_per_class": 20,
+      "eps": [
+        0.5,
+        1.0
+      ],
+      "steps": 100,
+      "alpha0": 0.25,
+      "restarts": 1,
+      "a2_k": 10,
+      "a2_tau": 1.0,
+      "a2_penalty": 10.0,
+      "a2_mass_drop": 0.5,
+      "a3_lambdas": [
+        0.1,
+        1.0,
+        10.0
+      ],
+      "a3_kappa": 1.0,
+      "constrained_attacks": [
+        "A0",
+        "A1",
+        "A1b",
+        "A2",
+        "A3"
+      ],
+      "unconstrained_attacks": [
+        "A0",
+        "A1",
+        "A1b",
+        "A2"
+      ],
+      "topk": [
+        5,
+        10,
+        20
+      ],
+      "aopc_steps": 10,
+      "ig_steps": 50,
+      "grad_batch": 128,
+      "ig_internal_batch": 2560,
+      "eval_rows": 4096,
+      "attn_batch": 256,
+      "norm_min_gap": 0.05,
+      "rng_seed": 4026,
+      "val_per_class": 100,
+      "fpr": 0.05,
+      "ig_steps_det": 20,
+      "knn_k": 5,
+      "knn_train_per_class": 20000,
+      "maha_train_rows": 200000,
+      "a4_lambdas": [
+        1.0,
+        10.0,
+        100.0
+      ],
+      "a4_norm_w": 0.5,
+      "a4_cos_margin": 0.02,
+      "n_boot": 1000,
+      "cv_splits": 5,
+      "cv_repeats": 5,
+      "n_test_benign": 1000,
+      "n_val_benign_sample": 1000,
+      "a5_lambdas": [
+        1.0,
+        10.0,
+        100.0
+      ],
+      "a5_norm_w": 0.5,
+      "a5_knn_margin_frac": 0.02,
+      "val_benign_cap": null,
+      "score_batch": 4096,
+      "kappa_a6": 10.0,
+      "a6_lambdas": [
+        1.0,
+        10.0,
+        100.0
+      ],
+      "a6_norm_w": 0.5,
+      "a6_safety": 0.5,
+      "a6_single_lambda": 10.0,
+      "d_train_neg": 20000,
+      "val_cons_neg": 5000,
+      "smoke": false,
+      "n_heldout": 50000,
+      "lambdas": [
+        1.0,
+        100.0
+      ],
+      "norm_w": 0.5,
+      "ablation_seed": 0,
+      "max_hours": 5.0,
+      "min_val_auroc": 0.9,
+      "C_plus": 1.0,
+      "out_dir": "results/stage7/stage7e",
+      "progress_log": true,
+      "attack_chunk": 500,
+      "seeds_e": [
+        0,
+        2
+      ],
+      "eps_e": 1.0,
+      "ig_steps_loss": 8,
+      "tau": 0.1,
+      "chunk_candidates": [
+        250,
+        100,
+        50
+      ],
+      "max_hours_e": 3.0,
+      "n_val_benign_check": 2000,
+      "estimate_rows": 500,
+      "estimate_steps": 4,
+      "out_dir_e": "results/stage6/strong",
+      "src_dir_e": "results/stage6/final",
+      "progress_log_e": true,
+      "a6_chunk": 500,
+      "a8_chunk": 100,
+      "probe_eps": 1.0
+    }
+  },
+  "env": {
+    "python": "3.14.8 (tags/v3.14.8:8e6e75d, Sep 30 2026, 18:19:33) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "numpy": "2.5.3",
+      "pandas": "3.0.6",
+      "pyarrow": "25.0.1",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "torch": "2.11.0+cu128",
+      "captum": "0.9.0",
+      "shap": "0.52.0",
+      "xgboost": "3.4.1"
+    },
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU"
+  }
+}

@@ -1,0 +1,13 @@
+check,seed,value,expected,pass
+target prob matches Stage 3,0,0.0e+00,< 1e-5,True
+fp32 attention vs stored float16 (max abs diff),0,2.4e-04,< 1e-3 (float16 rounding),True
+"gradattn: (row, layer) pairs with an all-zero CLS row in A_bar",0,0,small,True
+val ig_zero completeness |delta|/|f(x)-f(b)| p95,0,2.15e-02,reported as is (50 steps),True
+target prob matches Stage 3,1,0.0e+00,< 1e-5,True
+fp32 attention vs stored float16 (max abs diff),1,2.4e-04,< 1e-3 (float16 rounding),True
+"gradattn: (row, layer) pairs with an all-zero CLS row in A_bar",1,1,small,True
+val ig_zero completeness |delta|/|f(x)-f(b)| p95,1,2.26e-02,reported as is (50 steps),True
+target prob matches Stage 3,2,0.0e+00,< 1e-5,True
+fp32 attention vs stored float16 (max abs diff),2,2.4e-04,< 1e-3 (float16 rounding),True
+"gradattn: (row, layer) pairs with an all-zero CLS row in A_bar",2,0,small,True
+val ig_zero completeness |delta|/|f(x)-f(b)| p95,2,2.37e-02,reported as is (50 steps),True

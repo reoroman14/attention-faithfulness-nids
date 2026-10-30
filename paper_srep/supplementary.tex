@@ -1,0 +1,52 @@
+% Supplementary Information of the Scientific Reports version (Task 46), one separate file. Sources: si/notes.tex,
+% decisions.tex and paper_srep/generated (si_t_*.tex, figures, numbers). paper_srep/gen/build_srep.py inlines every
+% \input into one flat supplementary.tex in C:\attn_submission_srep_si, writes the table and figure lists below in the
+% order of srep_common.py (so that the automatic numbering S1, S2, ... equals the numbering macros of the main text),
+% and writes the Nature-style reference list at the %%BIBLIOGRAPHY%% line.
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[numbers,square,sort&compress]{natbib}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+\graphicspath{{generated/}}
+
+\input{generated/numbers.tex}
+\input{generated/srep_numbers.tex}
+\input{decisions.tex}
+
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\tablename}{Supplementary Table}
+\renewcommand{\figurename}{Supplementary Figure}
+
+% Title on two lines so that it wraps; the author names are broken by hand, because article's \maketitle sets \author
+% in a one-column tabular, where a long line cannot wrap.
+\title{Supplementary Information\\[1ex]{\Large\paperTitle}}
+\author{Abdulla Amin Aburomman, Mamun Bin Ibne Reaz, Mwaffaq Abualhaija,\\
+  Marwan Alakhras, Fadi Batah and Saleh AlTakrouri}
+\date{}
+
+\begin{document}
+\maketitle
+
+\input{si/notes.tex}
+
+\clearpage
+\section*{Supplementary Tables}
+%%SUPPTABLES%%
+
+\clearpage
+\section*{Supplementary Figures}
+%%SUPPFIGURES%%
+
+%%BIBLIOGRAPHY%%
+
+\end{document}

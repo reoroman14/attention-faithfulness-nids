@@ -1,0 +1,30 @@
+[2026-10-29 07:09:03] start pilot years ['2017', '2018'] controls ['c0', 'c1', 'c2', 'a1', 'a2', 'b'] seeds [0, 1, 2] cap 4.0 h
+[2026-10-29 07:09:13] 2017 c0: chunk 100, 0.22 s/step/500 rows, peak 0.31 GB -> 1.6 min per run, 0.26 h for 9 runs
+[2026-10-29 07:09:18] 2017 c1: chunk 100, 0.17 s/step/500 rows, peak 0.31 GB -> 1.2 min per run, 0.20 h for 9 runs
+[2026-10-29 07:09:22] 2017 c2: chunk 100, 0.19 s/step/500 rows, peak 0.32 GB -> 1.3 min per run, 0.21 h for 9 runs
+[2026-10-29 07:09:38] 2017 a1: chunk 100, 0.98 s/step/500 rows, peak 1.89 GB -> 6.9 min per run, 1.09 h for 9 runs
+[2026-10-29 07:09:55] 2017 a2: chunk 100, 1.11 s/step/500 rows, peak 1.89 GB -> 7.8 min per run, 1.23 h for 9 runs
+[2026-10-29 07:13:26] 2017 b: chunk 100, 36.64 s/step/500 rows, peak 11.01 GB -> 257.5 min per run, 38.77 h for 9 runs
+[2026-10-29 07:13:34] 2018 c0: chunk 100, 0.18 s/step/500 rows, peak 0.30 GB -> 1.2 min per run, 0.20 h for 9 runs
+[2026-10-29 07:13:39] 2018 c1: chunk 100, 0.18 s/step/500 rows, peak 0.30 GB -> 1.2 min per run, 0.20 h for 9 runs
+[2026-10-29 07:13:43] 2018 c2: chunk 100, 0.14 s/step/500 rows, peak 0.31 GB -> 0.9 min per run, 0.15 h for 9 runs
+[2026-10-29 07:13:59] 2018 a1: chunk 100, 0.94 s/step/500 rows, peak 1.89 GB -> 6.3 min per run, 1.00 h for 9 runs
+[2026-10-29 07:14:17] 2018 a2: chunk 100, 1.01 s/step/500 rows, peak 1.89 GB -> 6.7 min per run, 1.06 h for 9 runs
+[2026-10-29 07:17:47] 2018 b: chunk 100, 36.55 s/step/500 rows, peak 11.01 GB -> 242.4 min per run, 36.49 h for 9 runs
+[2026-10-29 07:17:47] finished pilot in 525 s
+[2026-10-29 07:20:56] start pilot years ['2017', '2018'] controls ['c0', 'c1', 'c2', 'a1', 'a2', 'b'] seeds [0, 1, 2] cap 4.0 h
+[2026-10-29 07:21:06] 2017 c0: chunk 100, 0.20 s/step/500 rows, peak 0.31 GB -> 1.4 min per run, 0.23 h for 9 runs
+[2026-10-29 07:21:10] 2017 c1: chunk 100, 0.13 s/step/500 rows, peak 0.31 GB -> 0.9 min per run, 0.16 h for 9 runs
+[2026-10-29 07:21:15] 2017 c2: chunk 100, 0.20 s/step/500 rows, peak 0.32 GB -> 1.4 min per run, 0.23 h for 9 runs
+[2026-10-29 07:21:32] 2017 a1: chunk 100, 1.02 s/step/500 rows, peak 1.89 GB -> 7.1 min per run, 1.13 h for 9 runs
+[2026-10-29 07:21:49] 2017 a2: chunk 100, 1.16 s/step/500 rows, peak 1.89 GB -> 8.2 min per run, 1.29 h for 9 runs
+[2026-10-29 07:24:54] 2017 b: peak 11.01 GB > 7.5 GB at chunk 100 (spill), treated as OOM
+[2026-10-29 07:25:20] 2017 b: chunk 50, 4.36 s/step/500 rows, peak 5.63 GB -> 30.6 min per run, 4.61 h for 9 runs
+[2026-10-29 07:25:29] 2018 c0: chunk 100, 0.27 s/step/500 rows, peak 0.30 GB -> 1.8 min per run, 0.29 h for 9 runs
+[2026-10-29 07:25:34] 2018 c1: chunk 100, 0.18 s/step/500 rows, peak 0.30 GB -> 1.2 min per run, 0.20 h for 9 runs
+[2026-10-29 07:25:39] 2018 c2: chunk 100, 0.24 s/step/500 rows, peak 0.31 GB -> 1.6 min per run, 0.26 h for 9 runs
+[2026-10-29 07:25:57] 2018 a1: chunk 100, 1.08 s/step/500 rows, peak 1.89 GB -> 7.2 min per run, 1.14 h for 9 runs
+[2026-10-29 07:26:16] 2018 a2: chunk 100, 1.22 s/step/500 rows, peak 1.89 GB -> 8.1 min per run, 1.27 h for 9 runs
+[2026-10-29 07:29:20] 2018 b: peak 11.01 GB > 7.5 GB at chunk 100 (spill), treated as OOM
+[2026-10-29 07:29:46] 2018 b: chunk 50, 4.38 s/step/500 rows, peak 5.62 GB -> 29.0 min per run, 4.37 h for 9 runs
+[2026-10-29 07:29:46] finished pilot in 529 s

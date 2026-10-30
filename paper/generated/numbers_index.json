@@ -1,0 +1,2750 @@
+{
+ "nFeatures": {
+  "value": "72",
+  "source": "results/stage7/data/features.json"
+ },
+ "nControls": {
+  "value": "18",
+  "source": "results/stage4_constraints.csv"
+ },
+ "nDerived": {
+  "value": "16",
+  "source": "results/stage4_constraints.csv"
+ },
+ "nImmutable": {
+  "value": "38",
+  "source": "results/stage4_constraints.csv"
+ },
+ "nSeeds": {
+  "value": "3",
+  "source": "src/stage5_fullrun.py STAGE5['seeds']"
+ },
+ "paramTopK": {
+  "value": "10",
+  "source": "src/stage4_attack.py STAGE4['a2_k']"
+ },
+ "paramSteps": {
+  "value": "100",
+  "source": "src/stage4_attack.py STAGE4['steps']"
+ },
+ "paramFPR": {
+  "value": "5\\%",
+  "source": "src/stage6_defense.py STAGE6['fpr']"
+ },
+ "paramBoot": {
+  "value": "1{,}000",
+  "source": "src/stage6b_defense.py STAGE6B['n_boot']"
+ },
+ "paramNegTest": {
+  "value": "1{,}000",
+  "source": "src/stage6b_defense.py STAGE6B['n_test_benign']"
+ },
+ "paramNegTrain": {
+  "value": "20{,}000",
+  "source": "src/stage6c_defense.py STAGE6C['d_train_neg']"
+ },
+ "paramNegHeld": {
+  "value": "50{,}000",
+  "source": "src/stage6d_final.py STAGE6D['n_heldout']"
+ },
+ "paramPerClass": {
+  "value": "150",
+  "source": "src/stage5_fullrun.py STAGE5['n_per_class']"
+ },
+ "paramExplPerClass": {
+  "value": "500",
+  "source": "src/stage3_explain.py STAGE3['n_per_class']"
+ },
+ "paramIGLoss": {
+  "value": "8",
+  "source": "src/stage6e_strong.py STAGE6E['ig_steps_loss']"
+ },
+ "paramIGDet": {
+  "value": "20",
+  "source": "src/stage6_defense.py STAGE6['ig_steps_det']"
+ },
+ "paramKnn": {
+  "value": "5",
+  "source": "src/stage6_defense.py STAGE6['knn_k']"
+ },
+ "paramKappa": {
+  "value": "10",
+  "source": "src/stage6c_defense.py STAGE6C['kappa_a6']"
+ },
+ "paramNormW": {
+  "value": "0.5",
+  "source": "src/stage6d_final.py STAGE6D['norm_w']"
+ },
+ "paramNDThr": {
+  "value": "\\ensuremath{10^{-3}}",
+  "source": "src/stage8_neardup.py THR"
+ },
+ "nCommonClasses": {
+  "value": "7",
+  "source": "paper/data_v2.py COMMON"
+ },
+ "nVtwoClasses": {
+  "value": "5",
+  "source": "paper/data_v2.py COMMON minus dos_slowloris, webattack"
+ },
+ "nMethods": {
+  "value": "8",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "nConsistency": {
+  "value": "12",
+  "source": "results/stage7/stage7e/standin_quality.csv"
+ },
+ "paramCILevel": {
+  "value": "95\\%",
+  "source": "src/stage6d_final.py paired_boot and src/stage6e_strong.py paired_union (2.5 / 97.5 percentiles)"
+ },
+ "paramEpsHead": {
+  "value": "1",
+  "source": "src/stage5_fullrun.py STAGE5['headline_max_eps']"
+ },
+ "nRowsTrainSeventeen": {
+  "value": "906{,}981",
+  "source": "results/stage1_class_counts.csv"
+ },
+ "nRowsValSeventeen": {
+  "value": "302{,}329",
+  "source": "results/stage1_class_counts.csv"
+ },
+ "nRowsTestSeventeen": {
+  "value": "302{,}327",
+  "source": "results/stage1_class_counts.csv"
+ },
+ "nClassesSeventeen": {
+  "value": "11",
+  "source": "results/stage1_class_counts.csv"
+ },
+ "nRowsTrainEighteen": {
+  "value": "1{,}095{,}031",
+  "source": "results/stage7/stage7b_counts_by_step.csv"
+ },
+ "nRowsValEighteen": {
+  "value": "365{,}010",
+  "source": "results/stage7/stage7b_counts_by_step.csv"
+ },
+ "nRowsTestEighteen": {
+  "value": "365{,}011",
+  "source": "results/stage7/stage7b_counts_by_step.csv"
+ },
+ "nClassesEighteen": {
+  "value": "8",
+  "source": "results/stage7/stage7b_counts_by_step.csv"
+ },
+ "nWebTestEighteen": {
+  "value": "85",
+  "source": "results/stage7/stage7b_counts_by_step.csv"
+ },
+ "nWebValEighteen": {
+  "value": "84",
+  "source": "results/stage7/stage7c/stage7c_3c_val_selection_counts.csv"
+ },
+ "nHeartbleed": {
+  "value": "11",
+  "source": "results/stage1_class_counts.csv"
+ },
+ "nSqlInjection": {
+  "value": "12",
+  "source": "results/stage1_cleaning_report.csv"
+ },
+ "nFtpRemoved": {
+  "value": "190{,}300",
+  "source": "results/stage7/stage7b_counts_by_step.csv"
+ },
+ "nSlowhttpRemoved": {
+  "value": "105{,}550",
+  "source": "results/stage7/stage7b_counts_by_step.csv"
+ },
+ "fOneFTTSeventeen": {
+  "value": "\\ensuremath{0.9231}",
+  "source": "results/stage2_per_class_f1.csv"
+ },
+ "fOneFTTSeventeenRange": {
+  "value": "\\ensuremath{0.9133}~to~\\ensuremath{0.9309}",
+  "source": "results/stage2_per_class_f1.csv"
+ },
+ "fOneXGBSeventeen": {
+  "value": "\\ensuremath{0.9515}",
+  "source": "results/stage2_per_class_f1.csv"
+ },
+ "fOneFTTEighteen": {
+  "value": "\\ensuremath{0.9924}",
+  "source": "results/stage7/stage7b_per_class.csv"
+ },
+ "fOneFTTEighteenRange": {
+  "value": "\\ensuremath{0.9915}~to~\\ensuremath{0.9936}",
+  "source": "results/stage7/stage7b_per_class.csv"
+ },
+ "fOneXGBEighteen": {
+  "value": "\\ensuremath{0.9977}",
+  "source": "results/stage7/stage7b_per_class.csv"
+ },
+ "valAurocDSeventeenRange": {
+  "value": "\\ensuremath{0.988}~to~\\ensuremath{0.996}",
+  "source": "results/stage6/final/seed0/summary_defenders.csv; results/stage6/final/seed0/summary_detection.csv; results/stage6/final/seed0/negatives.pkl"
+ },
+ "valAurocDplusSeventeenRange": {
+  "value": "\\ensuremath{0.993}~to~\\ensuremath{0.998}",
+  "source": "results/stage6/final/seed0/summary_defenders.csv; results/stage6/final/seed0/summary_detection.csv; results/stage6/final/seed0/negatives.pkl"
+ },
+ "testFprDSeventeenRange": {
+  "value": "\\ensuremath{0.045}~to~\\ensuremath{0.056}",
+  "source": "results/stage6/final/seed0/summary_defenders.csv; results/stage6/final/seed0/summary_detection.csv; results/stage6/final/seed0/negatives.pkl"
+ },
+ "testFprDplusSeventeenRange": {
+  "value": "\\ensuremath{0.047}~to~\\ensuremath{0.057}",
+  "source": "results/stage6/final/seed0/summary_defenders.csv; results/stage6/final/seed0/summary_detection.csv; results/stage6/final/seed0/negatives.pkl"
+ },
+ "nPosTrainSeventeenRange": {
+  "value": "538~to~854",
+  "source": "results/stage6/final/seed0/summary_defenders.csv; results/stage6/final/seed0/summary_detection.csv; results/stage6/final/seed0/negatives.pkl"
+ },
+ "valAurocDEighteenRange": {
+  "value": "\\ensuremath{0.995}~to~\\ensuremath{0.999}",
+  "source": "results/stage7/stage7e/seed0/summary_defenders.csv; results/stage7/stage7e/seed0/summary_detection.csv; results/stage7/stage7e/seed0/negatives.pkl"
+ },
+ "valAurocDplusEighteenRange": {
+  "value": "\\ensuremath{0.997}~to~\\ensuremath{1.000}",
+  "source": "results/stage7/stage7e/seed0/summary_defenders.csv; results/stage7/stage7e/seed0/summary_detection.csv; results/stage7/stage7e/seed0/negatives.pkl"
+ },
+ "testFprDEighteenRange": {
+  "value": "\\ensuremath{0.053}~to~\\ensuremath{0.058}",
+  "source": "results/stage7/stage7e/seed0/summary_defenders.csv; results/stage7/stage7e/seed0/summary_detection.csv; results/stage7/stage7e/seed0/negatives.pkl"
+ },
+ "testFprDplusEighteenRange": {
+  "value": "\\ensuremath{0.044}~to~\\ensuremath{0.053}",
+  "source": "results/stage7/stage7e/seed0/summary_defenders.csv; results/stage7/stage7e/seed0/summary_detection.csv; results/stage7/stage7e/seed0/negatives.pkl"
+ },
+ "nPosTrainEighteenRange": {
+  "value": "228~to~566",
+  "source": "results/stage7/stage7e/seed0/summary_defenders.csv; results/stage7/stage7e/seed0/summary_detection.csv; results/stage7/stage7e/seed0/negatives.pkl"
+ },
+ "ndSlowlorisSeventeen": {
+  "value": "\\ensuremath{0.351}",
+  "source": "results/stage8/neardup_exact_2017_2018.csv"
+ },
+ "ndWebSeventeen": {
+  "value": "\\ensuremath{0.411}",
+  "source": "results/stage8/neardup_exact_2017_2018.csv"
+ },
+ "ndAllSeventeen": {
+  "value": "\\ensuremath{0.108}",
+  "source": "results/stage8/neardup_exact_2017_2018.csv"
+ },
+ "ndSlowlorisEighteen": {
+  "value": "\\ensuremath{0.456}",
+  "source": "results/stage8/neardup_exact_2017_2018.csv"
+ },
+ "ndWebEighteen": {
+  "value": "\\ensuremath{0.000}",
+  "source": "results/stage8/neardup_exact_2017_2018.csv"
+ },
+ "ndAllEighteen": {
+  "value": "\\ensuremath{0.043}",
+  "source": "results/stage8/neardup_exact_2017_2018.csv"
+ },
+ "ndSlowhttpSeventeen": {
+  "value": "\\ensuremath{0.866}",
+  "source": "results/stage8/neardup_exact_2017_2018.csv"
+ },
+ "ndSrcAllSeventeen": {
+  "value": "271~of~1{,}494",
+  "source": "results/stage8/sensitivity_flags.csv"
+ },
+ "ndSrcSlowlorisSeventeen": {
+  "value": "73~of~150",
+  "source": "results/stage8/sensitivity_flags.csv"
+ },
+ "ndSrcWebSeventeen": {
+  "value": "69~of~150",
+  "source": "results/stage8/sensitivity_flags.csv"
+ },
+ "ndSrcAllEighteen": {
+  "value": "0~of~985",
+  "source": "results/stage8/sensitivity_flags.csv"
+ },
+ "nSrcVzeroSeventeen": {
+  "value": "1{,}044",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "nSrcVoneSeventeen": {
+  "value": "901",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "nSrcVtwoSeventeen": {
+  "value": "744",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "nSrcVzeroEighteen": {
+  "value": "985",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "nSrcVoneEighteen": {
+  "value": "985",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "nSrcVtwoEighteen": {
+  "value": "750",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "ndNegSeventeen": {
+  "value": "\\ensuremath{0.128}",
+  "source": "results/stage8/sensitivity_negatives.csv"
+ },
+ "fprDNdSeventeen": {
+  "value": "\\ensuremath{0.008}",
+  "source": "results/stage8/sensitivity_negatives.csv"
+ },
+ "fprDOtherSeventeen": {
+  "value": "\\ensuremath{0.059}",
+  "source": "results/stage8/sensitivity_negatives.csv"
+ },
+ "fprDplusNdSeventeen": {
+  "value": "\\ensuremath{0.016}",
+  "source": "results/stage8/sensitivity_negatives.csv"
+ },
+ "fprDplusOtherSeventeen": {
+  "value": "\\ensuremath{0.058}",
+  "source": "results/stage8/sensitivity_negatives.csv"
+ },
+ "ndNegEighteen": {
+  "value": "\\ensuremath{0.072}",
+  "source": "results/stage8/sensitivity_negatives.csv"
+ },
+ "fprDNdEighteen": {
+  "value": "\\ensuremath{0.060}",
+  "source": "results/stage8/sensitivity_negatives.csv"
+ },
+ "fprDOtherEighteen": {
+  "value": "\\ensuremath{0.054}",
+  "source": "results/stage8/sensitivity_negatives.csv"
+ },
+ "fprDplusNdEighteen": {
+  "value": "\\ensuremath{0.037}",
+  "source": "results/stage8/sensitivity_negatives.csv"
+ },
+ "fprDplusOtherEighteen": {
+  "value": "\\ensuremath{0.050}",
+  "source": "results/stage8/sensitivity_negatives.csv"
+ },
+ "tprDNdSeventeen": {
+  "value": "\\ensuremath{0.918}",
+  "source": "results/stage8/sensitivity_tpr_by_flag.csv"
+ },
+ "tprDOtherSeventeen": {
+  "value": "\\ensuremath{0.589}",
+  "source": "results/stage8/sensitivity_tpr_by_flag.csv"
+ },
+ "tprDplusNdSeventeen": {
+  "value": "\\ensuremath{0.957}",
+  "source": "results/stage8/sensitivity_tpr_by_flag.csv"
+ },
+ "tprDplusOtherSeventeen": {
+  "value": "\\ensuremath{0.827}",
+  "source": "results/stage8/sensitivity_tpr_by_flag.csv"
+ },
+ "spRolloutIGVzeroSeventeen": {
+  "value": "\\ensuremath{0.357}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutIGVzeroSeventeenRange": {
+  "value": "\\ensuremath{0.339}~to~\\ensuremath{0.378}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutIGVoneSeventeen": {
+  "value": "\\ensuremath{0.349}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutIGVoneSeventeenRange": {
+  "value": "\\ensuremath{0.317}~to~\\ensuremath{0.373}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutGShapVoneSeventeen": {
+  "value": "\\ensuremath{0.470}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutGShapVoneSeventeenRange": {
+  "value": "\\ensuremath{0.412}~to~\\ensuremath{0.505}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutOcclVoneSeventeen": {
+  "value": "\\ensuremath{0.396}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutOcclVoneSeventeenRange": {
+  "value": "\\ensuremath{0.351}~to~\\ensuremath{0.435}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutTreeShapVoneSeventeen": {
+  "value": "\\ensuremath{0.231}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutTreeShapVoneSeventeenRange": {
+  "value": "\\ensuremath{0.176}~to~\\ensuremath{0.269}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spMeanIGVoneSeventeen": {
+  "value": "\\ensuremath{0.306}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spMeanIGVoneSeventeenRange": {
+  "value": "\\ensuremath{0.268}~to~\\ensuremath{0.340}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spMeanGShapVoneSeventeen": {
+  "value": "\\ensuremath{0.431}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spMeanGShapVoneSeventeenRange": {
+  "value": "\\ensuremath{0.369}~to~\\ensuremath{0.467}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spMeanOcclVoneSeventeen": {
+  "value": "\\ensuremath{0.351}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spMeanOcclVoneSeventeenRange": {
+  "value": "\\ensuremath{0.304}~to~\\ensuremath{0.387}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spMeanTreeShapVoneSeventeen": {
+  "value": "\\ensuremath{0.208}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spMeanTreeShapVoneSeventeenRange": {
+  "value": "\\ensuremath{0.155}~to~\\ensuremath{0.259}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spLastIGVoneSeventeen": {
+  "value": "\\ensuremath{0.033}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spLastIGVoneSeventeenRange": {
+  "value": "\\ensuremath{-0.013}~to~\\ensuremath{0.092}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spLastGShapVoneSeventeen": {
+  "value": "\\ensuremath{0.049}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spLastGShapVoneSeventeenRange": {
+  "value": "\\ensuremath{-0.023}~to~\\ensuremath{0.129}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spLastOcclVoneSeventeen": {
+  "value": "\\ensuremath{0.035}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spLastOcclVoneSeventeenRange": {
+  "value": "\\ensuremath{0.000}~to~\\ensuremath{0.083}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spLastTreeShapVoneSeventeen": {
+  "value": "\\ensuremath{0.040}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spLastTreeShapVoneSeventeenRange": {
+  "value": "\\ensuremath{-0.002}~to~\\ensuremath{0.077}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelRolloutVoneSeventeen": {
+  "value": "\\ensuremath{0.125}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelRolloutVoneSeventeenRange": {
+  "value": "\\ensuremath{0.114}~to~\\ensuremath{0.137}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelMeanVoneSeventeen": {
+  "value": "\\ensuremath{0.145}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelMeanVoneSeventeenRange": {
+  "value": "\\ensuremath{0.111}~to~\\ensuremath{0.191}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelLastVoneSeventeen": {
+  "value": "\\ensuremath{0.241}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelLastVoneSeventeenRange": {
+  "value": "\\ensuremath{0.219}~to~\\ensuremath{0.272}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelIGVoneSeventeen": {
+  "value": "\\ensuremath{0.020}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelIGVoneSeventeenRange": {
+  "value": "\\ensuremath{0.015}~to~\\ensuremath{0.024}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelGShapVoneSeventeen": {
+  "value": "\\ensuremath{0.058}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelGShapVoneSeventeenRange": {
+  "value": "\\ensuremath{0.054}~to~\\ensuremath{0.061}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelOcclVoneSeventeen": {
+  "value": "\\ensuremath{0.024}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelOcclVoneSeventeenRange": {
+  "value": "\\ensuremath{0.018}~to~\\ensuremath{0.032}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelAbsXVoneSeventeen": {
+  "value": "\\ensuremath{0.079}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelAbsXVoneSeventeenRange": {
+  "value": "\\ensuremath{0.074}~to~\\ensuremath{0.084}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelRandomVoneSeventeen": {
+  "value": "\\ensuremath{0.246}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelRandomVoneSeventeenRange": {
+  "value": "\\ensuremath{0.240}~to~\\ensuremath{0.258}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsRolloutVoneSeventeen": {
+  "value": "\\ensuremath{0.501}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsRolloutVoneSeventeenRange": {
+  "value": "\\ensuremath{0.460}~to~\\ensuremath{0.577}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsMeanVoneSeventeen": {
+  "value": "\\ensuremath{0.470}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsMeanVoneSeventeenRange": {
+  "value": "\\ensuremath{0.420}~to~\\ensuremath{0.544}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsLastVoneSeventeen": {
+  "value": "\\ensuremath{0.252}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsLastVoneSeventeenRange": {
+  "value": "\\ensuremath{0.207}~to~\\ensuremath{0.285}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsIGVoneSeventeen": {
+  "value": "\\ensuremath{0.761}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsIGVoneSeventeenRange": {
+  "value": "\\ensuremath{0.736}~to~\\ensuremath{0.793}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsGShapVoneSeventeen": {
+  "value": "\\ensuremath{0.584}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsGShapVoneSeventeenRange": {
+  "value": "\\ensuremath{0.578}~to~\\ensuremath{0.593}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsOcclVoneSeventeen": {
+  "value": "\\ensuremath{0.717}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsOcclVoneSeventeenRange": {
+  "value": "\\ensuremath{0.680}~to~\\ensuremath{0.778}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsAbsXVoneSeventeen": {
+  "value": "\\ensuremath{0.636}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsAbsXVoneSeventeenRange": {
+  "value": "\\ensuremath{0.629}~to~\\ensuremath{0.649}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsRandomVoneSeventeen": {
+  "value": "\\ensuremath{0.246}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsRandomVoneSeventeenRange": {
+  "value": "\\ensuremath{0.239}~to~\\ensuremath{0.257}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutIGVtwoSeventeen": {
+  "value": "\\ensuremath{0.345}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutIGVtwoSeventeenRange": {
+  "value": "\\ensuremath{0.331}~to~\\ensuremath{0.369}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutIGVzeroEighteen": {
+  "value": "\\ensuremath{0.323}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutIGVzeroEighteenRange": {
+  "value": "\\ensuremath{0.244}~to~\\ensuremath{0.423}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutIGVoneEighteen": {
+  "value": "\\ensuremath{0.314}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutIGVoneEighteenRange": {
+  "value": "\\ensuremath{0.244}~to~\\ensuremath{0.406}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutGShapVoneEighteen": {
+  "value": "\\ensuremath{0.432}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutGShapVoneEighteenRange": {
+  "value": "\\ensuremath{0.365}~to~\\ensuremath{0.515}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutOcclVoneEighteen": {
+  "value": "\\ensuremath{0.358}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutOcclVoneEighteenRange": {
+  "value": "\\ensuremath{0.310}~to~\\ensuremath{0.429}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutTreeShapVoneEighteen": {
+  "value": "\\ensuremath{0.263}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutTreeShapVoneEighteenRange": {
+  "value": "\\ensuremath{0.226}~to~\\ensuremath{0.337}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spMeanIGVoneEighteen": {
+  "value": "\\ensuremath{0.238}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spMeanIGVoneEighteenRange": {
+  "value": "\\ensuremath{0.190}~to~\\ensuremath{0.334}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spMeanGShapVoneEighteen": {
+  "value": "\\ensuremath{0.321}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spMeanGShapVoneEighteenRange": {
+  "value": "\\ensuremath{0.264}~to~\\ensuremath{0.430}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spMeanOcclVoneEighteen": {
+  "value": "\\ensuremath{0.276}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spMeanOcclVoneEighteenRange": {
+  "value": "\\ensuremath{0.196}~to~\\ensuremath{0.348}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spMeanTreeShapVoneEighteen": {
+  "value": "\\ensuremath{0.215}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spMeanTreeShapVoneEighteenRange": {
+  "value": "\\ensuremath{0.155}~to~\\ensuremath{0.280}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spLastIGVoneEighteen": {
+  "value": "\\ensuremath{0.015}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spLastIGVoneEighteenRange": {
+  "value": "\\ensuremath{-0.015}~to~\\ensuremath{0.048}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spLastGShapVoneEighteen": {
+  "value": "\\ensuremath{0.004}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spLastGShapVoneEighteenRange": {
+  "value": "\\ensuremath{-0.052}~to~\\ensuremath{0.036}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spLastOcclVoneEighteen": {
+  "value": "\\ensuremath{-0.011}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spLastOcclVoneEighteenRange": {
+  "value": "\\ensuremath{-0.048}~to~\\ensuremath{0.035}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spLastTreeShapVoneEighteen": {
+  "value": "\\ensuremath{0.027}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spLastTreeShapVoneEighteenRange": {
+  "value": "\\ensuremath{0.006}~to~\\ensuremath{0.064}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelRolloutVoneEighteen": {
+  "value": "\\ensuremath{0.119}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelRolloutVoneEighteenRange": {
+  "value": "\\ensuremath{0.084}~to~\\ensuremath{0.178}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelMeanVoneEighteen": {
+  "value": "\\ensuremath{0.140}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelMeanVoneEighteenRange": {
+  "value": "\\ensuremath{0.113}~to~\\ensuremath{0.193}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelLastVoneEighteen": {
+  "value": "\\ensuremath{0.259}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelLastVoneEighteenRange": {
+  "value": "\\ensuremath{0.174}~to~\\ensuremath{0.338}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelIGVoneEighteen": {
+  "value": "\\ensuremath{0.031}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelIGVoneEighteenRange": {
+  "value": "\\ensuremath{0.025}~to~\\ensuremath{0.039}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelGShapVoneEighteen": {
+  "value": "\\ensuremath{0.053}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelGShapVoneEighteenRange": {
+  "value": "\\ensuremath{0.044}~to~\\ensuremath{0.065}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelOcclVoneEighteen": {
+  "value": "\\ensuremath{0.049}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelOcclVoneEighteenRange": {
+  "value": "\\ensuremath{0.032}~to~\\ensuremath{0.067}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelAbsXVoneEighteen": {
+  "value": "\\ensuremath{0.149}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelAbsXVoneEighteenRange": {
+  "value": "\\ensuremath{0.122}~to~\\ensuremath{0.173}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelRandomVoneEighteen": {
+  "value": "\\ensuremath{0.345}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucDelRandomVoneEighteenRange": {
+  "value": "\\ensuremath{0.323}~to~\\ensuremath{0.380}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsRolloutVoneEighteen": {
+  "value": "\\ensuremath{0.607}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsRolloutVoneEighteenRange": {
+  "value": "\\ensuremath{0.541}~to~\\ensuremath{0.687}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsMeanVoneEighteen": {
+  "value": "\\ensuremath{0.506}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsMeanVoneEighteenRange": {
+  "value": "\\ensuremath{0.378}~to~\\ensuremath{0.578}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsLastVoneEighteen": {
+  "value": "\\ensuremath{0.374}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsLastVoneEighteenRange": {
+  "value": "\\ensuremath{0.328}~to~\\ensuremath{0.442}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsIGVoneEighteen": {
+  "value": "\\ensuremath{0.864}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsIGVoneEighteenRange": {
+  "value": "\\ensuremath{0.837}~to~\\ensuremath{0.878}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsGShapVoneEighteen": {
+  "value": "\\ensuremath{0.795}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsGShapVoneEighteenRange": {
+  "value": "\\ensuremath{0.770}~to~\\ensuremath{0.817}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsOcclVoneEighteen": {
+  "value": "\\ensuremath{0.795}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsOcclVoneEighteenRange": {
+  "value": "\\ensuremath{0.782}~to~\\ensuremath{0.812}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsAbsXVoneEighteen": {
+  "value": "\\ensuremath{0.604}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsAbsXVoneEighteenRange": {
+  "value": "\\ensuremath{0.560}~to~\\ensuremath{0.656}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsRandomVoneEighteen": {
+  "value": "\\ensuremath{0.342}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "aucInsRandomVoneEighteenRange": {
+  "value": "\\ensuremath{0.320}~to~\\ensuremath{0.379}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutIGVtwoEighteen": {
+  "value": "\\ensuremath{0.320}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "spRolloutIGVtwoEighteenRange": {
+  "value": "\\ensuremath{0.228}~to~\\ensuremath{0.427}",
+  "source": "results/stage8/clean_variants.csv"
+ },
+ "ordSpDelVzero": {
+  "value": "\\ensuremath{0.976}",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "ordSpInsVzero": {
+  "value": "\\ensuremath{0.976}",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "ordSpDelVone": {
+  "value": "\\ensuremath{0.929}",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankDelRolloutSeventeen": {
+  "value": "5",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankDelRolloutEighteen": {
+  "value": "4",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankDelIGSeventeen": {
+  "value": "1",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankDelIGEighteen": {
+  "value": "1",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankDelOcclSeventeen": {
+  "value": "2",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankDelOcclEighteen": {
+  "value": "2",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankDelAbsXSeventeen": {
+  "value": "4",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankDelAbsXEighteen": {
+  "value": "6",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankDelRandomSeventeen": {
+  "value": "8",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankDelRandomEighteen": {
+  "value": "8",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankDelLastSeventeen": {
+  "value": "7",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankDelLastEighteen": {
+  "value": "7",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "ordSpInsVone": {
+  "value": "\\ensuremath{0.929}",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankInsRolloutSeventeen": {
+  "value": "5",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankInsRolloutEighteen": {
+  "value": "4",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankInsIGSeventeen": {
+  "value": "1",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankInsIGEighteen": {
+  "value": "1",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankInsOcclSeventeen": {
+  "value": "2",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankInsOcclEighteen": {
+  "value": "2",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankInsAbsXSeventeen": {
+  "value": "3",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankInsAbsXEighteen": {
+  "value": "5",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankInsRandomSeventeen": {
+  "value": "8",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankInsRandomEighteen": {
+  "value": "8",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankInsLastSeventeen": {
+  "value": "7",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "rankInsLastEighteen": {
+  "value": "7",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "ordSpDelVtwo": {
+  "value": "\\ensuremath{0.976}",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "ordSpInsVtwo": {
+  "value": "\\ensuremath{0.905}",
+  "source": "results/stage8/clean_variants_ordering.csv"
+ },
+ "staticGapSeventeen": {
+  "value": "\\ensuremath{0.022}",
+  "source": "results/stage7/stage7c/stage7c_cmp2017_findings.csv"
+ },
+ "staticGapEighteen": {
+  "value": "\\ensuremath{-0.025}",
+  "source": "results/stage7/stage7c/stage7c_cmp2017_findings.csv"
+ },
+ "headMinusRolloutSeventeen": {
+  "value": "\\ensuremath{-0.024}",
+  "source": "results/stage7/stage7c/stage7c_cmp2017_findings.csv"
+ },
+ "headMinusRolloutEighteen": {
+  "value": "\\ensuremath{0.021}",
+  "source": "results/stage7/stage7c/stage7c_cmp2017_findings.csv"
+ },
+ "massAtwoVzeroSeventeen": {
+  "value": "\\ensuremath{0.902}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massAtwoVzeroSeventeenRange": {
+  "value": "\\ensuremath{0.870}~to~\\ensuremath{0.943}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipIGVzeroSeventeen": {
+  "value": "\\ensuremath{-10.70}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipIGVzeroSeventeenRange": {
+  "value": "\\ensuremath{-12.78}~to~\\ensuremath{-8.83}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipRolloutVzeroSeventeen": {
+  "value": "\\ensuremath{-7.61}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipRolloutVzeroSeventeenRange": {
+  "value": "\\ensuremath{-8.90}~to~\\ensuremath{-6.23}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "succAzeroVzeroSeventeen": {
+  "value": "\\ensuremath{0.198}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massAtwoVoneSeventeen": {
+  "value": "\\ensuremath{0.906}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massAtwoVoneSeventeenRange": {
+  "value": "\\ensuremath{0.864}~to~\\ensuremath{0.948}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massAthreeVoneSeventeen": {
+  "value": "\\ensuremath{0.900}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massAthreeVoneSeventeenRange": {
+  "value": "\\ensuremath{0.855}~to~\\ensuremath{0.947}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massUncVoneSeventeen": {
+  "value": "\\ensuremath{0.800}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massUncVoneSeventeenRange": {
+  "value": "\\ensuremath{0.748}~to~\\ensuremath{0.833}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "succAoneVoneSeventeen": {
+  "value": "\\ensuremath{0.622}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "succAoneVoneSeventeenRange": {
+  "value": "\\ensuremath{0.461}~to~\\ensuremath{0.814}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "succAzeroVoneSeventeen": {
+  "value": "\\ensuremath{0.206}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "succAzeroVoneSeventeenRange": {
+  "value": "\\ensuremath{0.103}~to~\\ensuremath{0.270}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massAzeroVoneSeventeen": {
+  "value": "\\ensuremath{0.994}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massAzeroVoneSeventeenRange": {
+  "value": "\\ensuremath{0.970}~to~\\ensuremath{1.025}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "aoneMinusAzeroVoneSeventeen": {
+  "value": "\\ensuremath{0.416}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "aoneMinusAzeroVoneSeventeenRange": {
+  "value": "\\ensuremath{0.216}~to~\\ensuremath{0.544}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipIGVoneSeventeen": {
+  "value": "\\ensuremath{-11.06}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipIGVoneSeventeenRange": {
+  "value": "\\ensuremath{-13.04}~to~\\ensuremath{-9.02}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipOcclVoneSeventeen": {
+  "value": "\\ensuremath{-12.55}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipOcclVoneSeventeenRange": {
+  "value": "\\ensuremath{-14.26}~to~\\ensuremath{-10.83}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipRolloutVoneSeventeen": {
+  "value": "\\ensuremath{-7.45}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipRolloutVoneSeventeenRange": {
+  "value": "\\ensuremath{-8.09}~to~\\ensuremath{-6.59}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipMeanVoneSeventeen": {
+  "value": "\\ensuremath{-7.16}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipMeanVoneSeventeenRange": {
+  "value": "\\ensuremath{-8.00}~to~\\ensuremath{-6.15}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipLastVoneSeventeen": {
+  "value": "\\ensuremath{1.04}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipLastVoneSeventeenRange": {
+  "value": "\\ensuremath{-1.33}~to~\\ensuremath{4.31}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipStaticRolloutVoneSeventeen": {
+  "value": "\\ensuremath{-5.43}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipStaticRolloutVoneSeventeenRange": {
+  "value": "\\ensuremath{-6.16}~to~\\ensuremath{-4.63}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipStaticIGVoneSeventeen": {
+  "value": "\\ensuremath{-9.72}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipStaticIGVoneSeventeenRange": {
+  "value": "\\ensuremath{-11.09}~to~\\ensuremath{-7.72}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipAbsXVoneSeventeen": {
+  "value": "\\ensuremath{-6.60}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipAbsXVoneSeventeenRange": {
+  "value": "\\ensuremath{-8.94}~to~\\ensuremath{-4.86}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipRandomVoneSeventeen": {
+  "value": "\\ensuremath{0.02}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipRandomVoneSeventeenRange": {
+  "value": "\\ensuremath{-0.10}~to~\\ensuremath{0.15}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massAtwoVtwoSeventeen": {
+  "value": "\\ensuremath{0.927}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massAtwoVtwoSeventeenRange": {
+  "value": "\\ensuremath{0.901}~to~\\ensuremath{0.953}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipIGVtwoSeventeen": {
+  "value": "\\ensuremath{-10.73}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipIGVtwoSeventeenRange": {
+  "value": "\\ensuremath{-12.73}~to~\\ensuremath{-8.92}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipRolloutVtwoSeventeen": {
+  "value": "\\ensuremath{-6.73}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipRolloutVtwoSeventeenRange": {
+  "value": "\\ensuremath{-7.73}~to~\\ensuremath{-5.81}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massAtwoVzeroEighteen": {
+  "value": "\\ensuremath{0.861}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massAtwoVzeroEighteenRange": {
+  "value": "\\ensuremath{0.840}~to~\\ensuremath{0.874}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipIGVzeroEighteen": {
+  "value": "\\ensuremath{-11.36}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipIGVzeroEighteenRange": {
+  "value": "\\ensuremath{-12.05}~to~\\ensuremath{-10.99}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipRolloutVzeroEighteen": {
+  "value": "\\ensuremath{-7.50}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipRolloutVzeroEighteenRange": {
+  "value": "\\ensuremath{-8.93}~to~\\ensuremath{-5.84}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "succAzeroVzeroEighteen": {
+  "value": "\\ensuremath{0.185}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massAtwoVoneEighteen": {
+  "value": "\\ensuremath{0.861}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massAtwoVoneEighteenRange": {
+  "value": "\\ensuremath{0.840}~to~\\ensuremath{0.874}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massAthreeVoneEighteen": {
+  "value": "\\ensuremath{0.869}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massAthreeVoneEighteenRange": {
+  "value": "\\ensuremath{0.854}~to~\\ensuremath{0.885}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massUncVoneEighteen": {
+  "value": "\\ensuremath{0.726}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massUncVoneEighteenRange": {
+  "value": "\\ensuremath{0.699}~to~\\ensuremath{0.743}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "succAoneVoneEighteen": {
+  "value": "\\ensuremath{0.601}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "succAoneVoneEighteenRange": {
+  "value": "\\ensuremath{0.294}~to~\\ensuremath{0.866}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "succAzeroVoneEighteen": {
+  "value": "\\ensuremath{0.185}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "succAzeroVoneEighteenRange": {
+  "value": "\\ensuremath{0.087}~to~\\ensuremath{0.317}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massAzeroVoneEighteen": {
+  "value": "\\ensuremath{0.999}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massAzeroVoneEighteenRange": {
+  "value": "\\ensuremath{0.967}~to~\\ensuremath{1.041}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "aoneMinusAzeroVoneEighteen": {
+  "value": "\\ensuremath{0.416}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "aoneMinusAzeroVoneEighteenRange": {
+  "value": "\\ensuremath{0.207}~to~\\ensuremath{0.550}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipIGVoneEighteen": {
+  "value": "\\ensuremath{-11.36}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipIGVoneEighteenRange": {
+  "value": "\\ensuremath{-12.05}~to~\\ensuremath{-10.99}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipOcclVoneEighteen": {
+  "value": "\\ensuremath{-10.61}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipOcclVoneEighteenRange": {
+  "value": "\\ensuremath{-10.88}~to~\\ensuremath{-10.25}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipRolloutVoneEighteen": {
+  "value": "\\ensuremath{-7.50}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipRolloutVoneEighteenRange": {
+  "value": "\\ensuremath{-8.93}~to~\\ensuremath{-5.84}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipMeanVoneEighteen": {
+  "value": "\\ensuremath{-7.37}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipMeanVoneEighteenRange": {
+  "value": "\\ensuremath{-7.74}~to~\\ensuremath{-6.65}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipLastVoneEighteen": {
+  "value": "\\ensuremath{-1.16}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipLastVoneEighteenRange": {
+  "value": "\\ensuremath{-2.92}~to~\\ensuremath{0.34}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipStaticRolloutVoneEighteen": {
+  "value": "\\ensuremath{-6.19}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipStaticRolloutVoneEighteenRange": {
+  "value": "\\ensuremath{-7.39}~to~\\ensuremath{-4.99}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipStaticIGVoneEighteen": {
+  "value": "\\ensuremath{-10.07}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipStaticIGVoneEighteenRange": {
+  "value": "\\ensuremath{-10.57}~to~\\ensuremath{-9.59}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipAbsXVoneEighteen": {
+  "value": "\\ensuremath{-5.97}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipAbsXVoneEighteenRange": {
+  "value": "\\ensuremath{-6.61}~to~\\ensuremath{-5.56}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipRandomVoneEighteen": {
+  "value": "\\ensuremath{0.25}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipRandomVoneEighteenRange": {
+  "value": "\\ensuremath{-0.31}~to~\\ensuremath{0.82}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massAtwoVtwoEighteen": {
+  "value": "\\ensuremath{0.866}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massAtwoVtwoEighteenRange": {
+  "value": "\\ensuremath{0.839}~to~\\ensuremath{0.885}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipIGVtwoEighteen": {
+  "value": "\\ensuremath{-11.09}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipIGVtwoEighteenRange": {
+  "value": "\\ensuremath{-11.32}~to~\\ensuremath{-10.82}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipRolloutVtwoEighteen": {
+  "value": "\\ensuremath{-6.74}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "flipRolloutVtwoEighteenRange": {
+  "value": "\\ensuremath{-7.89}~to~\\ensuremath{-4.58}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "tprAeightOneVzeroSeventeen": {
+  "value": "\\ensuremath{0.016}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightOneVzeroSeventeenCI": {
+  "value": "\\ensuremath{[-0.005, 0.039]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightHundredVzeroSeventeen": {
+  "value": "\\ensuremath{-0.047}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightHundredVzeroSeventeenCI": {
+  "value": "\\ensuremath{[-0.074, -0.022]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightNormVzeroSeventeen": {
+  "value": "\\ensuremath{-0.012}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightNormVzeroSeventeenCI": {
+  "value": "\\ensuremath{[-0.032, 0.007]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "unionVzeroSeventeen": {
+  "value": "\\ensuremath{-0.025}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVzeroSeventeenCI": {
+  "value": "\\ensuremath{[-0.039, -0.012]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVzeroSeventeenAbs": {
+  "value": "\\ensuremath{0.025}",
+  "source": "results/stage8/sensitivity_union.csv (absolute value of Dplus_minus_D)"
+ },
+ "unionDVzeroSeventeen": {
+  "value": "\\ensuremath{0.246}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionDplusVzeroSeventeen": {
+  "value": "\\ensuremath{0.221}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVzeroSeventeenSeedZero": {
+  "value": "\\ensuremath{0.063}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVzeroSeventeenSeedZeroCI": {
+  "value": "\\ensuremath{[0.036, 0.092]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVzeroSeventeenSeedOne": {
+  "value": "\\ensuremath{-0.050}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVzeroSeventeenSeedOneCI": {
+  "value": "\\ensuremath{[-0.064, -0.037]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVzeroSeventeenSeedTwo": {
+  "value": "\\ensuremath{-0.089}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVzeroSeventeenSeedTwoCI": {
+  "value": "\\ensuremath{[-0.111, -0.068]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "undetDAsixOneVzeroSeventeen": {
+  "value": "\\ensuremath{0.185}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDAsixOneVzeroSeventeenRange": {
+  "value": "\\ensuremath{0.127}~to~\\ensuremath{0.250}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "tprAsixOneVoneSeventeen": {
+  "value": "\\ensuremath{0.238}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAsixOneVoneSeventeenCI": {
+  "value": "\\ensuremath{[0.213, 0.265]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAsixHundredVoneSeventeen": {
+  "value": "\\ensuremath{0.234}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAsixHundredVoneSeventeenCI": {
+  "value": "\\ensuremath{[0.199, 0.271]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAsixNormVoneSeventeen": {
+  "value": "\\ensuremath{0.204}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAsixNormVoneSeventeenCI": {
+  "value": "\\ensuremath{[0.185, 0.223]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightOneVoneSeventeen": {
+  "value": "\\ensuremath{0.040}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightOneVoneSeventeenCI": {
+  "value": "\\ensuremath{[0.013, 0.066]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightHundredVoneSeventeen": {
+  "value": "\\ensuremath{-0.017}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightHundredVoneSeventeenCI": {
+  "value": "\\ensuremath{[-0.049, 0.013]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightNormVoneSeventeen": {
+  "value": "\\ensuremath{0.013}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightNormVoneSeventeenCI": {
+  "value": "\\ensuremath{[-0.010, 0.034]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "unionVoneSeventeen": {
+  "value": "\\ensuremath{-0.037}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVoneSeventeenCI": {
+  "value": "\\ensuremath{[-0.050, -0.023]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVoneSeventeenAbs": {
+  "value": "\\ensuremath{0.037}",
+  "source": "results/stage8/sensitivity_union.csv (absolute value of Dplus_minus_D)"
+ },
+ "unionDVoneSeventeen": {
+  "value": "\\ensuremath{0.266}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionDplusVoneSeventeen": {
+  "value": "\\ensuremath{0.229}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVoneSeventeenSeedZero": {
+  "value": "\\ensuremath{0.031}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVoneSeventeenSeedZeroCI": {
+  "value": "\\ensuremath{[-0.000, 0.063]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVoneSeventeenSeedOne": {
+  "value": "\\ensuremath{-0.058}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVoneSeventeenSeedOneCI": {
+  "value": "\\ensuremath{[-0.074, -0.042]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVoneSeventeenSeedTwo": {
+  "value": "\\ensuremath{-0.084}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVoneSeventeenSeedTwoCI": {
+  "value": "\\ensuremath{[-0.109, -0.060]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "undetDAsixOneVoneSeventeen": {
+  "value": "\\ensuremath{0.204}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDAsixOneVoneSeventeenRange": {
+  "value": "\\ensuremath{0.148}~to~\\ensuremath{0.272}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDplusAsixOneVoneSeventeen": {
+  "value": "\\ensuremath{0.086}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDplusAsixOneVoneSeventeenRange": {
+  "value": "\\ensuremath{0.009}~to~\\ensuremath{0.210}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDAeightOneVoneSeventeen": {
+  "value": "\\ensuremath{0.162}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDAeightOneVoneSeventeenRange": {
+  "value": "\\ensuremath{0.134}~to~\\ensuremath{0.191}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDplusAeightOneVoneSeventeen": {
+  "value": "\\ensuremath{0.141}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDplusAeightOneVoneSeventeenRange": {
+  "value": "\\ensuremath{0.064}~to~\\ensuremath{0.277}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDplusAeightHundredVoneSeventeen": {
+  "value": "\\ensuremath{0.125}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDplusAeightHundredVoneSeventeenRange": {
+  "value": "\\ensuremath{0.012}~to~\\ensuremath{0.279}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDAoneVoneSeventeen": {
+  "value": "\\ensuremath{0.016}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDAoneVoneSeventeenRange": {
+  "value": "\\ensuremath{0.000}~to~\\ensuremath{0.046}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "tprAeightOneVtwoSeventeen": {
+  "value": "\\ensuremath{0.072}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightOneVtwoSeventeenCI": {
+  "value": "\\ensuremath{[0.042, 0.101]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightHundredVtwoSeventeen": {
+  "value": "\\ensuremath{0.028}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightHundredVtwoSeventeenCI": {
+  "value": "\\ensuremath{[-0.008, 0.065]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightNormVtwoSeventeen": {
+  "value": "\\ensuremath{0.049}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightNormVtwoSeventeenCI": {
+  "value": "\\ensuremath{[0.023, 0.077]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "unionVtwoSeventeen": {
+  "value": "\\ensuremath{-0.049}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVtwoSeventeenCI": {
+  "value": "\\ensuremath{[-0.065, -0.033]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVtwoSeventeenAbs": {
+  "value": "\\ensuremath{0.049}",
+  "source": "results/stage8/sensitivity_union.csv (absolute value of Dplus_minus_D)"
+ },
+ "unionDVtwoSeventeen": {
+  "value": "\\ensuremath{0.293}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionDplusVtwoSeventeen": {
+  "value": "\\ensuremath{0.244}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVtwoSeventeenSeedZero": {
+  "value": "\\ensuremath{-0.004}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVtwoSeventeenSeedZeroCI": {
+  "value": "\\ensuremath{[-0.042, 0.030]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVtwoSeventeenSeedOne": {
+  "value": "\\ensuremath{-0.071}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVtwoSeventeenSeedOneCI": {
+  "value": "\\ensuremath{[-0.090, -0.054]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVtwoSeventeenSeedTwo": {
+  "value": "\\ensuremath{-0.071}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVtwoSeventeenSeedTwoCI": {
+  "value": "\\ensuremath{[-0.097, -0.044]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "undetDAsixOneVtwoSeventeen": {
+  "value": "\\ensuremath{0.226}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDAsixOneVtwoSeventeenRange": {
+  "value": "\\ensuremath{0.179}~to~\\ensuremath{0.294}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "tprAeightOneVzeroEighteen": {
+  "value": "\\ensuremath{-0.017}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightOneVzeroEighteenCI": {
+  "value": "\\ensuremath{[-0.032, -0.003]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightHundredVzeroEighteen": {
+  "value": "\\ensuremath{-0.016}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightHundredVzeroEighteenCI": {
+  "value": "\\ensuremath{[-0.031, 0.001]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightNormVzeroEighteen": {
+  "value": "\\ensuremath{-0.012}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightNormVzeroEighteenCI": {
+  "value": "\\ensuremath{[-0.018, -0.006]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "unionVzeroEighteen": {
+  "value": "\\ensuremath{-0.001}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVzeroEighteenCI": {
+  "value": "\\ensuremath{[-0.008, 0.007]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVzeroEighteenAbs": {
+  "value": "\\ensuremath{0.001}",
+  "source": "results/stage8/sensitivity_union.csv (absolute value of Dplus_minus_D)"
+ },
+ "unionDVzeroEighteen": {
+  "value": "\\ensuremath{0.023}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionDplusVzeroEighteen": {
+  "value": "\\ensuremath{0.022}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVzeroEighteenSeedZero": {
+  "value": "\\ensuremath{-0.050}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVzeroEighteenSeedZeroCI": {
+  "value": "\\ensuremath{[-0.064, -0.037]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVzeroEighteenSeedOne": {
+  "value": "\\ensuremath{0.029}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVzeroEighteenSeedOneCI": {
+  "value": "\\ensuremath{[0.018, 0.041]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVzeroEighteenSeedTwo": {
+  "value": "\\ensuremath{0.018}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVzeroEighteenSeedTwoCI": {
+  "value": "\\ensuremath{[0.004, 0.032]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "undetDAsixOneVzeroEighteen": {
+  "value": "\\ensuremath{0.014}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDAsixOneVzeroEighteenRange": {
+  "value": "\\ensuremath{0.002}~to~\\ensuremath{0.036}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "tprAsixOneVoneEighteen": {
+  "value": "\\ensuremath{0.037}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAsixOneVoneEighteenCI": {
+  "value": "\\ensuremath{[0.021, 0.051]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAsixHundredVoneEighteen": {
+  "value": "\\ensuremath{0.013}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAsixHundredVoneEighteenCI": {
+  "value": "\\ensuremath{[0.001, 0.025]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAsixNormVoneEighteen": {
+  "value": "\\ensuremath{0.025}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAsixNormVoneEighteenCI": {
+  "value": "\\ensuremath{[0.018, 0.033]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightOneVoneEighteen": {
+  "value": "\\ensuremath{-0.017}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightOneVoneEighteenCI": {
+  "value": "\\ensuremath{[-0.032, -0.003]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightHundredVoneEighteen": {
+  "value": "\\ensuremath{-0.016}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightHundredVoneEighteenCI": {
+  "value": "\\ensuremath{[-0.031, 0.001]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightNormVoneEighteen": {
+  "value": "\\ensuremath{-0.012}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightNormVoneEighteenCI": {
+  "value": "\\ensuremath{[-0.018, -0.006]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "unionVoneEighteen": {
+  "value": "\\ensuremath{-0.001}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVoneEighteenCI": {
+  "value": "\\ensuremath{[-0.008, 0.007]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVoneEighteenAbs": {
+  "value": "\\ensuremath{0.001}",
+  "source": "results/stage8/sensitivity_union.csv (absolute value of Dplus_minus_D)"
+ },
+ "unionDVoneEighteen": {
+  "value": "\\ensuremath{0.023}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionDplusVoneEighteen": {
+  "value": "\\ensuremath{0.022}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVoneEighteenSeedZero": {
+  "value": "\\ensuremath{-0.050}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVoneEighteenSeedZeroCI": {
+  "value": "\\ensuremath{[-0.064, -0.037]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVoneEighteenSeedOne": {
+  "value": "\\ensuremath{0.029}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVoneEighteenSeedOneCI": {
+  "value": "\\ensuremath{[0.018, 0.041]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVoneEighteenSeedTwo": {
+  "value": "\\ensuremath{0.018}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVoneEighteenSeedTwoCI": {
+  "value": "\\ensuremath{[0.004, 0.032]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "undetDAsixOneVoneEighteen": {
+  "value": "\\ensuremath{0.014}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDAsixOneVoneEighteenRange": {
+  "value": "\\ensuremath{0.002}~to~\\ensuremath{0.036}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDplusAsixOneVoneEighteen": {
+  "value": "\\ensuremath{0.002}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDplusAsixOneVoneEighteenRange": {
+  "value": "\\ensuremath{0.000}~to~\\ensuremath{0.007}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDAeightOneVoneEighteen": {
+  "value": "\\ensuremath{0.007}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDAeightOneVoneEighteenRange": {
+  "value": "\\ensuremath{0.001}~to~\\ensuremath{0.016}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDplusAeightOneVoneEighteen": {
+  "value": "\\ensuremath{0.013}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDplusAeightOneVoneEighteenRange": {
+  "value": "\\ensuremath{0.001}~to~\\ensuremath{0.020}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDplusAeightHundredVoneEighteen": {
+  "value": "\\ensuremath{0.013}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDplusAeightHundredVoneEighteenRange": {
+  "value": "\\ensuremath{0.001}~to~\\ensuremath{0.018}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDAoneVoneEighteen": {
+  "value": "\\ensuremath{0.001}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDAoneVoneEighteenRange": {
+  "value": "\\ensuremath{0.000}~to~\\ensuremath{0.001}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "tprAeightOneVtwoEighteen": {
+  "value": "\\ensuremath{-0.026}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightOneVtwoEighteenCI": {
+  "value": "\\ensuremath{[-0.047, -0.006]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightHundredVtwoEighteen": {
+  "value": "\\ensuremath{-0.022}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightHundredVtwoEighteenCI": {
+  "value": "\\ensuremath{[-0.042, -0.001]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightNormVtwoEighteen": {
+  "value": "\\ensuremath{-0.015}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "tprAeightNormVtwoEighteenCI": {
+  "value": "\\ensuremath{[-0.024, -0.008]}",
+  "source": "results/stage8/sensitivity_paired.csv"
+ },
+ "unionVtwoEighteen": {
+  "value": "\\ensuremath{0.000}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVtwoEighteenCI": {
+  "value": "\\ensuremath{[-0.010, 0.010]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVtwoEighteenAbs": {
+  "value": "\\ensuremath{0.000}",
+  "source": "results/stage8/sensitivity_union.csv (absolute value of Dplus_minus_D)"
+ },
+ "unionDVtwoEighteen": {
+  "value": "\\ensuremath{0.029}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionDplusVtwoEighteen": {
+  "value": "\\ensuremath{0.028}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVtwoEighteenSeedZero": {
+  "value": "\\ensuremath{-0.067}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVtwoEighteenSeedZeroCI": {
+  "value": "\\ensuremath{[-0.084, -0.049]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVtwoEighteenSeedOne": {
+  "value": "\\ensuremath{0.040}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVtwoEighteenSeedOneCI": {
+  "value": "\\ensuremath{[0.027, 0.055]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVtwoEighteenSeedTwo": {
+  "value": "\\ensuremath{0.025}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "unionVtwoEighteenSeedTwoCI": {
+  "value": "\\ensuremath{[0.007, 0.043]}",
+  "source": "results/stage8/sensitivity_union.csv"
+ },
+ "undetDAsixOneVtwoEighteen": {
+  "value": "\\ensuremath{0.017}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "undetDAsixOneVtwoEighteenRange": {
+  "value": "\\ensuremath{0.001}~to~\\ensuremath{0.047}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "pcTopClassSeventeen": {
+  "value": "Bot",
+  "source": "results/stage8/sensitivity_per_class.csv"
+ },
+ "pcTopSeventeen": {
+  "value": "\\ensuremath{0.824}",
+  "source": "results/stage8/sensitivity_per_class.csv"
+ },
+ "pcRestMaxSeventeen": {
+  "value": "\\ensuremath{0.189}",
+  "source": "results/stage8/sensitivity_per_class.csv"
+ },
+ "pcTopClassEighteen": {
+  "value": "DDoS",
+  "source": "results/stage8/sensitivity_per_class.csv"
+ },
+ "pcTopEighteen": {
+  "value": "\\ensuremath{0.080}",
+  "source": "results/stage8/sensitivity_per_class.csv"
+ },
+ "pcRestMaxEighteen": {
+  "value": "\\ensuremath{0.004}",
+  "source": "results/stage8/sensitivity_per_class.csv"
+ },
+ "standinMedSeventeenRange": {
+  "value": "\\ensuremath{0.937}~to~\\ensuremath{0.972}",
+  "source": "results/stage8/stage8c_standin_quality_2017.csv"
+ },
+ "standinMinSeventeen": {
+  "value": "\\ensuremath{0.756}",
+  "source": "results/stage8/stage8c_standin_quality_2017.csv"
+ },
+ "standinMinNameSeventeen": {
+  "value": "attnmean\\_gxi\\_jacc10",
+  "source": "results/stage8/stage8c_standin_quality_2017.csv"
+ },
+ "standinMedEighteenRange": {
+  "value": "\\ensuremath{0.878}~to~\\ensuremath{0.927}",
+  "source": "results/stage7/stage7e/standin_quality.csv"
+ },
+ "standinMinEighteen": {
+  "value": "\\ensuremath{0.652}",
+  "source": "results/stage7/stage7e/standin_quality.csv"
+ },
+ "standinMinNameEighteen": {
+  "value": "attnmean\\_ig20\\_jacc10",
+  "source": "results/stage7/stage7e/standin_quality.csv"
+ },
+ "notflipIGVoneSeventeen": {
+  "value": "\\ensuremath{-0.59}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipIGVoneSeventeenRange": {
+  "value": "\\ensuremath{-2.38}~to~\\ensuremath{1.17}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipOcclVoneSeventeen": {
+  "value": "\\ensuremath{0.43}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipOcclVoneSeventeenRange": {
+  "value": "\\ensuremath{-1.92}~to~\\ensuremath{3.95}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipRolloutVoneSeventeen": {
+  "value": "\\ensuremath{0.51}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipRolloutVoneSeventeenRange": {
+  "value": "\\ensuremath{-0.58}~to~\\ensuremath{1.52}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipMeanVoneSeventeen": {
+  "value": "\\ensuremath{-0.51}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipMeanVoneSeventeenRange": {
+  "value": "\\ensuremath{-1.68}~to~\\ensuremath{1.32}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipLastVoneSeventeen": {
+  "value": "\\ensuremath{0.70}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipLastVoneSeventeenRange": {
+  "value": "\\ensuremath{-1.94}~to~\\ensuremath{2.58}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipStaticRolloutVoneSeventeen": {
+  "value": "\\ensuremath{0.51}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipStaticRolloutVoneSeventeenRange": {
+  "value": "\\ensuremath{-1.17}~to~\\ensuremath{1.97}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipStaticIGVoneSeventeen": {
+  "value": "\\ensuremath{0.33}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipStaticIGVoneSeventeenRange": {
+  "value": "\\ensuremath{-2.01}~to~\\ensuremath{3.32}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipAbsXVoneSeventeen": {
+  "value": "\\ensuremath{1.89}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipAbsXVoneSeventeenRange": {
+  "value": "\\ensuremath{0.61}~to~\\ensuremath{3.25}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipRandomVoneSeventeen": {
+  "value": "\\ensuremath{-0.28}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipRandomVoneSeventeenRange": {
+  "value": "\\ensuremath{-1.33}~to~\\ensuremath{0.40}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipIGVoneSeventeen": {
+  "value": "\\ensuremath{-11.26}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipIGVoneSeventeenRange": {
+  "value": "\\ensuremath{-14.08}~to~\\ensuremath{-7.45}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipOcclVoneSeventeen": {
+  "value": "\\ensuremath{-12.63}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipOcclVoneSeventeenRange": {
+  "value": "\\ensuremath{-15.54}~to~\\ensuremath{-8.17}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipRolloutVoneSeventeen": {
+  "value": "\\ensuremath{-8.35}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipRolloutVoneSeventeenRange": {
+  "value": "\\ensuremath{-11.11}~to~\\ensuremath{-4.49}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipMeanVoneSeventeen": {
+  "value": "\\ensuremath{-8.95}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipMeanVoneSeventeenRange": {
+  "value": "\\ensuremath{-12.54}~to~\\ensuremath{-4.21}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipLastVoneSeventeen": {
+  "value": "\\ensuremath{0.17}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipLastVoneSeventeenRange": {
+  "value": "\\ensuremath{-2.54}~to~\\ensuremath{4.04}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipStaticRolloutVoneSeventeen": {
+  "value": "\\ensuremath{-5.49}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipStaticRolloutVoneSeventeenRange": {
+  "value": "\\ensuremath{-9.13}~to~\\ensuremath{-3.04}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipStaticIGVoneSeventeen": {
+  "value": "\\ensuremath{-9.38}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipStaticIGVoneSeventeenRange": {
+  "value": "\\ensuremath{-12.86}~to~\\ensuremath{-5.57}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipAbsXVoneSeventeen": {
+  "value": "\\ensuremath{-7.00}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipAbsXVoneSeventeenRange": {
+  "value": "\\ensuremath{-8.87}~to~\\ensuremath{-4.51}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipRandomVoneSeventeen": {
+  "value": "\\ensuremath{-1.19}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipRandomVoneSeventeenRange": {
+  "value": "\\ensuremath{-1.55}~to~\\ensuremath{-0.92}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "nAoneFlipVoneSeventeen": {
+  "value": "1{,}675",
+  "source": "results/stage8/flip_split_counts.csv"
+ },
+ "nAoneNotFlipVoneSeventeen": {
+  "value": "1{,}028",
+  "source": "results/stage8/flip_split_counts.csv"
+ },
+ "nAzeroFlipVoneSeventeen": {
+  "value": "399",
+  "source": "results/stage8/flip_split_counts.csv"
+ },
+ "notflipIGVoneEighteen": {
+  "value": "\\ensuremath{-0.46}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipIGVoneEighteenRange": {
+  "value": "\\ensuremath{-1.48}~to~\\ensuremath{0.95}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipOcclVoneEighteen": {
+  "value": "\\ensuremath{0.98}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipOcclVoneEighteenRange": {
+  "value": "\\ensuremath{0.43}~to~\\ensuremath{1.30}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipRolloutVoneEighteen": {
+  "value": "\\ensuremath{0.27}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipRolloutVoneEighteenRange": {
+  "value": "\\ensuremath{-0.82}~to~\\ensuremath{1.18}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipMeanVoneEighteen": {
+  "value": "\\ensuremath{-0.52}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipMeanVoneEighteenRange": {
+  "value": "\\ensuremath{-1.19}~to~\\ensuremath{0.26}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipLastVoneEighteen": {
+  "value": "\\ensuremath{-0.03}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipLastVoneEighteenRange": {
+  "value": "\\ensuremath{-0.60}~to~\\ensuremath{0.84}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipStaticRolloutVoneEighteen": {
+  "value": "\\ensuremath{1.54}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipStaticRolloutVoneEighteenRange": {
+  "value": "\\ensuremath{1.29}~to~\\ensuremath{2.03}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipStaticIGVoneEighteen": {
+  "value": "\\ensuremath{0.48}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipStaticIGVoneEighteenRange": {
+  "value": "\\ensuremath{-0.74}~to~\\ensuremath{2.14}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipAbsXVoneEighteen": {
+  "value": "\\ensuremath{0.87}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipAbsXVoneEighteenRange": {
+  "value": "\\ensuremath{-0.03}~to~\\ensuremath{2.04}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipRandomVoneEighteen": {
+  "value": "\\ensuremath{-0.30}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "notflipRandomVoneEighteenRange": {
+  "value": "\\ensuremath{-0.47}~to~\\ensuremath{-0.12}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipIGVoneEighteen": {
+  "value": "\\ensuremath{-13.02}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipIGVoneEighteenRange": {
+  "value": "\\ensuremath{-14.94}~to~\\ensuremath{-10.94}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipOcclVoneEighteen": {
+  "value": "\\ensuremath{-14.29}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipOcclVoneEighteenRange": {
+  "value": "\\ensuremath{-16.61}~to~\\ensuremath{-11.44}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipRolloutVoneEighteen": {
+  "value": "\\ensuremath{-10.19}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipRolloutVoneEighteenRange": {
+  "value": "\\ensuremath{-13.45}~to~\\ensuremath{-6.70}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipMeanVoneEighteen": {
+  "value": "\\ensuremath{-8.30}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipMeanVoneEighteenRange": {
+  "value": "\\ensuremath{-11.17}~to~\\ensuremath{-6.17}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipLastVoneEighteen": {
+  "value": "\\ensuremath{-1.88}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipLastVoneEighteenRange": {
+  "value": "\\ensuremath{-5.26}~to~\\ensuremath{0.71}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipStaticRolloutVoneEighteen": {
+  "value": "\\ensuremath{-8.41}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipStaticRolloutVoneEighteenRange": {
+  "value": "\\ensuremath{-9.69}~to~\\ensuremath{-6.85}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipStaticIGVoneEighteen": {
+  "value": "\\ensuremath{-10.38}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipStaticIGVoneEighteenRange": {
+  "value": "\\ensuremath{-12.80}~to~\\ensuremath{-8.56}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipAbsXVoneEighteen": {
+  "value": "\\ensuremath{-7.91}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipAbsXVoneEighteenRange": {
+  "value": "\\ensuremath{-10.62}~to~\\ensuremath{-6.36}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipRandomVoneEighteen": {
+  "value": "\\ensuremath{1.70}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "azeroflipRandomVoneEighteenRange": {
+  "value": "\\ensuremath{-0.90}~to~\\ensuremath{4.28}",
+  "source": "results/stage8/flip_split.csv"
+ },
+ "nAoneFlipVoneEighteen": {
+  "value": "1{,}726",
+  "source": "results/stage8/flip_split_counts.csv"
+ },
+ "nAoneNotFlipVoneEighteen": {
+  "value": "1{,}229",
+  "source": "results/stage8/flip_split_counts.csv"
+ },
+ "nAzeroFlipVoneEighteen": {
+  "value": "271",
+  "source": "results/stage8/flip_split_counts.csv"
+ },
+ "apDModel": {
+  "value": "96",
+  "source": "src/config.py DEFAULTS['stage2']"
+ },
+ "apBlocks": {
+  "value": "3",
+  "source": "src/config.py DEFAULTS['stage2']"
+ },
+ "apHeads": {
+  "value": "4",
+  "source": "src/config.py DEFAULTS['stage2']"
+ },
+ "apFfnFactor": {
+  "value": "\\ensuremath{4/3}",
+  "source": "src/config.py DEFAULTS['stage2']"
+ },
+ "apAttnDropout": {
+  "value": "0.1",
+  "source": "src/config.py DEFAULTS['stage2']"
+ },
+ "apFfnDropout": {
+  "value": "0.1",
+  "source": "src/config.py DEFAULTS['stage2']"
+ },
+ "apResDropout": {
+  "value": "0",
+  "source": "src/config.py DEFAULTS['stage2']"
+ },
+ "apBatch": {
+  "value": "1{,}024",
+  "source": "src/config.py DEFAULTS['stage2']"
+ },
+ "apLR": {
+  "value": "\\ensuremath{3 \\times 10^{-4}}",
+  "source": "src/config.py DEFAULTS['stage2']"
+ },
+ "apWeightDecay": {
+  "value": "\\ensuremath{1 \\times 10^{-5}}",
+  "source": "src/config.py DEFAULTS['stage2']"
+ },
+ "apWarmup": {
+  "value": "500",
+  "source": "src/config.py DEFAULTS['stage2']"
+ },
+ "apMaxEpochs": {
+  "value": "20",
+  "source": "src/config.py DEFAULTS['stage2']"
+ },
+ "apPatience": {
+  "value": "5",
+  "source": "src/config.py DEFAULTS['stage2']"
+ },
+ "apGradClip": {
+  "value": "1",
+  "source": "src/config.py DEFAULTS['stage2']"
+ },
+ "apSkewThr": {
+  "value": "2",
+  "source": "src/config.py DEFAULTS['stage2']"
+ },
+ "apClip": {
+  "value": "10",
+  "source": "src/config.py DEFAULTS['stage2']"
+ },
+ "apClassWeight": {
+  "value": "sqrt\\_inv",
+  "source": "src/config.py DEFAULTS['stage2']"
+ },
+ "apXgbDepth": {
+  "value": "8",
+  "source": "src/config.py DEFAULTS['stage2']['xgb']"
+ },
+ "apXgbEta": {
+  "value": "0.1",
+  "source": "src/config.py DEFAULTS['stage2']['xgb']"
+ },
+ "apXgbSubsample": {
+  "value": "0.8",
+  "source": "src/config.py DEFAULTS['stage2']['xgb']"
+ },
+ "apXgbColsample": {
+  "value": "0.8",
+  "source": "src/config.py DEFAULTS['stage2']['xgb']"
+ },
+ "apXgbMinChild": {
+  "value": "1",
+  "source": "src/config.py DEFAULTS['stage2']['xgb']"
+ },
+ "apXgbRounds": {
+  "value": "2{,}000",
+  "source": "src/config.py DEFAULTS['stage2']['xgb']"
+ },
+ "apXgbEarly": {
+  "value": "50",
+  "source": "src/config.py DEFAULTS['stage2']['xgb']"
+ },
+ "apBestEpochSeventeen": {
+  "value": "4, 4, 7",
+  "source": "results/stage2_ftt_training_curves.csv"
+ },
+ "apEpochsRunSeventeen": {
+  "value": "9, 9, 12",
+  "source": "results/stage2_ftt_training_curves.csv"
+ },
+ "apBestEpochEighteen": {
+  "value": "19, 18, 16",
+  "source": "results/stage7/seed{0,1,2}/info.json"
+ },
+ "apEpochsRunEighteen": {
+  "value": "20, 20, 20",
+  "source": "results/stage7/seed{0,1,2}/info.json"
+ },
+ "apParamsEighteen": {
+  "value": "239{,}432",
+  "source": "results/stage7/seed0/info.json"
+ },
+ "apXgbBestSeventeen": {
+  "value": "19",
+  "source": "results/stage2_full_run_console.txt"
+ },
+ "apXgbBestEighteen": {
+  "value": "104",
+  "source": "results/stage7/xgb_info.json"
+ },
+ "apAlpha": {
+  "value": "0.25",
+  "source": "src/stage4_attack.py STAGE4"
+ },
+ "apRestarts": {
+  "value": "1",
+  "source": "src/stage4_attack.py STAGE4"
+ },
+ "apAtwoTau": {
+  "value": "1",
+  "source": "src/stage4_attack.py STAGE4"
+ },
+ "apAtwoPenalty": {
+  "value": "10",
+  "source": "src/stage4_attack.py STAGE4"
+ },
+ "apAthreeKappa": {
+  "value": "1",
+  "source": "src/stage4_attack.py STAGE4"
+ },
+ "apIGSteps": {
+  "value": "50",
+  "source": "src/stage3_explain.py STAGE3['ig_steps']"
+ },
+ "apIGBenignK": {
+  "value": "10",
+  "source": "src/stage3_explain.py STAGE3['ig_benign_k']"
+ },
+ "apGsBackground": {
+  "value": "100",
+  "source": "src/stage3_explain.py STAGE3['gs_background']"
+ },
+ "apGsSamples": {
+  "value": "50",
+  "source": "src/stage3_explain.py STAGE3['gs_n_samples']"
+ },
+ "apEpsList": {
+  "value": "\\ensuremath{\\{0.05, 0.1, 0.25, 0.5, 1, 2\\}}",
+  "source": "src/stage5_fullrun.py STAGE5['settings']"
+ },
+ "apEpsAthree": {
+  "value": "\\ensuremath{\\{0.25, 0.5, 1\\}}",
+  "source": "src/stage5_fullrun.py STAGE5['settings']"
+ },
+ "apEpsUnc": {
+  "value": "\\ensuremath{\\{0.05, 0.1, 0.25, 0.5\\}}",
+  "source": "src/stage5_fullrun.py STAGE5['settings']"
+ },
+ "apKnnRef": {
+  "value": "20{,}000",
+  "source": "src/stage6_defense.py STAGE6"
+ },
+ "apMahaRows": {
+  "value": "200{,}000",
+  "source": "src/stage6_defense.py STAGE6"
+ },
+ "apAsixSafety": {
+  "value": "0.5",
+  "source": "src/stage6c_defense.py STAGE6C['a6_safety']"
+ },
+ "apAsixSingleLambda": {
+  "value": "10",
+  "source": "src/stage6c_defense.py STAGE6C['a6_single_lambda']"
+ },
+ "apCplus": {
+  "value": "1",
+  "source": "src/stage6d_final.py STAGE6D['C_plus']"
+ },
+ "apTau": {
+  "value": "0.1",
+  "source": "src/stage6e_strong.py STAGE6E['tau']"
+ },
+ "apChunkAsix": {
+  "value": "500",
+  "source": "src/stage7e_defense_2018.py STAGE7E['a6_chunk'] (= STAGE6D['attack_chunk'])"
+ },
+ "apChunkAeight": {
+  "value": "100",
+  "source": "src/stage7e_defense_2018.py STAGE7E['a8_chunk']"
+ },
+ "apChunkAeightSeventeen": {
+  "value": "100",
+  "source": "results/stage6/strong/runtime_estimate.txt"
+ },
+ "ndSrcCommonSeventeen": {
+  "value": "143~of~1{,}044",
+  "source": "results/stage8/sensitivity_flags.csv"
+ },
+ "ndSrcSlowhttpSeventeen": {
+  "value": "128~of~150",
+  "source": "results/stage8/sensitivity_flags.csv"
+ },
+ "succAoneRowsVoneSeventeen": {
+  "value": "\\ensuremath{0.620}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "succAoneRowsVoneEighteen": {
+  "value": "\\ensuremath{0.584}",
+  "source": "results/stage8/sensitivity_defenders.csv"
+ },
+ "massRedAtwoVoneSeventeen": {
+  "value": "\\ensuremath{0.094}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massRedUncVoneSeventeen": {
+  "value": "\\ensuremath{0.200}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massRedAtwoVoneEighteen": {
+  "value": "\\ensuremath{0.139}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "massRedUncVoneEighteen": {
+  "value": "\\ensuremath{0.274}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "nAzeroFlipVoneSeventeenSeeds": {
+  "value": "218, 43, 138",
+  "source": "results/stage8/flip_split_counts.csv"
+ },
+ "nAzeroFlipVoneSeventeenMin": {
+  "value": "43",
+  "source": "results/stage8/flip_split_counts.csv"
+ },
+ "nAzeroFlipVoneEighteenSeeds": {
+  "value": "20, 208, 43",
+  "source": "results/stage8/flip_split_counts.csv"
+ },
+ "nAzeroFlipVoneEighteenMin": {
+  "value": "20",
+  "source": "results/stage8/flip_split_counts.csv"
+ },
+ "staticGapSeventeenRange": {
+  "value": "\\ensuremath{-0.020}~to~\\ensuremath{0.049}",
+  "source": "results/stage7/stage7c/stage7c_cmp2017_findings.csv"
+ },
+ "staticGapEighteenRange": {
+  "value": "\\ensuremath{-0.045}~to~\\ensuremath{-0.013}",
+  "source": "results/stage7/stage7c/stage7c_cmp2017_findings.csv"
+ },
+ "headMinusRolloutSeventeenRange": {
+  "value": "\\ensuremath{-0.038}~to~\\ensuremath{-0.001}",
+  "source": "results/stage7/stage7c/stage7c_cmp2017_findings.csv"
+ },
+ "headMinusRolloutEighteenRange": {
+  "value": "\\ensuremath{-0.046}~to~\\ensuremath{0.057}",
+  "source": "results/stage7/stage7c/stage7c_cmp2017_findings.csv"
+ },
+ "fprDNdSeventeenHalf": {
+  "value": "\\ensuremath{0.016}",
+  "source": "results/stage8/sensitivity_negatives.csv"
+ },
+ "fprDOtherSeventeenHalf": {
+  "value": "\\ensuremath{0.059}",
+  "source": "results/stage8/sensitivity_negatives.csv"
+ },
+ "fprDplusNdSeventeenHalf": {
+  "value": "\\ensuremath{0.023}",
+  "source": "results/stage8/sensitivity_negatives.csv"
+ },
+ "fprDplusOtherSeventeenHalf": {
+  "value": "\\ensuremath{0.061}",
+  "source": "results/stage8/sensitivity_negatives.csv"
+ },
+ "fprDNdEighteenHalf": {
+  "value": "\\ensuremath{0.212}",
+  "source": "results/stage8/sensitivity_negatives.csv"
+ },
+ "fprDOtherEighteenHalf": {
+  "value": "\\ensuremath{0.045}",
+  "source": "results/stage8/sensitivity_negatives.csv"
+ },
+ "fprDplusNdEighteenHalf": {
+  "value": "\\ensuremath{0.055}",
+  "source": "results/stage8/sensitivity_negatives.csv"
+ },
+ "fprDplusOtherEighteenHalf": {
+  "value": "\\ensuremath{0.044}",
+  "source": "results/stage8/sensitivity_negatives.csv"
+ },
+ "sensMaxMassChange": {
+  "value": "\\ensuremath{0.025}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "sensMaxFlipChange": {
+  "value": "\\ensuremath{0.87}",
+  "source": "results/stage8/sensitivity_stage5.csv"
+ },
+ "topImmRolloutSeventeen": {
+  "value": "\\ensuremath{3.91}",
+  "source": "results/stage3/attr_seed{0,1,2}.npz; results/stage3/selection.parquet; results/stage4_constraints.csv"
+ },
+ "topImmIGSeventeen": {
+  "value": "\\ensuremath{5.48}",
+  "source": "results/stage3/attr_seed{0,1,2}.npz; results/stage3/selection.parquet; results/stage4_constraints.csv"
+ },
+ "topImmRolloutEighteen": {
+  "value": "\\ensuremath{5.09}",
+  "source": "results/stage7/stage7c/raw/attr_seed{0,1,2}.npz; results/stage7/stage7c/raw/selection.parquet; results/stage7/stage7d/stage7d_constraints_2018_floors.csv"
+ },
+ "topImmIGEighteen": {
+  "value": "\\ensuremath{4.49}",
+  "source": "results/stage7/stage7c/raw/attr_seed{0,1,2}.npz; results/stage7/stage7c/raw/selection.parquet; results/stage7/stage7d/stage7d_constraints_2018_floors.csv"
+ },
+ "azeroBenignShareVzeroSeventeen": {
+  "value": "\\ensuremath{0.164}",
+  "source": "results/stage8/flip_split_counts.csv"
+ },
+ "azeroBenignShareVzeroEighteen": {
+  "value": "\\ensuremath{0.092}",
+  "source": "results/stage8/flip_split_counts.csv"
+ },
+ "msPerRowIGRange": {
+  "value": "\\ensuremath{3.93}~to~\\ensuremath{5.50}",
+  "source": "results/stage3_timing.csv"
+ },
+ "msPerRowAttnRange": {
+  "value": "\\ensuremath{0.032}~to~\\ensuremath{0.039}",
+  "source": "results/stage3_timing.csv"
+ },
+ "valFlatEighteenRange": {
+  "value": "\\ensuremath{0.9858}~to~\\ensuremath{0.9904}",
+  "source": "results/stage7/seed{0,1,2}/curves.csv"
+ },
+ "nRandLevels": {
+  "value": "8",
+  "source": "src/stage3_explain.py RAND_LEVELS"
+ },
+ "randRowsPerClass": {
+  "value": "50",
+  "source": "src/stage3_explain.py STAGE3['rand_n_per_class']; results/stage3_randomisation.csv"
+ },
+ "randRolloutTopOneSeventeen": {
+  "value": "\\ensuremath{0.969}",
+  "source": "results/stage3_randomisation.csv"
+ },
+ "randLastTopOneSeventeen": {
+  "value": "\\ensuremath{0.041}",
+  "source": "results/stage3_randomisation.csv"
+ },
+ "randRolloutAllSeventeen": {
+  "value": "\\ensuremath{-0.067}",
+  "source": "results/stage3_randomisation.csv"
+ },
+ "randIGAbsAllSeventeen": {
+  "value": "\\ensuremath{0.379}",
+  "source": "results/stage3_randomisation.csv"
+ },
+ "randIGSignedAllSeventeen": {
+  "value": "\\ensuremath{0.028}",
+  "source": "results/stage3_randomisation.csv"
+ },
+ "randRolloutTopOneEighteen": {
+  "value": "\\ensuremath{0.979}",
+  "source": "results/stage7/stage7c/stage7c_randomisation.csv"
+ },
+ "randLastTopOneEighteen": {
+  "value": "\\ensuremath{0.079}",
+  "source": "results/stage7/stage7c/stage7c_randomisation.csv"
+ },
+ "randRolloutAllEighteen": {
+  "value": "\\ensuremath{-0.051}",
+  "source": "results/stage7/stage7c/stage7c_randomisation.csv"
+ },
+ "randIGAbsAllEighteen": {
+  "value": "\\ensuremath{0.377}",
+  "source": "results/stage7/stage7c/stage7c_randomisation.csv"
+ },
+ "randIGSignedAllEighteen": {
+  "value": "\\ensuremath{0.022}",
+  "source": "results/stage7/stage7c/stage7c_randomisation.csv"
+ },
+ "ablAoneMinusDSeventeen": {
+  "value": "\\ensuremath{0.192}",
+  "source": "results/stage9/ablation/summary_paired.csv"
+ },
+ "ablAtwoMinusDSeventeen": {
+  "value": "\\ensuremath{0.099}",
+  "source": "results/stage9/ablation/summary_paired.csv"
+ },
+ "ablBMinusDSeventeen": {
+  "value": "\\ensuremath{0.265}",
+  "source": "results/stage9/ablation/summary_paired.csv"
+ },
+ "ablCzeroMinusDSeventeen": {
+  "value": "\\ensuremath{0.000}",
+  "source": "results/stage9/ablation/summary_paired.csv"
+ },
+ "ablConeMinusDSeventeen": {
+  "value": "\\ensuremath{-0.043}",
+  "source": "results/stage9/ablation/summary_paired.csv"
+ },
+ "ablCtwoMinusDSeventeen": {
+  "value": "\\ensuremath{0.193}",
+  "source": "results/stage9/ablation/summary_paired.csv"
+ },
+ "ablPairSeventeen": {
+  "value": "\\ensuremath{0.045}",
+  "source": "results/stage9/ablation/summary_paired.csv"
+ },
+ "ablPairSeventeenCI": {
+  "value": "\\ensuremath{[0.028, 0.065]}",
+  "source": "results/stage9/ablation/summary_paired.csv"
+ },
+ "ablPairAltSeventeen": {
+  "value": "\\ensuremath{0.058}",
+  "source": "results/stage9/ablation/summary_paired.csv"
+ },
+ "ablAoneMinusDEighteen": {
+  "value": "\\ensuremath{0.036}",
+  "source": "results/stage9/ablation/summary_paired.csv"
+ },
+ "ablAtwoMinusDEighteen": {
+  "value": "\\ensuremath{0.020}",
+  "source": "results/stage9/ablation/summary_paired.csv"
+ },
+ "ablBMinusDEighteen": {
+  "value": "\\ensuremath{0.041}",
+  "source": "results/stage9/ablation/summary_paired.csv"
+ },
+ "ablCzeroMinusDEighteen": {
+  "value": "\\ensuremath{0.004}",
+  "source": "results/stage9/ablation/summary_paired.csv"
+ },
+ "ablConeMinusDEighteen": {
+  "value": "\\ensuremath{-0.001}",
+  "source": "results/stage9/ablation/summary_paired.csv"
+ },
+ "ablCtwoMinusDEighteen": {
+  "value": "\\ensuremath{0.038}",
+  "source": "results/stage9/ablation/summary_paired.csv"
+ },
+ "ablPairEighteen": {
+  "value": "\\ensuremath{0.001}",
+  "source": "results/stage9/ablation/summary_paired.csv"
+ },
+ "ablPairEighteenCI": {
+  "value": "\\ensuremath{[-0.007, 0.010]}",
+  "source": "results/stage9/ablation/summary_paired.csv"
+ },
+ "ablPairAltEighteen": {
+  "value": "\\ensuremath{0.004}",
+  "source": "results/stage9/ablation/summary_paired.csv"
+ },
+ "ablShuffleMaxDiff": {
+  "value": "\\ensuremath{0.013}",
+  "source": "results/stage9/ablation/summary_paired.csv"
+ },
+ "ablFprAoneSeventeen": {
+  "value": "\\ensuremath{0.060}",
+  "source": "results/stage9/ablation/summary_detection.csv"
+ },
+ "ablFprDplusSeventeen": {
+  "value": "\\ensuremath{0.053}",
+  "source": "results/stage9/ablation/summary_detection.csv"
+ }
+}
