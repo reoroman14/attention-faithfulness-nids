@@ -13,8 +13,7 @@ two corrected intrusion datasets, LYCOS-IDS2017 and LycoS-Unicas-IDS2018, with t
   (A8), and one that optimises the detector's exact score (A8x). A6x gives the attacker of the base detector the
   iterate selection of A8x. Control detectors separate the role of attention.
 
-**Access.** The repository is currently private. The editors and reviewers can be given access on request, and it
-will be made public on acceptance with a tagged release matching the published version.
+**Access.** The repository is publicly available, with a tagged release (tag `submitted-scientific-reports-2026-10`).
 
 ## Folder layout
 
@@ -246,8 +245,9 @@ logs) show the order of sanity checks, pilots and attacks.
   - LYCOS-IDS2017 (Rosay et al., 2021; 2022): https://lycos-ids.univ-lemans.fr
   - LycoS-Unicas-IDS2018 (Cantone et al., 2024): https://github.com/MarcoCantone/LycoS-Unicas-IDS2018
   - CIC-IDS2017 and CSE-CIC-IDS2018 (Sharafaldin, Habibi Lashkari and Ghorbani, ICISSP 2018,
-    doi:10.5220/0006639801080116). CSE-CIC-IDS2018 is distributed through AWS Open Data,
-    https://registry.opendata.aws/cse-cic-ids2018, under terms that require citation and a link to that page.
+    doi:10.5220/0006639801080116). CIC-IDS2017: https://www.unb.ca/cic/datasets/ids-2017.html. CSE-CIC-IDS2018 is
+    distributed through AWS Open Data, https://registry.opendata.aws/cse-cic-ids2018, under terms that require citation
+    and a link to that page.
 - **Per-row intermediate files** (`*.parquet`, `*.npz`, `*.npy`, `*.pkl`): attacked rows, per-row explanations and
   scores, selections, negatives and detector inputs. They are not included because of their size: the stage 9 per-row
   files alone take about 0.9 GB, and the full `results/` folder about 3 GB.
